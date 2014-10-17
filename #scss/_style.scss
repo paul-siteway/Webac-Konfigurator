@@ -1,0 +1,128 @@
+@import 'bourbon/bourbon';
+
+body{
+    overflow-y: scroll;
+}
+#mapAPP {
+	position: relative;
+	// padding-top: 40px;
+	background: url('http://www.eitictlabs.eu/fileadmin/system2013/g/img/bg_body.jpg') repeat top left;
+    
+    
+	#map{
+		width: 100% !important;
+		height: 500px !important;
+		@include box-shadow(0 0 5px rgb(234, 234, 234));
+		border: 1px solid #fff;
+		// position: absolute !important;
+		//GOOGLE MAPS & BOOTSTAP FIX
+		img { 
+		  max-width: none;
+		}
+		label { 
+		  width: auto; display:inline; 
+		} 
+		// END GOOGLE MAPS & BOOTSTAP FIX
+	}//map
+
+	#orteView{
+	}
+	#controls{
+		select{
+			font-size: 10px;
+		}
+        .btn {
+            margin: 0 5px;
+        }
+        .filters{
+            float: left;
+        }
+		.filterLabel{
+			padding:10px;
+			padding-bottom: 0;
+			text-align: right;
+		}
+        .searchContainer {
+            float: right;
+            text-align: right;
+        }
+        .navbar{
+            background: rgba(255,255,255,0.9);
+            box-shadow: 0 0 10px #39597d;
+            .navbar-inner{
+                padding: 10px;
+                max-width: 1135px;
+                margin: 0 auto;
+		    }
+        }
+		
+	}
+	#orteView{
+		background: #fff;
+		.ort{
+			@include box-shadow(0 0 5px rgb(234, 234, 234));
+			border: 1px solid #F1F1F1;
+			margin: 10px 0;
+			padding: 10px;
+			img {
+				float: left;
+				margin-right: 10px;
+			}
+			ul{
+				list-style: none;
+			}
+		}
+	}
+    
+    #locationsView{
+        margin: 0 -10px;
+    }
+    
+    .location{
+        
+        padding: 10px;
+        display: inline-block;
+        width: 50%;
+        height: 240px;
+        overflow: hidden;
+        
+        .inner{
+            box-shadow: 0 0 5px #e4e4e4;
+            position: relative;
+            background: #fff;
+            padding: 10px;
+            height: 220px;
+            h4{
+                margin: -10px !important;
+                margin-bottom: 10px !important;
+                color: #5fbd00;
+                border-bottom: 1px solid #e4e4e4;
+                padding: 10px;
+                padding-left: 25px;
+                margin: 0 0 10px 0;
+                font-weight: lighter;
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                padding-left: 15px;
+            }
+            .btn-danger {
+                position: absolute;
+                top: 0px;
+                right: 3px;
+                background: none;
+                color: #c12e2a;
+                text-shadow: none;
+                border: none;
+                box-shadow: none;
+                border-left: 1px solid #e4e4e4;
+                border-radius: 0;
+                padding: 10px;
+            }
+        }
+        
+    }
+	
+
+}
