@@ -231,8 +231,6 @@
 		initialize: function(){
 			this.model.on('change', this.render, this );
 			this.model.on('destroy', this.remove, this );
-
-			
 		},
 		render: function(){
 			var id = this.model.get('id');
@@ -301,7 +299,6 @@
 			var type = $('#ellType').find('option:selected').val();
 			// console.log('startFilterType:' +type);
 			//this.collection.reset(this.collection.query({ eLLType: {$like: type}}) );
-
 		}
 	});
 	
@@ -359,7 +356,7 @@
 	// ########################################
 	// ##########   FILTERS  VIEW   ########### 
 	// ########################################
-	
+
 	MapApp.Views.Filters = Backbone.View.extend({
 		tagName: 'div', 
 		className: 'filters col-md-6',
@@ -368,6 +365,7 @@
 			// this.collection.on('add', this.update, this);
 			//this.collection.on('remove', this.update, this);
 			this.collection.on('reset', this.update, this);
+            MapApp.vents.on('updateFilter', this.update, this);
 			this.create();
 		},
 		create: function () {
@@ -377,6 +375,7 @@
 			MapApp.activateMultiselect();
 		},
 		update: function () {
+            console.log('update Filters');
 			this.createOptionsLists();
 			// this.render();
 			// MapApp.activateMultiselect();
@@ -397,7 +396,8 @@
 			//Remove all duplicates
 			MapApp.filterList = _.uniq(MapApp.filterList);			
 		},
-		createOptionsLists: function () {
+        createOptionsLists: function () {
+            console.log('createOptionsLists');
 			MapApp.optionsLists = {};
 			// reset the optionen Collection 
 			MapApp.optionsCollection.reset();
@@ -412,6 +412,7 @@
 					var tempArray = [];
 					//Go trough all Locations and get each FIltername
 					MapApp.locationsCollection.each(function (location) {
+                        console.log(    'location:'+location.get('title')  );
 						var option = location.get('filterable')[filtername];
 						tempArray.push(option);
 				});
