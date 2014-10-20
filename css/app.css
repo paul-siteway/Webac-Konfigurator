@@ -8042,6 +8042,7 @@ body {
   -webkit-box-shadow: 0 0 5px #eaeaea;
   box-shadow: 0 0 5px #eaeaea;
   border: 1px solid #fff;
+  display: none !important;
 }
 #mapAPP #map img {
   max-width: none;
@@ -8050,32 +8051,38 @@ body {
   width: auto;
   display: inline;
 }
-#mapAPP #controls select {
-  font-size: 10px;
+#mapAPP #filterLocations {
+  border: 1px solid red;
+  background: lightgrey;
 }
-#mapAPP #controls .btn {
-  margin: 0 5px;
+#mapAPP #filterLocations .filters {
+  *zoom: 1;
+  text-align: center;
 }
-#mapAPP #controls .filters {
-  float: left;
+#mapAPP #filterLocations .filters:before, #mapAPP #filterLocations .filters:after {
+  content: " ";
+  display: table;
 }
-#mapAPP #controls .filterLabel {
+#mapAPP #filterLocations .filters:after {
+  clear: both;
+}
+#mapAPP #filterLocations .filters .dropdown-menu {
+  display: block !important;
+  float: none;
+  clear: both;
+  position: inherit;
+}
+#mapAPP #filterLocations .filters .btn-group {
+  display: inline-block;
+  width: 33%;
+  background: lightgrey;
   padding: 10px;
-  padding-bottom: 0;
-  text-align: right;
+  overflow: hidden;
+  vertical-align: top;
 }
-#mapAPP #controls .searchContainer {
-  float: right;
-  text-align: right;
-}
-#mapAPP #controls .navbar {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 10px #39597d;
-}
-#mapAPP #controls .navbar .navbar-inner {
-  padding: 10px;
-  max-width: 1135px;
-  margin: 0 auto;
+#mapAPP #filterLocations .filters .btn-group .dropdown-toggle {
+  width: 100%;
+  border-radius: 0;
 }
 #mapAPP #orteView {
   background: #fff;

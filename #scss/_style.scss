@@ -23,40 +23,46 @@ body{
 		  width: auto; display:inline; 
 		} 
 		// END GOOGLE MAPS & BOOTSTAP FIX
+        display: none !important;
 	}//map
 
-	#orteView{
-	}
-	#controls{
-		select{
-			font-size: 10px;
-		}
-        .btn {
-            margin: 0 5px;
-        }
+
+    #filterLocations{        
+        border: 1px solid red;
+        background: lightgrey;
         .filters{
-            float: left;
-        }
-		.filterLabel{
-			padding:10px;
-			padding-bottom: 0;
-			text-align: right;
-		}
-        .searchContainer {
-            float: right;
-            text-align: right;
-        }
-        .navbar{
-            background: rgba(255,255,255,0.9);
-            box-shadow: 0 0 10px #39597d;
-            .navbar-inner{
+            @include clearfix;
+            text-align: center;
+            
+            .dropdown-menu{
+                display: block !important; 
+                float: none;
+                clear: both;
+                position: inherit;
+            }
+            .btn-group{
+                display: inline-block;
+                width: 33%;
+                background: lightgrey;
                 padding: 10px;
-                max-width: 1135px;
-                margin: 0 auto;
-		    }
-        }
-		
-	}
+                overflow: hidden;
+                vertical-align: top;
+                .dropdown-toggle{
+                    width: 100%;
+                    border-radius:0;
+                }        
+            }//btn-group
+        }//filters
+    }//filterLocations
+    
+
+    
+    
+    
+    
+    
+    
+    
 	#orteView{
 		background: #fff;
 		.ort{
@@ -125,4 +131,4 @@ body{
     }
 	
 
-}
+}//appApp

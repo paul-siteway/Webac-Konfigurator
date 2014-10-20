@@ -53,6 +53,7 @@
 	
 
 	MapApp.filterList = [];
+    MapApp.anwendungsgebiete= {};
 
 
 
@@ -163,15 +164,15 @@
 			MapApp.vents.trigger('location:showAll', id);
 		},
 		add: function (id,title) {
-			console.log('add id:'+id+' title:'+title) ;
+			//console.log('add id:'+id+' title:'+title) ;
 			//EVENT SHOULD FIRE HERE
 		},
 		search: function (title) {
-			console.log('search title:'+title) ;
+			//console.log('search title:'+title) ;
 			//EVENT SHOULD FIRE HERE
 		},
 		Default: function (other) {
-			console.log('Not sure wht you tying to do: you acessed:'+other) ;
+			//console.log('Not sure wht you tying to do: you acessed:'+other) ;
 			//EVENT SHOULD FIRE HERE
 		} 
 	});
@@ -311,7 +312,7 @@
 
 	MapApp.Views.Filter = Backbone.View.extend({
 		tagName: 'select',
-		className: 'col-md-2 multiselect',
+		className: 'multiselect',
 		template: template('filterTemplate'),
 		initialize: function () {
 			// console.log('initialized Single Filter View');
@@ -343,10 +344,12 @@
 					MapApp["filterOptionsArray"+this.options.index].push(inhalt);
 				},this);
 			},this);
+            
 			//make the FilterArray Unique
 			MapApp["filterOptionsArray"+this.options.index] = _.uniq(MapApp["filterOptionsArray"+this.options.index]);
-			//Finally go trough all the items in the Filtersoptions array and add them to the Select
-			_.each(MapApp["filterOptionsArray"+this.options.index], function (name) {
+			
+            //Finally go trough all the items in the Filtersoptions array and add them to the Select
+            _.each(MapApp["filterOptionsArray"+this.options.index], function (name) {
 				this.$el.append( this.template( {optionName: name} ));	
 			},this);
 		}
@@ -359,7 +362,7 @@
 
 	MapApp.Views.Filters = Backbone.View.extend({
 		tagName: 'div', 
-		className: 'filters col-md-6',
+		className: 'filters',
 		initialize: function () {
 			MapApp.vents.on('selectChanged', this.updateQueryObject, this);
 			// this.collection.on('add', this.update, this);
@@ -370,16 +373,38 @@
 		},
 		create: function () {
 			this.createFilterList();
+            this.createAnwendungsgebietList();
 			this.createOptionsLists();
 			this.render();
 			MapApp.activateMultiselect();
 		},
 		update: function () {
-            console.log('update Filters');
+            //console.log('update Filters');
 			this.createOptionsLists();
 			// this.render();
 			// MapApp.activateMultiselect();
 		},
+        createAnwendungsgebietList: function(){
+            MapApp.anwendungsgebiete = {};
+            
+            //go trough each locaction
+            this.collection.each(function (location) {
+                var name = location.get('Anwendungsgebiet');
+                MapApp.anwendungsgebiete[name] = {};
+            });
+            
+            //go trough each locaction
+            this.collection.each(function (location) {
+                var anwendungsgebietsName = location.get('Anwendungsgebiet');
+                var filter = location.get('filterable');
+                //go trough each filter of location
+                _.each(filter,function(filterArray, filterGroupName){
+                    console.log(filterGroupName);
+                    MapApp.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = filterArray; 
+                    
+                });
+            });
+        },
 		createFilterList: function () {
 			// console.log('creatingFilterList');
 			//Empty the Filter list
@@ -397,8 +422,8 @@
 			MapApp.filterList = _.uniq(MapApp.filterList);			
 		},
         createOptionsLists: function () {
-            console.log('createOptionsLists');
-			MapApp.optionsLists = {};
+            //console.log('createOptionsLists');
+			//MapApp.optionsLists = {};
 			// reset the optionen Collection 
 			MapApp.optionsCollection.reset();
 			//Go trough each Filter in the Filterlist
@@ -412,26 +437,26 @@
 					var tempArray = [];
 					//Go trough all Locations and get each FIltername
 					MapApp.locationsCollection.each(function (location) {
-                        console.log(    'location:'+location.get('title')  );
+                      //  console.log(    'location:'+location.get('title')  );
 						var option = location.get('filterable')[filtername];
 						tempArray.push(option);
 				});
 					// console.xlog('####'+tempArray);
 				MapApp.optionsCollection.at(index).set('filteroptions', tempArray);
 			});
-
 		},
 		render: function () {
 			////Filter trough all ITEMS
 			this.$el.html('');
 			_.each(MapApp.filterList, function (filter,index) {
-				//for each vreate a new View.
+				//for each create a new View.
 				MapApp.filterView = new MapApp.Views.Filter({index:index}); 
 				MapApp.filterView.render();
 				this.$el.append(  MapApp.filterView.el );
 			},this);
 			return this;
-		},	updateQueryObject: function() {
+		},  
+        updateQueryObject: function() {
 			MapApp.queryObject = {};
 			$('select.multiselect').each(function () {
 				filtername = 'filterable.'+$(this).attr('data-name');
@@ -439,15 +464,10 @@
 				if($(this).val() == null) return;
 				MapApp.queryObject[filtername] = selected;
 			});
-			console.log('##################');
-			console.log('THE COLLECTION IS:');
-			console.log(MapApp.locationsCollection);
-			console.log('THE QUERY OBJECT IS: ');
-			console.log(MapApp.queryObject);
 
 			filteredLocations = MapApp.initialLocationsCollection.query(MapApp.queryObject)
-			console.log('THE RESULT IS: ');
-			console.log(filteredLocations);
+			//console.log('THE RESULT IS: ');
+			//console.log(filteredLocations);
 			MapApp.locationsCollection.reset(filteredLocations);
 		}
 	});
@@ -474,7 +494,7 @@
 			
 		},
 		showAll: function() {
-			console.log('Showing Markers')
+			//console.log('Showing Markers')
 			this.removeAll();
 			this.collection.each(this.addLocation, this);
 			if(this.collection.length!=0){
@@ -572,8 +592,6 @@
 
 
 	MapApp.initialLocationsCollection = new MapApp.Collections.Locations(MapApp.locationsCollection.toJSON());
-	
-	
 
 	MapApp.filterView = new MapApp.Views.Filter({model:MapApp.Models.Locations});
 
