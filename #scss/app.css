@@ -5481,32 +5481,39 @@ body {
     height: 500px !important;
     -webkit-box-shadow: 0 0 5px #eaeaea;
     box-shadow: 0 0 5px #eaeaea;
-    border: 1px solid #fff; }
+    border: 1px solid #fff;
+    display: none !important; }
     #mapAPP #map img {
       max-width: none; }
     #mapAPP #map label {
       width: auto;
       display: inline; }
-  #mapAPP #controls select {
-    font-size: 10px; }
-  #mapAPP #controls .btn {
-    margin: 0 5px; }
-  #mapAPP #controls .filters {
-    float: left; }
-  #mapAPP #controls .filterLabel {
-    padding: 10px;
-    padding-bottom: 0;
-    text-align: right; }
-  #mapAPP #controls .searchContainer {
-    float: right;
-    text-align: right; }
-  #mapAPP #controls .navbar {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 10px #39597d; }
-    #mapAPP #controls .navbar .navbar-inner {
-      padding: 10px;
-      max-width: 1135px;
-      margin: 0 auto; }
+  #mapAPP #filterProducts {
+    border: 1px solid red;
+    background: lightgrey; }
+    #mapAPP #filterProducts .filters {
+      *zoom: 1;
+      text-align: center; }
+      #mapAPP #filterProducts .filters:before, #mapAPP #filterProducts .filters:after {
+        content: " ";
+        display: table; }
+      #mapAPP #filterProducts .filters:after {
+        clear: both; }
+      #mapAPP #filterProducts .filters .dropdown-menu {
+        display: block !important;
+        float: none;
+        clear: both;
+        position: inherit; }
+      #mapAPP #filterProducts .filters .btn-group {
+        display: inline-block;
+        width: 33%;
+        background: lightgrey;
+        padding: 10px;
+        overflow: hidden;
+        vertical-align: top; }
+        #mapAPP #filterProducts .filters .btn-group .dropdown-toggle {
+          width: 100%;
+          border-radius: 0; }
   #mapAPP #orteView {
     background: #fff; }
     #mapAPP #orteView .ort {
@@ -5520,21 +5527,21 @@ body {
         margin-right: 10px; }
       #mapAPP #orteView .ort ul {
         list-style: none; }
-  #mapAPP #locationsView {
+  #mapAPP #productsView {
     margin: 0 -10px; }
-  #mapAPP .location {
+  #mapAPP .product {
     padding: 10px;
     display: inline-block;
     width: 50%;
     height: 240px;
     overflow: hidden; }
-    #mapAPP .location .inner {
+    #mapAPP .product .inner {
       box-shadow: 0 0 5px #e4e4e4;
       position: relative;
       background: #fff;
       padding: 10px;
       height: 220px; }
-      #mapAPP .location .inner h4 {
+      #mapAPP .product .inner h4 {
         margin: -10px !important;
         margin-bottom: 10px !important;
         color: #5fbd00;
@@ -5543,11 +5550,11 @@ body {
         padding-left: 25px;
         margin: 0 0 10px 0;
         font-weight: lighter; }
-      #mapAPP .location .inner ul {
+      #mapAPP .product .inner ul {
         margin: 0;
         padding: 0;
         padding-left: 15px; }
-      #mapAPP .location .inner .btn-danger {
+      #mapAPP .product .inner .btn-danger {
         position: absolute;
         top: 0px;
         right: 3px;

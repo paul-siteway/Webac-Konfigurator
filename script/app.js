@@ -9,10 +9,7 @@
 // @codekit-prepend 'bootstrap.js'
 // @codekit-prepend 'bootstrap-multiselect.js'
 
-
-
 (function() {
-	
 	//create a namespace
 
 	window.MapApp = {
@@ -42,8 +39,8 @@
 	$('#searchTitle').on('keyup', function () {
 		query = $(this).val();
 		console.log(query);
-		filteredLocations = MapApp.initialLocationsCollection.query({title: {$likeI: query}})
-		MapApp.locationsCollection.reset(filteredLocations);
+		filteredProducts = MapApp.initialProductsCollection.query({title: {$likeI: query}})
+		MapApp.productsCollection.reset(filteredProducts);
 	})
 
 	$('.reset').on('click', function (e) {
@@ -60,7 +57,7 @@
 	// ########################################
 	// ########## CUSTOM FUNCTIONS ############
 	// ########################################
-	MapApp.addLocationToMap = function (id, lat, lon, title){
+	MapApp.addProductToMap = function (id, lat, lon, title){
 		MapApp.map.addMarker({
 			lat			: lat,
 			lng			: lon,
@@ -70,7 +67,7 @@
 			//alert('You clicked in this marker '+title);
 			},
 			infoWindow: {
-				content: $('#locationsView #location'+id).html()
+				content: $('#productsView #product'+id).html()
 			}
 		});
 		return 'marker added';
@@ -158,10 +155,10 @@
 		},
 		show: function (id) {
 			console.log('show:'+id) ;
-			MapApp.vents.trigger('location:show', id);
+			MapApp.vents.trigger('product:show', id);
 		},
 		showAll: function (id) {
-			MapApp.vents.trigger('location:showAll', id);
+			MapApp.vents.trigger('product:showAll', id);
 		},
 		add: function (id,title) {
 			//console.log('add id:'+id+' title:'+title) ;
@@ -184,7 +181,7 @@
 	// ################################
 	// ########  LOCATION M O D E L  #######
 	// ################################
-	MapApp.Models.Locations = Backbone.DeepModel.extend({
+	MapApp.Models.Products = Backbone.DeepModel.extend({
 
 		defaults: {
 			lat: 51.511214,
@@ -216,33 +213,33 @@
 
 
 	// ################################
-	// #####  SINGLE Location V I E W   ####
+	// #####  SINGLE Product V I E W   ####
 	// ################################
 
 	 
-	MapApp.Views.Location = Backbone.View.extend({
+	MapApp.Views.Product = Backbone.View.extend({
 		tagName : "div", 
-		className: 'location',
+		className: 'product',
 		events: {
-			'click' : 'showLocationInMap',
+			'click' : 'showProductInMap',
 			'click strong': 'showAlert',
 			'click button': 'destroy'
 		},
-		template: template('locationTemplate'),
+		template: template('productTemplate'),
 		initialize: function(){
 			this.model.on('change', this.render, this );
 			this.model.on('destroy', this.remove, this );
 		},
 		render: function(){
 			var id = this.model.get('id');
-			this.$el.html( this.template(this.model.toJSON()) ).attr('id', 'location'+id);
-			MapApp.vents.trigger('locationAdded');
+			this.$el.html( this.template(this.model.toJSON()) ).attr('id', 'product'+id);
+			MapApp.vents.trigger('productAdded');
 			return this;
 		}, 
 		showAlert: function () {
-			var newLocationTitle = prompt('edit the Title:',this.model.get('title') );
-			if(!newLocationTitle) return;
-			this.model.set('title', newLocationTitle);
+			var newProductTitle = prompt('edit the Title:',this.model.get('title') );
+			if(!newProductTitle) return;
+			this.model.set('title', newProductTitle);
 		},
 		destroy: function () {
 			this.model.destroy();
@@ -250,7 +247,7 @@
 		remove: function () {
 			this.$el.remove();
 		},
-		showLocationInMap: function () {
+		showProductInMap: function () {
 			// console.log(this.model.get('id'));
 			var lat = this.model.get('lat');
 			var lon = this.model.get('lon');
@@ -262,10 +259,10 @@
 
 
 	// ################################
-	// ########## LOCATIONS VIEW  ########## - View for all Locations
+	// ########## LOCATIONS VIEW  ########## - View for all Products
 	// ################################
 
-	MapApp.Views.Locations = Backbone.View.extend({
+	MapApp.Views.Products = Backbone.View.extend({
 		tagName: 'div' ,
 		initialize: function() {
 			this.collection.on('add', this.addOne, this);
@@ -279,21 +276,21 @@
 			this.collection.each(this.addOne, this);
 			return this;
 		},
-		renderFiltered : function(locations){
+		renderFiltered : function(products){
 
-		$("#locationsView").html("");
-		locations.each(function(location){
-			var view = new MapApp.Views.Location({
-				model: location,
+		$("#productsView").html("");
+		products.each(function(product){
+			var view = new MapApp.Views.Product({
+				model: product,
 				collection: this.collection
 			});
-			$("#locationsView").append(view.render().el);
+			$("#productsView").append(view.render().el);
 		});
 		return this;
 		},
-		addOne: function (location) {
-			var locationView = new MapApp.Views.Location({model: location});
-			this.$el.append(locationView.render().el);
+		addOne: function (product) {
+			var productView = new MapApp.Views.Product({model: product});
+			this.$el.append(productView.render().el);
 		},
 		startFilterType: function(){
 			
@@ -388,16 +385,16 @@
             MapApp.anwendungsgebiete = {};
             
             //go trough each locaction
-            this.collection.each(function (location) {
-                var name = location.get('Anwendungsgebiet');
+            this.collection.each(function (product) {
+                var name = product.get('Anwendungsgebiet');
                 MapApp.anwendungsgebiete[name] = {};
             });
             
             //go trough each locaction
-            this.collection.each(function (location) {
-                var anwendungsgebietsName = location.get('Anwendungsgebiet');
-                var filter = location.get('filterable');
-                //go trough each filter of location
+            this.collection.each(function (product) {
+                var anwendungsgebietsName = product.get('Anwendungsgebiet');
+                var filter = product.get('filterable');
+                //go trough each filter of product
                 _.each(filter,function(filterArray, filterGroupName){
                     console.log(filterGroupName);
                     MapApp.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = filterArray; 
@@ -409,10 +406,10 @@
 			// console.log('creatingFilterList');
 			//Empty the Filter list
 			MapApp.filterList = [];
-			//Lopp over all Locations in collection
-			this.collection.each(function (location) {
+			//Lopp over all Products in collection
+			this.collection.each(function (product) {
 				//get only the Filterable Attributes
-				var filterableList = location.get('filterable');
+				var filterableList = product.get('filterable');
 				//Push each Attribute to List
 				for (var key in filterableList) {
 					MapApp.filterList.push(key);
@@ -435,10 +432,10 @@
 					
 					//Temp array for all Options
 					var tempArray = [];
-					//Go trough all Locations and get each FIltername
-					MapApp.locationsCollection.each(function (location) {
-                      //  console.log(    'location:'+location.get('title')  );
-						var option = location.get('filterable')[filtername];
+					//Go trough all Products and get each FIltername
+					MapApp.productsCollection.each(function (product) {
+                      //  console.log(    'product:'+product.get('title')  );
+						var option = product.get('filterable')[filtername];
 						tempArray.push(option);
 				});
 					// console.xlog('####'+tempArray);
@@ -465,10 +462,10 @@
 				MapApp.queryObject[filtername] = selected;
 			});
 
-			filteredLocations = MapApp.initialLocationsCollection.query(MapApp.queryObject)
+			filteredProducts = MapApp.initialProductsCollection.query(MapApp.queryObject)
 			//console.log('THE RESULT IS: ');
-			//console.log(filteredLocations);
-			MapApp.locationsCollection.reset(filteredLocations);
+			//console.log(filteredProducts);
+			MapApp.productsCollection.reset(filteredProducts);
 		}
 	});
 
@@ -484,9 +481,9 @@
 			'click #removeAll' : 'removeAll'
 		},
 		initialize: function(){
-			// vents.on('location:show', this.addLocation, this);
-			MapApp.vents.on('location:showAll', this.showAll, this);
-			MapApp.vents.on('locationAdded', this.showAll, this);
+			// vents.on('product:show', this.addProduct, this);
+			MapApp.vents.on('product:showAll', this.showAll, this);
+			MapApp.vents.on('productAdded', this.showAll, this);
 			this.collection.on('add', this.showAll, this);
 			this.collection.on('remove', this.showAll, this);
 			this.collection.on('reset', this.showAll, this);
@@ -496,7 +493,7 @@
 		showAll: function() {
 			//console.log('Showing Markers')
 			this.removeAll();
-			this.collection.each(this.addLocation, this);
+			this.collection.each(this.addProduct, this);
 			if(this.collection.length!=0){
 				MapApp.map.fitZoom();
 			}else{
@@ -506,18 +503,18 @@
 		removeAll: function () {
 			MapApp.removeMarkers();
 		},
-		addLocation: function(location){
+		addProduct: function(product){
 			// console.log('show LOCATION In MAP VIEW');			
-			var lat = location.get('lat');
-			var lon = location.get('lon');
-			var title = location.get('title');
-			var logo = location.get('logo');
-			var id = location.get('id');
-			var nationalCLC = location.get('nationalCLC');
-			var actionLines = location.get('actionLines');
-			var eLLType = location.get('eLLType');
-			var link = location.get('link');
-			MapApp.addLocationToMap(id, lat, lon, title);
+			var lat = product.get('lat');
+			var lon = product.get('lon');
+			var title = product.get('title');
+			var logo = product.get('logo');
+			var id = product.get('id');
+			var nationalCLC = product.get('nationalCLC');
+			var actionLines = product.get('actionLines');
+			var eLLType = product.get('eLLType');
+			var link = product.get('link');
+			MapApp.addProductToMap(id, lat, lon, title);
 		},
 		destroyMarker: function (id) {
 			this.model.destroy();
@@ -533,8 +530,8 @@
 	// ########################################
 	
 
-	MapApp.Views.CreateLocation = Backbone.View.extend({
-		el: '#addLocation',
+	MapApp.Views.CreateProduct = Backbone.View.extend({
+		el: '#addProduct',
 		events: {
 			'submit': 'submit'
 		},
@@ -546,9 +543,9 @@
 			var newLat = $(e.currentTarget).find('input.lat').val();
 			var newLon = $(e.currentTarget).find('input.lon').val();
 			if(! $.trim(newTitle) ) return "title must not be empty!";
-			var location = new MapApp.Models.Locations();
-			location.set({title: newTitle, lat: newLat, lon: newLon});
-			this.collection.add(location);
+			var product = new MapApp.Models.Products();
+			product.set({title: newTitle, lat: newLat, lon: newLon});
+			this.collection.add(product);
 			//console.log('newTitle is:'+newTitle+' isValid:'+$.trim(newTitle));
 		}
 	});
@@ -560,8 +557,8 @@
 
 
 
-	MapApp.Collections.Locations = Backbone.QueryCollection.extend({
-		model: MapApp.Models.Locations
+	MapApp.Collections.Products = Backbone.QueryCollection.extend({
+		model: MapApp.Models.Products
 	});
 
 
@@ -588,25 +585,25 @@
 	//########## CREATE VIEWS AND COLLECTIONS
 	//########################################
 
-	MapApp.locationsCollection = new MapApp.Collections.Locations(data);
+	MapApp.productsCollection = new MapApp.Collections.Products(data);
 
 
-	MapApp.initialLocationsCollection = new MapApp.Collections.Locations(MapApp.locationsCollection.toJSON());
+	MapApp.initialProductsCollection = new MapApp.Collections.Products(MapApp.productsCollection.toJSON());
 
-	MapApp.filterView = new MapApp.Views.Filter({model:MapApp.Models.Locations});
+	MapApp.filterView = new MapApp.Views.Filter({model:MapApp.Models.Products});
 
 	
-	MapApp.filtersView = new MapApp.Views.Filters({collection: MapApp.locationsCollection});
-	$('#filterLocations').append( MapApp.filtersView.el);
+	MapApp.filtersView = new MapApp.Views.Filters({collection: MapApp.productsCollection});
+	$('#filterProducts').append( MapApp.filtersView.el);
 
-	MapApp.locationsView = new MapApp.Views.Locations({collection: MapApp.locationsCollection});
-	$('#locationsView').append(MapApp.locationsView.render().el);
+	MapApp.productsView = new MapApp.Views.Products({collection: MapApp.productsCollection});
+	$('#productsView').append(MapApp.productsView.render().el);
 	
-	//MapApp.filtersView = new MapApp.Views.Filter({collection: MapApp.locationsCollection});
+	//MapApp.filtersView = new MapApp.Views.Filter({collection: MapApp.productsCollection});
 	//$('#controls').append(MapApp.filtersView.render().el);
 
-	MapApp.createLocationView = new MapApp.Views.CreateLocation({collection: MapApp.locationsCollection});
-	new MapApp.Views.Map({collection: MapApp.locationsCollection});
+	MapApp.createProductView = new MapApp.Views.CreateProduct({collection: MapApp.productsCollection});
+	new MapApp.Views.Map({collection: MapApp.productsCollection});
 
 	MapApp.activateMultiselect();
 

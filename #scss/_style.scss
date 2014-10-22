@@ -27,7 +27,7 @@ body{
 	}//map
 
 
-    #filterLocations{        
+    #filterProducts{        
         border: 1px solid red;
         background: lightgrey;
         .filters{
@@ -80,11 +80,11 @@ body{
 		}
 	}
     
-    #locationsView{
+    #productsView{
         margin: 0 -10px;
     }
     
-    .location{
+    .product{
         
         padding: 10px;
         display: inline-block;

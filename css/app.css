@@ -8051,28 +8051,28 @@ body {
   width: auto;
   display: inline;
 }
-#mapAPP #filterLocations {
+#mapAPP #filterProducts {
   border: 1px solid red;
   background: lightgrey;
 }
-#mapAPP #filterLocations .filters {
+#mapAPP #filterProducts .filters {
   *zoom: 1;
   text-align: center;
 }
-#mapAPP #filterLocations .filters:before, #mapAPP #filterLocations .filters:after {
+#mapAPP #filterProducts .filters:before, #mapAPP #filterProducts .filters:after {
   content: " ";
   display: table;
 }
-#mapAPP #filterLocations .filters:after {
+#mapAPP #filterProducts .filters:after {
   clear: both;
 }
-#mapAPP #filterLocations .filters .dropdown-menu {
+#mapAPP #filterProducts .filters .dropdown-menu {
   display: block !important;
   float: none;
   clear: both;
   position: inherit;
 }
-#mapAPP #filterLocations .filters .btn-group {
+#mapAPP #filterProducts .filters .btn-group {
   display: inline-block;
   width: 33%;
   background: lightgrey;
@@ -8080,7 +8080,7 @@ body {
   overflow: hidden;
   vertical-align: top;
 }
-#mapAPP #filterLocations .filters .btn-group .dropdown-toggle {
+#mapAPP #filterProducts .filters .btn-group .dropdown-toggle {
   width: 100%;
   border-radius: 0;
 }
@@ -8101,24 +8101,24 @@ body {
 #mapAPP #orteView .ort ul {
   list-style: none;
 }
-#mapAPP #locationsView {
+#mapAPP #productsView {
   margin: 0 -10px;
 }
-#mapAPP .location {
+#mapAPP .product {
   padding: 10px;
   display: inline-block;
   width: 50%;
   height: 240px;
   overflow: hidden;
 }
-#mapAPP .location .inner {
+#mapAPP .product .inner {
   box-shadow: 0 0 5px #e4e4e4;
   position: relative;
   background: #fff;
   padding: 10px;
   height: 220px;
 }
-#mapAPP .location .inner h4 {
+#mapAPP .product .inner h4 {
   margin: -10px !important;
   margin-bottom: 10px !important;
   color: #5fbd00;
@@ -8128,12 +8128,12 @@ body {
   margin: 0 0 10px 0;
   font-weight: lighter;
 }
-#mapAPP .location .inner ul {
+#mapAPP .product .inner ul {
   margin: 0;
   padding: 0;
   padding-left: 15px;
 }
-#mapAPP .location .inner .btn-danger {
+#mapAPP .product .inner .btn-danger {
   position: absolute;
   top: 0px;
   right: 3px;

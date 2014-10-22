@@ -11,7 +11,7 @@
 <div id="mapAPP">
     
        
-    <div id="filterLocations">
+    <div id="filterProducts">
         
         <script type="text/template" id="filterTemplate">
             <option value='<%= optionName %>'><%= optionName %></option>
@@ -27,8 +27,8 @@
 
 
 
-	<div id="locationsView">
-		<script type="text/template" id="locationTemplate">
+	<div id="productsView">
+		<script type="text/template" id="productTemplate">
         <div class="inner">
 		<h4><span><%= title %></span></h4>
 		<ul>
@@ -56,11 +56,11 @@
 	</div><!-- orteView -->
 	<!--
 	<div id="mapActions">
-		<form id="addLocation" class="form-inline">
+		<form id="addProduct" class="form-inline">
 			<input type="text" class="col-md-2 title" placeholder="Title">
 			<input type="text" class="col-md-2 lat" placeholder="Latitude">
 			<input type="text" class="col-md-2 lon" placeholder="Longlitude">  
-			<button type="submit" class="btn btn-default">Add Location</button>
+			<button type="submit" class="btn btn-default">Add Product</button>
 			<a href="#" class="btn btn-default" id="showAll"><i class="icon-eye-open"></i>Show All Markers</a>			
 			<a href="#" class="btn btn-default" id="removeAll"><i class="icon-eye-close"></i> Remove All Markers</a></div>
 		</form>
@@ -114,7 +114,7 @@
         
         $(function() {
            $('.viewJSON').click(function(){
-                console.debug(MapApp.locationsCollection.toJSON());
+                console.debug(MapApp.productsCollection.toJSON());
            });
         });
 
