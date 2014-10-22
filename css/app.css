@@ -8036,21 +8036,6 @@ body {
   position: relative;
   background: url("http://www.eitictlabs.eu/fileadmin/system2013/g/img/bg_body.jpg") repeat top left;
 }
-#mapAPP #map {
-  width: 100% !important;
-  height: 500px !important;
-  -webkit-box-shadow: 0 0 5px #eaeaea;
-  box-shadow: 0 0 5px #eaeaea;
-  border: 1px solid #fff;
-  display: none !important;
-}
-#mapAPP #map img {
-  max-width: none;
-}
-#mapAPP #map label {
-  width: auto;
-  display: inline;
-}
 #mapAPP #filterProducts {
   border: 1px solid red;
   background: lightgrey;
@@ -8083,23 +8068,6 @@ body {
 #mapAPP #filterProducts .filters .btn-group .dropdown-toggle {
   width: 100%;
   border-radius: 0;
-}
-#mapAPP #orteView {
-  background: #fff;
-}
-#mapAPP #orteView .ort {
-  -webkit-box-shadow: 0 0 5px #eaeaea;
-  box-shadow: 0 0 5px #eaeaea;
-  border: 1px solid #F1F1F1;
-  margin: 10px 0;
-  padding: 10px;
-}
-#mapAPP #orteView .ort img {
-  float: left;
-  margin-right: 10px;
-}
-#mapAPP #orteView .ort ul {
-  list-style: none;
 }
 #mapAPP #productsView {
   margin: 0 -10px;

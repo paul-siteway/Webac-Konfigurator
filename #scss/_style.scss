@@ -8,24 +8,6 @@ body{
 	// padding-top: 40px;
 	background: url('http://www.eitictlabs.eu/fileadmin/system2013/g/img/bg_body.jpg') repeat top left;
     
-    
-	#map{
-		width: 100% !important;
-		height: 500px !important;
-		@include box-shadow(0 0 5px rgb(234, 234, 234));
-		border: 1px solid #fff;
-		// position: absolute !important;
-		//GOOGLE MAPS & BOOTSTAP FIX
-		img { 
-		  max-width: none;
-		}
-		label { 
-		  width: auto; display:inline; 
-		} 
-		// END GOOGLE MAPS & BOOTSTAP FIX
-        display: none !important;
-	}//map
-
 
     #filterProducts{        
         border: 1px solid red;
@@ -57,28 +39,6 @@ body{
     
 
     
-    
-    
-    
-    
-    
-    
-	#orteView{
-		background: #fff;
-		.ort{
-			@include box-shadow(0 0 5px rgb(234, 234, 234));
-			border: 1px solid #F1F1F1;
-			margin: 10px 0;
-			padding: 10px;
-			img {
-				float: left;
-				margin-right: 10px;
-			}
-			ul{
-				list-style: none;
-			}
-		}
-	}
     
     #productsView{
         margin: 0 -10px;

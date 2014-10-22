@@ -958,7 +958,7 @@
 		},
 	"\/script\/gmaps.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/script\/gmaps.js",
 		"outputAbbreviatedPath": "\/script\/min\/gmaps-min.js",

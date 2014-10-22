@@ -1,4 +1,3 @@
-// @codekit-prepend 'gmaps.js'
 // @codekit-prepend 'underscore.js'
 // @codekit-prepend 'jquery.js'
 
@@ -50,42 +49,6 @@
 
 	Webac.filterList = [];
     Webac.anwendungsgebiete= {};
-
-
-
-	// ########################################
-	// ########## CUSTOM FUNCTIONS ############
-	// ########################################
-	Webac.addProductToMap = function (id, lat, lon, title){
-		Webac.map.addMarker({
-			lat			: lat,
-			lng			: lon,
-			title		: title,
-			html		: "",
-			click: function(e) {
-			//alert('You clicked in this marker '+title);
-			},
-			infoWindow: {
-				content: $('#productsView #product'+id).html()
-			}
-		});
-		return 'marker added';
-	};
-
-	Webac.removeMarkers = function () {
-		Webac.map.removeMarkers();
-	};
-
-	Webac.mapInit = function() {
-		//Initialize the Google Map
-		Webac.map = new GMaps({
-	        div: '#map',
-	        lat: 53.571148,
-	        lng: 10.024898,
-	        zoom: 3
-	      });
-	};
-	Webac.mapInit();
 
 	Webac.readProp = function (obj, prop) {
 		return obj[prop];
@@ -178,7 +141,7 @@
 
 
 	// ################################
-	// ########  LOCATION M O D E L  #######
+	// ########  PRODUCTS MODEL  #######
 	// ################################
 	Webac.Models.Products = Backbone.DeepModel.extend({
 
@@ -220,7 +183,6 @@
 		tagName : "div", 
 		className: 'product',
 		events: {
-			'click' : 'showProductInMap',
 			'click strong': 'showAlert',
 			'click button': 'destroy'
 		},
@@ -245,20 +207,13 @@
 		},
 		remove: function () {
 			this.$el.remove();
-		},
-		showProductInMap: function () {
-			// console.log(this.model.get('id'));
-			var lat = this.model.get('lat');
-			var lon = this.model.get('lon');
-			Webac.map.setCenter(lat, lon);
-			Webac.map.setZoom(6);
 		}
 	});
 
 
 
 	// ################################
-	// ########## LOCATIONS VIEW  ########## - View for all Products
+	// ########## Products VIEW  ########## - View for all Products
 	// ################################
 
 	Webac.Views.Products = Backbone.View.extend({
@@ -270,7 +225,7 @@
 			Webac.vents.on('startSearch', this.search, this);
 		},
 		render: function(){
-			// console.log('redering LOCATIONS VIEW');
+			// console.log('redering PRODUCTS VIEW');
 			this.$el.html('');
 			this.collection.each(this.addOne, this);
 			return this;
@@ -469,63 +424,7 @@
 	});
 
 	// ########################################
-	// ##########  M A P ++ V I E W   ######### 
-	// ########################################
-	 
-
-	Webac.Views.Map = Backbone.View.extend({
-		el: '#mapActions',
-		events: {
-			'click #showAll' : 'showAll',
-			'click #removeAll' : 'removeAll'
-		},
-		initialize: function(){
-			// vents.on('product:show', this.addProduct, this);
-			Webac.vents.on('product:showAll', this.showAll, this);
-			Webac.vents.on('productAdded', this.showAll, this);
-			this.collection.on('add', this.showAll, this);
-			this.collection.on('remove', this.showAll, this);
-			this.collection.on('reset', this.showAll, this);
-			this.showAll();
-			
-		},
-		showAll: function() {
-			//console.log('Showing Markers')
-			this.removeAll();
-			this.collection.each(this.addProduct, this);
-			if(this.collection.length!=0){
-				Webac.map.fitZoom();
-			}else{
-				Webac.mapInit();
-			}
-		},
-		removeAll: function () {
-			Webac.removeMarkers();
-		},
-		addProduct: function(product){
-			// console.log('show LOCATION In MAP VIEW');			
-			var lat = product.get('lat');
-			var lon = product.get('lon');
-			var title = product.get('title');
-			var logo = product.get('logo');
-			var id = product.get('id');
-			var nationalCLC = product.get('nationalCLC');
-			var actionLines = product.get('actionLines');
-			var eLLType = product.get('eLLType');
-			var link = product.get('link');
-			Webac.addProductToMap(id, lat, lon, title);
-		},
-		destroyMarker: function (id) {
-			this.model.destroy();
-		},
-		remove: function () {
-			this.$el.remove();
-		}
-	});
-
-
-	// ########################################
-	// ##########  ADD LOCATION V I E W  ########## 
+	// ##########  ADD PRODUCTS V I E W  ########## 
 	// ########################################
 	
 
@@ -559,10 +458,6 @@
 	Webac.Collections.Products = Backbone.QueryCollection.extend({
 		model: Webac.Models.Products
 	});
-
-
-	//##
-
 
 
 	Webac.Models.option = Backbone.Model.extend({
@@ -602,7 +497,6 @@
 	//$('#controls').append(Webac.filtersView.render().el);
 
 	Webac.createProductView = new Webac.Views.CreateProduct({collection: Webac.productsCollection});
-	new Webac.Views.Map({collection: Webac.productsCollection});
 
 	Webac.activateMultiselect();
 
