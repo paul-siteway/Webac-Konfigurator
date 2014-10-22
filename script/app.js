@@ -248,10 +248,9 @@
             this.$el.append(this.template( {name: anwendungsgebietName}) );	
             
             _.each(Webac.anwendungsgebiete[anwendungsgebietName], function (object, name) {
-				this.$el.find('.inner').append(name);
+				this.$el.find('.inner').append('<div>'+name+'</div>');
 			},this);
 		},
-        
     }); 
 
     

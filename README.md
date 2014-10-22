@@ -26,6 +26,6 @@ mapping:
 
 TODO: 
 
-- [ ]  MAP AUSBAUEN
-- [ ] Jedes Anwendungsgebiet bekommt seine eigenen 3 Dropdowns. Insgesamt 30.
-- [ ] "Anwendungsgebiet" ist kein Filterbarer Dropdown mehr.
+
+- [ ] Refactor Code to Marionette JS
+- [ ] Finish AnwenungsgebieteView with Marrionette Subviews/Layouts
