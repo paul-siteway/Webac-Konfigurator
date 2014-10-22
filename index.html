@@ -7,15 +7,32 @@
 
 </head>
 <body>
-<div id="mapAPP">
+<div id="webacAPP">
     
        
+    
+       
+       
+    <div id="anwendungsgebiete">
+        <script type="text/template" id="anwendungsgebietTemplate">
+                <div class="inner">
+                    <h1>    <%= name %>  </h1>
+                </div><!-- inner -->
+        </script>
+    </div>
+
+      
+       
+    <!-- POSSIBLY OLD VIEW       -->
     <div id="filterProducts">
         
         <script type="text/template" id="filterTemplate">
             <option value='<%= optionName %>'><%= optionName %></option>
         </script>
     </div> <!-- filterContainer -->
+    
+    
+    
     
 
 	<div id="productsView">
@@ -45,19 +62,8 @@
 		</div>
 		</script>
 	</div><!-- productsView -->
-	<!--
-	<div id="mapActions">
-		<form id="addProduct" class="form-inline">
-			<input type="text" class="col-md-2 title" placeholder="Title">
-			<input type="text" class="col-md-2 lat" placeholder="Latitude">
-			<input type="text" class="col-md-2 lon" placeholder="Longlitude">  
-			<button type="submit" class="btn btn-default">Add Product</button>
-			<a href="#" class="btn btn-default" id="showAll"><i class="icon-eye-open"></i>Show All Markers</a>			
-			<a href="#" class="btn btn-default" id="removeAll"><i class="icon-eye-close"></i> Remove All Markers</a></div>
-		</form>
-	</div>
-	-->
-	<!-- mapActions -->
+
+
 
 	</div><!-- Container -->
 	</div> <!-- mapAPP -->
@@ -69,8 +75,6 @@
 			id: 1,
 			title: 'Webac 150',
 			Anwendungsgebiet: 'Bauwerksabdichtung',
-			lat: '65.618196',
-			lon: '22.140026000000034', 
 			productBild: '<img alt="Webac 150" src="http://ell.eitictlabs.eu/typo3temp/pics/6a557a649d.jpg" width="145" height="69" />',
 			filterable:  {
 				AnwendungFuer: ['Horizontalsperre', 'Mauerwerksabdichtung','Arbeitsfugen', 'Dehnfugen', 'Drückendes Wasser', 'Kein Drückendes Wasser', 'Flächen Vorbereiten', 'Beschichtung'],
@@ -83,8 +87,6 @@
 			id: 2,
 			title: 'Webac 151',
 			Anwendungsgebiet: 'Risssanierung',
-			lat: '65.618196',
-			lon: '22.140026000000034', 
 			productBild: '<img alt="Webac 150" src="http://ell.eitictlabs.eu/typo3temp/pics/6a557a649d.jpg" width="145" height="69" />',
 			filterable:  {
 				AnwendungFuer: ['Dehnbarer Beton', 'Krafschlüssiger Beton'],

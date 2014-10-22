@@ -3,11 +3,27 @@
 body{
     overflow-y: scroll;
 }
-#mapAPP {
+#webacAPP {
 	position: relative;
 	// padding-top: 40px;
 	background: url('http://www.eitictlabs.eu/fileadmin/system2013/g/img/bg_body.jpg') repeat top left;
     
+    .anwendungsgebiete{
+         .anwendungsgebiet   {
+            
+            display: inline-block;
+            width: 15%;        
+            .inner{
+                margin: 5px; 
+                border: 1px solid lightGrey;
+                border-radius: 3px;
+                background: #fff;
+                font-size: 12px;
+                text-align: center;
+                overflow: hidden;
+            }
+         }//anwendungsgebiet
+    }//anwendungsgebiete
 
     #filterProducts{        
         border: 1px solid red;
@@ -91,4 +107,4 @@ body{
     }
 	
 
-}//appApp
+}//webacAPP

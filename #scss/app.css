@@ -5473,50 +5473,61 @@ button.close {
 body {
   overflow-y: scroll; }
 
-#mapAPP {
+#webacAPP {
   position: relative;
   background: url('http://www.eitictlabs.eu/fileadmin/system2013/g/img/bg_body.jpg') repeat top left; }
-  #mapAPP #filterProducts {
+  #webacAPP .anwendungsgebiete .anwendungsgebiet {
+    display: inline-block;
+    width: 15%; }
+    #webacAPP .anwendungsgebiete .anwendungsgebiet .inner {
+      margin: 5px;
+      border: 1px solid lightGrey;
+      border-radius: 3px;
+      background: #fff;
+      font-size: 12px;
+      text-align: center;
+      overflow: hidden; }
+  #webacAPP #filterProducts {
     border: 1px solid red;
     background: lightgrey; }
-    #mapAPP #filterProducts .filters {
+    #webacAPP #filterProducts .filters {
       *zoom: 1;
       text-align: center; }
-      #mapAPP #filterProducts .filters:before, #mapAPP #filterProducts .filters:after {
+      #webacAPP #filterProducts .filters:before, #webacAPP #filterProducts .filters:after {
         content: " ";
         display: table; }
-      #mapAPP #filterProducts .filters:after {
+      #webacAPP #filterProducts .filters:after {
         clear: both; }
-      #mapAPP #filterProducts .filters .dropdown-menu {
+      #webacAPP #filterProducts .filters .dropdown-menu {
         display: block !important;
         float: none;
         clear: both;
         position: inherit; }
-      #mapAPP #filterProducts .filters .btn-group {
+      #webacAPP #filterProducts .filters .btn-group {
         display: inline-block;
         width: 33%;
         background: lightgrey;
         padding: 10px;
         overflow: hidden;
         vertical-align: top; }
-        #mapAPP #filterProducts .filters .btn-group .dropdown-toggle {
+        #webacAPP #filterProducts .filters .btn-group .dropdown-toggle {
           width: 100%;
           border-radius: 0; }
-  #mapAPP #productsView {
+  #webacAPP #productsView {
     margin: 0 -10px; }
-  #mapAPP .product {
+  #webacAPP .product {
     padding: 10px;
     display: inline-block;
     width: 50%;
     height: 240px;
     overflow: hidden; }
-    #mapAPP .product .inner {
+    #webacAPP .product .inner {
       box-shadow: 0 0 5px #e4e4e4;
       position: relative;
       background: #fff;
       padding: 10px;
       height: 220px; }
-      #mapAPP .product .inner h4 {
+      #webacAPP .product .inner h4 {
         margin: -10px !important;
         margin-bottom: 10px !important;
         color: #5fbd00;
@@ -5525,11 +5536,11 @@ body {
         padding-left: 25px;
         margin: 0 0 10px 0;
         font-weight: lighter; }
-      #mapAPP .product .inner ul {
+      #webacAPP .product .inner ul {
         margin: 0;
         padding: 0;
         padding-left: 15px; }
-      #mapAPP .product .inner .btn-danger {
+      #webacAPP .product .inner .btn-danger {
         position: absolute;
         top: 0px;
         right: 3px;
