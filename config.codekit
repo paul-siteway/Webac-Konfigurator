@@ -869,6 +869,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/script\/anwenungsgebiete.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/script\/anwenungsgebiete.js",
+		"outputAbbreviatedPath": "\/script\/min\/anwenungsgebiete-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/script\/app.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -877,125 +888,147 @@
 		"outputAbbreviatedPath": "\/js\/app.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 2,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
 		},
-	"\/script\/backbone-query.min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/backbone-query.min.js",
-		"outputAbbreviatedPath": "\/script\/min\/backbone-query.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/script\/backbone-validation.js": {
+	"\/script\/filter.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/backbone-validation.js",
-		"outputAbbreviatedPath": "\/script\/min\/backbone-validation-min.js",
+		"inputAbbreviatedPath": "\/script\/filter.js",
+		"outputAbbreviatedPath": "\/script\/min\/filter-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/backbone.js": {
+	"\/script\/lib\/backbone-query.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/backbone.js",
-		"outputAbbreviatedPath": "\/script\/min\/backbone-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/backbone-query.min.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/backbone-query.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/bootstrap-multiselect Kopie.js": {
+	"\/script\/lib\/backbone-validation.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/bootstrap-multiselect Kopie.js",
-		"outputAbbreviatedPath": "\/script\/min\/bootstrap-multiselect Kopie-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/backbone-validation.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/backbone-validation-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/bootstrap-multiselect.js": {
+	"\/script\/lib\/backbone.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/bootstrap-multiselect.js",
-		"outputAbbreviatedPath": "\/script\/min\/bootstrap-multiselect-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/backbone.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/backbone-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/bootstrap.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/bootstrap.js",
-		"outputAbbreviatedPath": "\/script\/min\/bootstrap-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/script\/bootstrap.min Kopie.js": {
+	"\/script\/lib\/bootstrap-multiselect Kopie.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/bootstrap.min Kopie.js",
-		"outputAbbreviatedPath": "\/script\/min\/bootstrap.min Kopie-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/bootstrap-multiselect Kopie.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/bootstrap-multiselect Kopie-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/deep-model.min.js": {
+	"\/script\/lib\/bootstrap-multiselect.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/deep-model.min.js",
-		"outputAbbreviatedPath": "\/script\/min\/deep-model.min-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/bootstrap-multiselect.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/bootstrap-multiselect-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/gmaps.js": {
+	"\/script\/lib\/bootstrap.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/script\/lib\/bootstrap.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/bootstrap-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/script\/lib\/bootstrap.min Kopie.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/gmaps.js",
-		"outputAbbreviatedPath": "\/script\/min\/gmaps-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/bootstrap.min Kopie.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/bootstrap.min Kopie-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/jquery.js": {
+	"\/script\/lib\/deep-model.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/jquery.js",
-		"outputAbbreviatedPath": "\/script\/min\/jquery-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/deep-model.min.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/deep-model.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/script\/underscore.js": {
+	"\/script\/lib\/gmaps.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/script\/lib\/gmaps.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/gmaps-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/script\/lib\/jquery.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/underscore.js",
-		"outputAbbreviatedPath": "\/script\/min\/underscore-min.js",
+		"inputAbbreviatedPath": "\/script\/lib\/jquery.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/jquery-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/script\/lib\/underscore.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/script\/lib\/underscore.js",
+		"outputAbbreviatedPath": "\/script\/lib\/min\/underscore-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/script\/product.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/script\/product.js",
+		"outputAbbreviatedPath": "\/script\/min\/product-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
