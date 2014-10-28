@@ -9,10 +9,14 @@ body{
 	background: url('http://www.eitictlabs.eu/fileadmin/system2013/g/img/bg_body.jpg') repeat top left;
     
     .anwendungsgebiete{
+
          .anwendungsgebiet   {
             
             display: inline-block;
-            width: 15%;
+            width: 100%;
+            @include clearfix;
+            text-align: center;
+            background: lightgrey;
             .inner{
                 margin: 5px; 
                 border: 1px solid lightGrey;
@@ -22,6 +26,24 @@ body{
                 text-align: center;
                 overflow: hidden;
             }
+            .dropdown-menu{
+                display: block !important; 
+                float: none;
+                clear: both;
+                position: inherit;
+            }
+            .btn-group{
+                display: inline-block;
+                width: 33%;
+                background: lightgrey;
+                padding: 10px;
+                overflow: hidden;
+                vertical-align: top;
+                .dropdown-toggle{
+                    width: 100%;
+                    border-radius:0;
+                }        
+            }//btn-group
          }//anwendungsgebiet
     }//anwendungsgebiete
 

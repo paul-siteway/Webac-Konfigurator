@@ -231,27 +231,30 @@
 	});
 
 
+
+
 	// ################################################ 
 	// #######  SILNGLE ANWENUNGSGEBIET  VIEW   ####### 
 	// ################################################    
     
     
-    Webac.Views.Anwendungsgebiet = Backbone.View.extend({
-        tagName: 'div',
+  Webac.Views.Anwendungsgebiet = Backbone.View.extend({
+  tagName: 'div',
 		className: 'anwendungsgebiet',
 		template: template('anwendungsgebietTemplate'),
 		initialize: function () {
             //none
 		},
 		render: function () {		
-            var anwendungsgebietName = this.options.name;
-            this.$el.append(this.template( {name: anwendungsgebietName}) );	
-            
-            _.each(Webac.anwendungsgebiete[anwendungsgebietName], function (object, name) {
-				this.$el.find('.inner').append('<div>'+name+'</div>');
-			},this);
-		},
-    }); 
+    var anwendungsgebietName = this.options.name;
+    this.$el.append(this.template( {name: anwendungsgebietName}) );	
+    _.each(Webac.anwendungsgebiete[anwendungsgebietName], function (object, name) {
+							Webac.newfilterView = new Webac.Views.FilterNew({anwendungsgebietName:anwendungsgebietName, spalte:name, optionsArray:object}); 
+							Webac.newfilterView.render();
+							this.$el.append(  Webac.newfilterView.el );            
+					},this);
+			},
+  }); 
 
     
     // ################################################## 
@@ -282,7 +285,7 @@
                 var filter = product.get('filterable');
                 //go trough each filter of product
                 _.each(filter,function(filterArray, filterGroupName){
-                    console.log(filterGroupName);
+                    //console.log(filterGroupName);
                     Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = filterArray; 
                 });
             });
@@ -292,10 +295,10 @@
             this.$el.html('');
             console.log('render Anwendungsgebiete');
             _.each(Webac.anwendungsgebiete, function (anwendungsgebiet,name) {
-                //for each create a new View.
-				Webac.anwendungsgebietView = new Webac.Views.Anwendungsgebiet({name:name}); 
-				Webac.anwendungsgebietView.render();
-				this.$el.append(  Webac.anwendungsgebietView.el );                
+               //for each create a new View.
+															Webac.anwendungsgebietView = new Webac.Views.Anwendungsgebiet({name:name}); 
+															Webac.anwendungsgebietView.render();
+															this.$el.append(  Webac.anwendungsgebietView.el );                
             },this);
             //each
             return this;
@@ -303,7 +306,35 @@
     });
     
     
+        
+ // ########################################
+	// ####### NEW SILNGLE FILTER  VIEW   ######## 
+	// ########################################
+	
+	
 
+	Webac.Views.FilterNew = Backbone.View.extend({
+		tagName: 'select',
+		className: 'multiselect',
+		template: template('filterTemplate'),
+		initialize: function () {
+			
+			// console.log('anwendungsgebietName:'+this.options.anwendungsgebietName);
+			// console.log('spalte:'+this.options.spalte);
+			// console.log('optionsArray:'+this.options.optionsArray);
+
+			this.$el.attr( "data-name", this.options.spalte );
+            this.$el.attr( 'multiple', 'multiple');
+		},
+		render: function (name) {
+					
+					_.each( this.options.optionsArray, function (name, index){
+							this.$el.append( this.template( {optionName: name} ));						
+					},this);
+		}
+	});
+
+        
         
         
     // ########################################
@@ -317,20 +348,14 @@
 		className: 'multiselect',
 		template: template('filterTemplate'),
 		initialize: function () {
-			// console.log('initialized Single Filter View');
+			//console.log('initialized Single Filter View');
 			this.$el.attr( "data-name", Webac.filterList[this.options.index] );
             this.$el.attr( 'multiple', 'multiple');
 		},
 		render: function () {
-            
-			this.renderFilters();
 			this.renderallOptions();
 		},
-		renderFilters: function () {
-			var optionName = Webac.filterList[this.options.index];
-			//this.$el.html('<option value="'+optionName+'">'+optionName+'</option>' );
-			//this.$el.html( this.template( {optionName: optionName} ));	
-		},
+		
 		renderallOptions: function () {
 			// console.log('Rendering Options');
 			var arrayHolder = Webac.optionsCollection.at(this.options.index).get('filteroptions');

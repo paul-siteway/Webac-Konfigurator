@@ -26,6 +26,5 @@ mapping:
 
 TODO: 
 
-
-- [ ] Refactor Code to Marionette JS
-- [ ] Finish AnwenungsgebieteView with Marrionette Subviews/Layouts
+- [x] Create Subviews for each Anwendungsgebiet
+- [ ] Hook up onselectChage Events and rebuild query object
