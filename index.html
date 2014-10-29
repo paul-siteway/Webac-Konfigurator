@@ -3,13 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Webac Konfigurator APP</title>
+	 <link rel="stylesheet" href="http://www.webac.de/fileadmin/system/css/style.css">
 	<link rel="stylesheet" href="css/app.css" media="all">
 
 </head>
 <body>
-<div id="webacAPP">
 
-        
+<div class="page">
+    <div class="allcont">
+    <div id="webacAPP">
+
+    <div id="anwendungsSelections">
+        <script type="text/template" id="anwendungsSelectTemplate"> 
+                <a class="inner">
+                    <%= bild %>
+                    <h3><%= name %></h3>
+                </a>
+                <i class="fa fa-times close"></i>
+        </script>
+    </div><!-- anwendungsgebiete -->        
     <div id="anwendungsgebiete">
         <script type="text/template" id="anwendungsgebietTemplate">         
            <h1>    <%= name %>  </h1>
@@ -55,29 +67,43 @@
 	</div><!-- productsView -->
 
 
-	</div><!-- Container -->
-	</div> <!-- mapAPP -->
 
+	</div> <!-- webacAPP -->
+    </div><!--allcont-->
+</div><!--page-->
     <script>
     
     var data = [
         { 
 			id: 1,
-			title: 'Webac 150',
+			title: 'Webac XX',
 			Anwendungsgebiet: 'Bauwerksabdichtung',
-			productBild: '<img alt="Webac 150" src="http://ell.eitictlabs.eu/typo3temp/pics/6a557a649d.jpg" width="145" height="69" />',
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
 			filterable:  {
-				AnwendungFuer: ['Horizontalsperre', 'Mauerwerksabdichtung','Arbeitsfugen', 'Dehnfugen', 'Drückendes Wasser', 'Kein Drückendes Wasser', 'Flächen Vorbereiten', 'Beschichtung'],
+				AnwendungFuer: ['Horizontalsperre'],
 				Eigenschaften: ['DFG>90%','DFG>90%', 'Hohlraumverfüllung', 'Vertikalabdichtung','Abdichtung gegen von außen einwirkendes Druckwasser', 'Baufstoff: Beton', 'Baufstoff: Mauerwerk', 'Baufstoff: Holz', 'trocken, feucht, nass', 'fließend', 'trocken', 'feucht', 'nass', 'Injektion'],
 				Anwendungsart: ['Injektion', 'Grundierung', 'Reperatur', 'Hinterfüllung', 'Reperatur+Grundierung/Primer','Tränken,Impregnieren', 'Grundierung für Beschichtung', 'Verlaufbeschichtung', 'Rollbeschichtung', 'Voranstrich']
 			 } ,
 			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
 		 },
-        {  
+        { 
 			id: 2,
+			title: 'Webac 150',
+			Anwendungsgebiet: 'Bauwerksabdichtung',
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+				AnwendungFuer: ['Mauerwerksabdichtung','Arbeitsfugen', 'Dehnfugen', 'Drückendes Wasser', 'Kein Drückendes Wasser', 'Flächen Vorbereiten', 'Beschichtung'],
+				Eigenschaften: ['DFG>90%','DFG>90%', 'Hohlraumverfüllung', 'Vertikalabdichtung','Abdichtung gegen von außen einwirkendes Druckwasser', 'Baufstoff: Beton', 'Baufstoff: Mauerwerk', 'Baufstoff: Holz', 'trocken, feucht, nass', 'fließend', 'trocken', 'feucht', 'nass', 'Injektion'],
+				Anwendungsart: ['Injektion', 'Grundierung', 'Reperatur', 'Hinterfüllung', 'Reperatur+Grundierung/Primer','Tränken,Impregnieren', 'Grundierung für Beschichtung', 'Verlaufbeschichtung', 'Rollbeschichtung', 'Voranstrich']
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+         
+        {  
+			id: 3,
 			title: 'Webac 151',
 			Anwendungsgebiet: 'Risssanierung',
-			productBild: '<img alt="Webac 150" src="http://ell.eitictlabs.eu/typo3temp/pics/6a557a649d.jpg" width="145" height="69" />',
+			image: '<img alt="Risssanierung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Risssanierung_e1a8eb5d1f.png" width="82" height="82" />',
 			filterable:  {
 				AnwendungFuer: ['Dehnbarer Beton', 'Krafschlüssiger Beton'],
 				Eigenschaften: ['trocken, feucht, nass', 'fließend', 'trocken', 'feucht', 'nass'],

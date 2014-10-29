@@ -40,6 +40,7 @@
 
   Webac.filterList = [];
   Webac.anwendungsgebiete = {};
+  Webac.currentAntwenungsgebiet = "";
 
 
 
@@ -50,6 +51,7 @@
   //Activate Bootstrap MultiselectPlugin on created Selects
   Webac.activateMultiselect = function() {
     $("select.multiselect").val([]);
+    $('.multiselect').multiselect("destroy");
     $('.multiselect').multiselect({
       buttonClass: 'btn',
       buttonWidth: 'auto',
@@ -176,8 +178,84 @@
       this.$el.append(productView.render().el);
     }
   });
+    
+    
+  
+    
+    
+  // ################################################################
+  // #####  SINGLE ANWENUNGSSELECTION VIEW   ########################
+  // ################################################################
 
+  Webac.Views.Selection = Backbone.View.extend({
+    tagName: "div",
+    className: 'selection',
+    events: {
+      'click a': 'showSelect',
+       'click .close': 'reset'
+    },
+    template: template('anwendungsSelectTemplate'),
+    initialize: function() {
+    },
+    render: function() {
+      console.log('redering Select');
+      console.log(this.model);
+      var name = this.model.get('Anwendungsgebiet');
+      var bild = this.model.get('image');
+      this.$el.append(this.template({name: name, bild: bild}));
+      return this;
+    },
+    reset: function(){
+        Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
+       // $('.anwendungsgebiete .anwendungsgebiet').slideUp();
+        //$('.anwendungsgebiete .anwendungsgebiet').slideUp();
+        Webac.activateMultiselect();
+        Webac.currentAntwenungsgebiet = "";
+    },
+    showSelect: function() {
+      var name = this.model.get('Anwendungsgebiet');
+      var id = this.model.get('id')-1;
+      Webac.queryObject = { Anwendungsgebiet:name};  
+      filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
+      Webac.productsCollection.reset(filteredProducts);
+      Webac.currentAntwenungsgebiet = name;
+     // $('.anwendungsgebiete .anwendungsgebiet').slideUp();
+      //$('.anwendungsgebiete .anwendungsgebiet').eq(id).slideDown();
+    },
+    remove: function() {
+      //this.$el.remove();
+    }
+  });
 
+  // ################################################################
+  // #######  ANWENUNGSSELECTIONS  VIEW   ############################
+  // ################################################################
+
+ Webac.Views.Selections = Backbone.View.extend({
+    tagName: 'div',
+    className: 'selections',
+
+    initialize: function() {
+      this.collection.on('add', this.addOne, this);
+      this.collection.on('reset', this.render, this);
+    },
+    render: function() {
+      console.log('redering anwendungsauswahl');
+      this.$el.html('');
+      this.collection.each(this.addOne, this);
+      return this;
+    },
+    addOne: function(product) {
+      var selectView = new Webac.Views.Selection({
+        model: product
+      });
+      this.$el.append(selectView.render().el);
+    }
+  });
+    
+
+    
+    
 
   // ################################################################
   // #######  SINGLE ANWENUNGSGEBIET  VIEW   ########################
@@ -197,7 +275,7 @@
         name: anwendungsgebietName
       }));
       _.each(Webac.anwendungsgebiete[anwendungsgebietName], function(object, name) {
-        Webac.newfilterView = new Webac.Views.FilterNew({
+      Webac.newfilterView = new Webac.Views.FilterNew({
           anwendungsgebietName: anwendungsgebietName,
           spalte: name,
           optionsArray: object
@@ -249,7 +327,7 @@
       this.$el.html('');
       console.log('render Anwendungsgebiete');
       _.each(Webac.anwendungsgebiete, function(anwendungsgebiet, name) {
-        //for each create a new View.
+        console.log('render Anwendungsgebiete:'+name);
         Webac.anwendungsgebietView = new Webac.Views.Anwendungsgebiet({
           name: name
         });
@@ -266,10 +344,11 @@
         selected = {
           $all: $(this).val()
         };
+        Webac.queryObject["Anwendungsgebiet"] =  Webac.currentAntwenungsgebiet;
         if ($(this).val() == null) return;
         Webac.queryObject[filtername] = selected;
+        
       });
-
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
       //			console.log('THE RESULT IS: ');
       //			console.log(filteredProducts);
@@ -299,6 +378,7 @@
       this.$el.attr('multiple', 'multiple');
     },
     render: function(name) {
+      
       _.each(this.options.optionsArray, function(name, index) {
         this.$el.append(this.template({
           optionName: name
@@ -329,9 +409,17 @@
   Webac.productsView = new Webac.Views.Products({
     collection: Webac.productsCollection
   });
+    
   $('#productsView').append(Webac.productsView.render().el);
 
-
+    
+  
+  Webac.anwendungsSelectionsView = new Webac.Views.Selections({
+    collection: Webac.productsCollection
+  });
+  $('#anwendungsSelections').append(Webac.anwendungsSelectionsView.render().el);
+    
+    
   //Webac.anwendungsgebietView = new  Webac.Views.Anwendungsgebiet({model:Webac.Models.Products});
   Webac.anwendungsgebieteView = new Webac.Views.Anwendungsgebiete({
     collection: Webac.productsCollection

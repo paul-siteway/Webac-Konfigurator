@@ -869,12 +869,12 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/script\/anwenungsgebiete.js": {
+	"\/script\/app Kopie.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/anwenungsgebiete.js",
-		"outputAbbreviatedPath": "\/script\/min\/anwenungsgebiete-min.js",
+		"inputAbbreviatedPath": "\/script\/app Kopie.js",
+		"outputAbbreviatedPath": "\/script\/min\/app Kopie-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -890,17 +890,6 @@
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
-		},
-	"\/script\/filter.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/filter.js",
-		"outputAbbreviatedPath": "\/script\/min\/filter-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		},
 	"\/script\/lib\/backbone-query.min.js": {
 		"fileType": 64,
@@ -1018,17 +1007,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/script\/lib\/underscore.js",
 		"outputAbbreviatedPath": "\/script\/lib\/min\/underscore-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/script\/product.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script\/product.js",
-		"outputAbbreviatedPath": "\/script\/min\/product-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

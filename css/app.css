@@ -8030,18 +8030,79 @@ button.close {
 
 body {
   overflow-y: scroll;
+  font: 400 0.85em/1.4em "StoneSansITCW01-Medium","Helvetica Neue",Arial,sans-serif;
+  color: #7b7b7b;
+  background: #f0f0f0;
 }
 
 #webacAPP {
   position: relative;
-  background: url("http://www.eitictlabs.eu/fileadmin/system2013/g/img/bg_body.jpg") repeat top left;
+}
+#webacAPP #anwendungsSelections .selections {
+  text-align: center;
+  padding: 30px 0;
+}
+#webacAPP #anwendungsSelections .selections .selection {
+  padding: 5px;
+  display: inline-block;
+  width: 15%;
+  overflow: hidden;
+  margin-bottom: 0;
+  position: relative;
+  background: #fff;
+}
+#webacAPP #anwendungsSelections .selections .selection a {
+  background: #fff;
+  font-size: 12px;
+  text-align: center;
+  display: block;
+  border-radius: 3px;
+  border: 1px solid #e6e9ee;
+  padding: 10px 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #7b7b7b;
+}
+#webacAPP #anwendungsSelections .selections .selection a:hover {
+  border: 1px solid #e30613;
+}
+#webacAPP #anwendungsSelections .selections .selection a h3 {
+  padding: 0;
+  font-size: 12px;
+  max-width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 auto;
+}
+#webacAPP #anwendungsSelections .selections .selection a img {
+  width: 25%;
+  margin: 0px 15px 15px;
+  height: auto;
+  border-radius: 100%;
+  border: 1px solid #e6e9ee;
+  background: #fff;
+}
+#webacAPP #anwendungsSelections .selections .selection .close {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  font-size: 12px;
+  opacity: 1;
+  color: #7b7b7b;
+}
+#webacAPP #anwendungsSelections .selections .selection:hover .close {
+  color: #e30613;
+}
+#webacAPP .anwendungsgebiete {
+  margin: 0 -35px;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet {
   display: inline-block;
   width: 100%;
   *zoom: 1;
   text-align: center;
-  background: lightgrey;
+  background: #f9f9f9;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet:before, #webacAPP .anwendungsgebiete .anwendungsgebiet:after {
   content: " ";
@@ -8052,7 +8113,7 @@ body {
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .inner {
   margin: 5px;
-  border: 1px solid lightGrey;
+  border: 1px solid #f9f9f9;
   border-radius: 3px;
   background: #fff;
   font-size: 12px;
@@ -8068,7 +8129,6 @@ body {
 #webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group {
   display: inline-block;
   width: 33%;
-  background: lightgrey;
   padding: 10px;
   overflow: hidden;
   vertical-align: top;
