@@ -8045,7 +8045,7 @@ body {
 #webacAPP #anwendungsSelections .selections .selection {
   padding: 5px;
   display: inline-block;
-  width: 15%;
+  width: 25%;
   overflow: hidden;
   margin-bottom: 0;
   position: relative;
@@ -8062,9 +8062,6 @@ body {
   cursor: pointer;
   text-decoration: none;
   color: #7b7b7b;
-}
-#webacAPP #anwendungsSelections .selections .selection a:hover {
-  border: 1px solid #e30613;
 }
 #webacAPP #anwendungsSelections .selections .selection a h3 {
   padding: 0;
@@ -8091,8 +8088,11 @@ body {
   opacity: 1;
   color: #7b7b7b;
 }
-#webacAPP #anwendungsSelections .selections .selection:hover .close {
+#webacAPP #anwendungsSelections .selections .selection:hover .close, #webacAPP #anwendungsSelections .selections .selection.active .close {
   color: #e30613;
+}
+#webacAPP #anwendungsSelections .selections .selection:hover a, #webacAPP #anwendungsSelections .selections .selection.active a {
+  border: 1px solid #e30613;
 }
 #webacAPP .anwendungsgebiete {
   margin: 0 -35px;
