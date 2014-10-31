@@ -200,18 +200,20 @@
       var name =  this.options.anwendungsgebietName;
       this.$el.append(this.template({name: name}));
       return this;
+        
     },
     reset: function(){
         Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
-        // $('.anwendungsgebiete .anwendungsgebiet').slideUp();
-        //$('.anwendungsgebiete .anwendungsgebiet').slideUp();
+        $('.anwendungsgebiete .anwendungsgebiet').slideUp();
+        $('.anwendungsgebiete .anwendungsgebiet').slideUp();
         Webac.activateMultiselect();
         Webac.currentAntwenungsgebiet = "";
+        $('.selection').removeClass('active').slideDown();
         
     },
     showSelect: function() {
+        
       var name = this.options.anwendungsgebietName;
-      
       Webac.queryObject = { Anwendungsgebiet:name};  
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
       Webac.productsCollection.reset(filteredProducts);
@@ -220,9 +222,11 @@
       var id = this.options.id;
       $('.anwendungsgebiete .anwendungsgebiet').slideUp();
       $('.anwendungsgebiete .anwendungsgebiet').eq(id).slideDown();        
-      $('.selection').eq(id).removeClass('active');
-      $('.selection').eq(id).addClass('active');
+      
+        $('.selection').eq(id).addClass('active').show();
+        $('.selection').not('.active').slideUp();
     },
+      
     remove: function() {
       //this.$el.remove();
     }
@@ -238,7 +242,7 @@
 
     initialize: function() {
       this.collection.on('add', this.addOne, this);
-      this.collection.on('reset', this.render, this);
+      //this.collection.on('reset', this.render, this);
     },
     render: function() {
       
@@ -336,8 +340,6 @@
                  Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = [];
                 console.log('EMPTY');
             }
-            
-            
             Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = _.uniq(Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName].concat(filterArray));
         });
           
