@@ -14,16 +14,15 @@
     <div id="webacAPP">
 
     <div id="anwendungsSelections">
-        <script type="text/template" id="anwendungsSelectTemplate"> 
+        <script type="text/template" id="anwendungsSelectTemplate">
                 <a class="inner">
-                    
                     <h3><%= name %></h3>
                 </a>
                 <i class="fa fa-times close"></i>
         </script>
-    </div><!-- anwendungsgebiete -->        
+    </div><!-- anwendungsgebiete -->
     <div id="anwendungsgebiete">
-        <script type="text/template" id="anwendungsgebietTemplate">         
+        <script type="text/template" id="anwendungsgebietTemplate">
            <h1>    <%= name %>  </h1>
         </script>
     </div><!-- anwendungsgebiete -->
@@ -44,6 +43,11 @@
 		<h4><span><%= title %></span></h4>
 		<ul>
 			
+            
+            <% if (Anwendungsgebiet) { %>
+			 <li><strong>Anwendungsgebiet:</strong><%= Anwendungsgebiet %></li>
+			<% } %>
+            
 			<% if (filterable.AnwendungFuer) { %>
 			 <li><strong>AnwendungFuer:</strong><%= filterable.AnwendungFuer %></li>
 			<% } %>
@@ -59,6 +63,7 @@
 			<% if (link) { %>
 			 <li><strong>link:</strong><%= link %></li>
 			<% } %>
+            
             
 		</ul>
 		<button class="btn btn-danger">Delete</button>

@@ -279,12 +279,14 @@
       //none
     },
     render: function() {
+      
       var anwendungsgebietName = this.options.name;
       this.$el.append(this.template({
         name: anwendungsgebietName
       }));
-      _.each(Webac.anwendungsgebiete[anwendungsgebietName], function(object, name) {
-      Webac.newfilterView = new Webac.Views.FilterNew({
+        
+      _.each(Webac.anwendungsgebiete[anwendungsgebietName], function(object, name) {  
+        Webac.newfilterView = new Webac.Views.FilterNew({
           anwendungsgebietName: anwendungsgebietName,
           spalte: name,
           optionsArray: object
@@ -292,7 +294,8 @@
         Webac.newfilterView.render();
         this.$el.append(Webac.newfilterView.el);
       }, this);
-    },
+        
+    }
   });
 
 
@@ -313,11 +316,13 @@
       this.render();
     },
     createAnwendungsgebietList: function() {
-      Webac.anwendungsgebiete = {};
+      //Webac.anwendungsgebiete = {};
       //go trough each product
       this.collection.each(function(product) {
         var name = product.get('Anwendungsgebiet');
-        Webac.anwendungsgebiete[name] = {};
+        if(!Webac.anwendungsgebiete[name]){
+            Webac.anwendungsgebiete[name] = {};
+        }
       });
 
       //go trough each product
@@ -326,9 +331,16 @@
         var filter = product.get('filterable');
         //go trough each filter of product
         _.each(filter, function(filterArray, filterGroupName) {
-          //console.log(filterGroupName);
-          Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = filterArray;
+            
+            if(!Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName]){
+                 Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = [];
+                console.log('EMPTY');
+            }
+            
+            
+            Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName] = _.uniq(Webac.anwendungsgebiete[anwendungsgebietsName][filterGroupName].concat(filterArray));
         });
+          
       });
     },
     render: function() {
@@ -378,13 +390,10 @@
     className: 'multiselect',
     template: template('filterTemplate'),
     initialize: function() {
-
-      // console.log('anwendungsgebietName:'+this.options.anwendungsgebietName);
-      // console.log('spalte:'+this.options.spalte);
-      // console.log('optionsArray:'+this.options.optionsArray);
-
+        
       this.$el.attr("data-name", this.options.spalte);
       this.$el.attr('multiple', 'multiple');
+        
     },
     render: function(name) {
       
