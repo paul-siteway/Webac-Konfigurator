@@ -20,6 +20,7 @@ body{
                 margin-bottom: 0;
                 position: relative;
                 background: #fff;
+                @include transition (all 2.0s ease-in-out);
                 a{
                     background: #fff;
                     font-size: 12px;
@@ -93,6 +94,13 @@ body{
                 float: none;
                 clear: both;
                 position: inherit;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-top: none;
+                padding: 10px 0;
+                input{
+                    -webkit-appearance: checkbox;
+                }
             }
             .btn-group{
                 display: inline-block;
@@ -110,7 +118,7 @@ body{
     }//anwendungsgebiete
 
     #filterProducts{        
-        border: 1px solid red;
+        //border: 1px solid red;
         background: lightgrey;
         .filters{
             @include clearfix;

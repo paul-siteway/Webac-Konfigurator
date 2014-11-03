@@ -15,7 +15,9 @@
 
     <div id="anwendungsSelections">
         <script type="text/template" id="anwendungsSelectTemplate">
+                
                 <a class="inner">
+                    <%= image %>    
                     <h3><%= name %></h3>
                 </a>
                 <i class="fa fa-times close"></i>
@@ -81,34 +83,152 @@
     var data = [
         { 
 			id: 1,
-			title: 'Webac XX',
-			Anwendungsgebiet: 'Bauwerksabdichtung',
-			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			title: 'Webac 150',
+			Anwendungsgebiet: ['Bauwerksabdichtung', 'Risssanierung'],
+            image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
 			filterable:  {
-				AnwendungFuer: ['Horizontalsperre'],
-				Eigenschaften: ['DFG>90%','DFG>90%', 'Hohlraumverfüllung', 'Vertikalabdichtung','Abdichtung gegen von außen einwirkendes Druckwasser', 'Baufstoff: Beton', 'Baufstoff: Mauerwerk', 'Baufstoff: Holz', 'trocken, feucht, nass', 'fließend', 'trocken', 'feucht', 'nass', 'Injektion'],
-				Anwendungsart: ['Injektion', 'Grundierung', 'Reperatur', 'Hinterfüllung', 'Reperatur+Grundierung/Primer','Tränken,Impregnieren', 'Grundierung für Beschichtung', 'Verlaufbeschichtung', 'Rollbeschichtung', 'Voranstrich']
+				AnwendungFuer: ['Horizontalsperre', 'Mauerwerksabdichtung'],
+				Eigenschaften: ['DFG>90%','DFG>90%','DFG>60%', 'Hohlraumverfüllung', 'Vertikalabdichtung','Abdichtung gegen von außen einwirkendes Druckwasser'],
+				Anwendungsart: ['PUR','SPUR','Gel']
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+         { 
+			id: 2,
+			title: 'Webac 240',
+			Anwendungsgebiet: ['Schleierinjektion'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         { 
+			id: 4,
+			title: 'Webac 1660',
+			Anwendungsgebiet: ['Bauwerksverfestigung'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+                AnwendungFuer: ['Beton','Mauerwerk'],
 			 } ,
 			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
 		 },
         { 
-			id: 2,
-			title: 'Webac 150',
-			Anwendungsgebiet: 'Bauwerksabdichtung',
+			id: 5,
+			title: 'Webac 1610',
+			Anwendungsgebiet: ['Bauwerksverfestigung'],
 			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
 			filterable:  {
-				AnwendungFuer: ['Mauerwerksabdichtung','Arbeitsfugen', 'Dehnfugen', 'Drückendes Wasser', 'Kein Drückendes Wasser', 'Flächen Vorbereiten', 'Beschichtung'],
-				Eigenschaften: ['DFG>90%','DFG>90%', 'Hohlraumverfüllung', 'Vertikalabdichtung','Abdichtung gegen von außen einwirkendes Druckwasser', 'Baufstoff: Beton', 'Baufstoff: Mauerwerk', 'Baufstoff: Holz', 'trocken, feucht, nass', 'fließend', 'trocken', 'feucht', 'nass', 'Injektion'],
-				Anwendungsart: ['Injektion', 'Grundierung', 'Reperatur', 'Hinterfüllung', 'Reperatur+Grundierung/Primer','Tränken,Impregnieren', 'Grundierung für Beschichtung', 'Verlaufbeschichtung', 'Rollbeschichtung', 'Voranstrich']
+                AnwendungFuer: ['Mauerwerk'],
 			 } ,
 			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
 		 },
+        {
+            id: 6,
+			title: 'Webac 2061',
+			Anwendungsgebiet: ['Bauwerksverfestigung'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+                AnwendungFuer: ['Mauerwerk'],
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+         { 
+			id: 7,
+			title: 'Webac 4180N',
+			Anwendungsgebiet: ['Bauwerksverfestigung'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+                AnwendungFuer: ['Holz'],
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+        
+        
+        
+        
+        
+        
+        
          
         {  
-			id: 3,
+			id: 8,
+			title: 'Webac 1403P',
+			Anwendungsgebiet: ['Risssanierung'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+				AnwendungFuer: ['Dehnbarer Beton'],
+				Eigenschaften: ['trocken, feucht, nass'],
+			 },
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+         {  
+			id: 9,
+			title: 'Webac 1405',
+			Anwendungsgebiet: ['Risssanierung'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+				AnwendungFuer: ['Dehnbarer Beton'],
+				Eigenschaften: ['fließend'],
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+          {  
+			id: 10,
+			title: 'Webac 1420',
+			Anwendungsgebiet: ['Risssanierung'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+				AnwendungFuer: ['Dehnbarer Beton'],
+				Eigenschaften: ['fließend'],
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 },
+         {   
+			id: 11,
+			title: 'Webac 4110',
+			Anwendungsgebiet: ['Risssanierung'],
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+				AnwendungFuer: ['Dehnbarer Beton', 'Krafschlüssiger Beton'],
+				Eigenschaften: ['fließend'],
+				Anwendungsart: ['temporär vorweg:ja,temporär vorweg:nein ']
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 }
+
+        
+        
+        
+        
+    ];
+    </script>
+<!--
+             {  
+            id: 3,
 			title: 'Webac 151',
 			Anwendungsgebiet: 'Risssanierung',
-			image: '<img alt="Risssanierung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Risssanierung_e1a8eb5d1f.png" width="82" height="82" />',
+			image: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://cdn.webac.de/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
 			filterable:  {
 				AnwendungFuer: ['Dehnbarer Beton', 'Krafschlüssiger Beton'],
 				Eigenschaften: ['trocken, feucht, nass', 'fließend', 'trocken', 'feucht', 'nass'],
@@ -116,10 +236,8 @@
 			 } ,
 			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
 		 }
-        
-    ];
-    </script>
-    
+-->
+
 <!--    <a href="#" class="btn btn-default viewJSON">VIEW JSON</div> -->
     
     

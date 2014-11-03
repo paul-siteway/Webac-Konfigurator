@@ -8050,6 +8050,11 @@ body {
   margin-bottom: 0;
   position: relative;
   background: #fff;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 #webacAPP #anwendungsSelections .selections .selection a {
   background: #fff;
@@ -8125,6 +8130,13 @@ body {
   float: none;
   clear: both;
   position: inherit;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: none;
+  padding: 10px 0;
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .dropdown-menu input {
+  -webkit-appearance: checkbox;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group {
   display: inline-block;
@@ -8138,7 +8150,6 @@ body {
   border-radius: 0;
 }
 #webacAPP #filterProducts {
-  border: 1px solid red;
   background: lightgrey;
 }
 #webacAPP #filterProducts .filters {
