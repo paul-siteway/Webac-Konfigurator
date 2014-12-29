@@ -8090,6 +8090,7 @@ body {
   top: 10px;
   right: 13px;
   font-size: 12px;
+  display: none;
   opacity: 1;
   color: #7b7b7b;
 }

@@ -16,7 +16,7 @@
     Models: {},
     Collections: {},
     Views: {},
-    queryObject: {}
+    queryObject: {},
   };
 
 
@@ -41,13 +41,26 @@
   Webac.filterList = [];
   Webac.anwendungsgebiete = {};
   Webac.currentAntwenungsgebiet = "";
-
+  Webac.lastSelectionBox1 = "";
+  Webac.lastSelectionBox2 = "";
+  Webac.lastSelectionBox3 = "";
 
 
   // #####################################
   // ######### GLOBAL FUNCTIONS   ########
   // #####################################
-
+  
+  Webac.resetApp = function(){
+      Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
+        $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
+        $('#productsView .product').hide();
+        Webac.queryObject = {};
+        Webac.lastSelectionBox1 = "";
+        Webac.lastSelectionBox2 = "";
+        Webac.lastSelectionBox3 = "";
+        Webac.currentAntwenungsgebiet = ""; 
+  }
+    
   //Activate Bootstrap MultiselectPlugin on created Selects
   Webac.activateMultiselect = function() {
     $("select.multiselect").val([]);
@@ -68,11 +81,30 @@
         } //buttontext
       },
       onChange: function(element, checked) {
-        console.log('change');
+        console.log('C H A N G E');
+        
+        if( element.parents('.multiselect').attr('data-name') == "Step1" ){
+            Webac.lastSelectionBox1 = element.val();
+            //console.log(Webac.lastSelectionBox1+'+++++++++++++');
+        }
+        if( element.parents('.multiselect').attr('data-name') == "Step2" ){
+            Webac.lastSelectionBox2 = element.val();
+            //console.log(Webac.lastSelectionBox1+'+++++++++++++');
+        }
+        if( element.parents('.multiselect').attr('data-name') == "Step3" ){
+            Webac.lastSelectionBox3 = element.val();
+            //console.log(Webac.lastSelectionBox1+'+++++++++++++');
+        }
+          
         filtername = element.parent().attr('data-name');
         Webac.vents.trigger('selectChanged', element, filtername, checked);
       }
     });
+      
+      //reselect the last selection
+      $('input[value="'+Webac.lastSelectionBox1+'"]').attr('checked', true);
+      $('input[value="'+Webac.lastSelectionBox2+'"]').attr('checked', true);
+      $('input[value="'+Webac.lastSelectionBox3+'"]').attr('checked', true);
   }; //activateMultiselect
 
 
@@ -154,7 +186,7 @@
       Webac.vents.on('startSearch', this.search, this);
     },
     render: function() {
-      // console.log('redering PRODUCTS VIEW');
+      console.log('++render View: Products++');
       this.$el.html('');
       this.collection.each(this.addOne, this);
       return this;
@@ -192,10 +224,10 @@
     className: 'selection',
     events: {
       'click a': 'showSelect',
-      'click .close': 'reset'
     },
     template: template('anwendungsSelectTemplate'),
     initialize: function() {
+       
     },
     render: function() {
       var name =  this.options.anwendungsgebietName;
@@ -204,16 +236,8 @@
       return this;
         
     },
-    reset: function(){
-        //Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
-        $('.anwendungsgebiete .anwendungsgebiet').slideUp();
-//        Webac.activateMultiselect();
-        Webac.currentAntwenungsgebiet = "";
-        //$('.selection').removeClass('active').slideDown();
-        
-    },
     showSelect: function() {
-        
+      Webac.resetApp();
       var name = this.options.anwendungsgebietName;      
       Webac.queryObject = { Anwendungsgebiet:name};  
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
@@ -240,17 +264,23 @@
  Webac.Views.Selections = Backbone.View.extend({
     tagName: 'div',
     className: 'selections',
-
     initialize: function() {
       this.collection.on('add', this.addOne, this);
       this.collection.on('reset', this.render, this);
+      Webac.vents.on('resetBtn', this.reset, this);
+    },
+     
+    reset: function(){
+        Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
+        Webac.resetApp();
+        
     },
     render: function() {
-      
+      console.log('++render View: Selcections++');
       this.$el.html('');
       var i = 0;
       _.each(Webac.anwendungsgebiete, function(object, name){
-          console.log('redering anwendungsauswahl');
+          //console.log('redering anwendungsauswahl');
         var image = object.image;
         var anwendungsgebietName = name;
         var selectView = new Webac.Views.Selection({
@@ -282,14 +312,9 @@
     className: 'anwendungsgebiet',
     template: template('anwendungsgebietTemplate'),
     initialize: function() {
-         this.collection.on('reset', this.hallo, this);
+      
     },
-    hallo: function(){
-        console.log('asd');
-    },
-
     render: function() {
-      console.log('Anwendungsgebiet Render');
       var anwendungsgebietName = this.options.name;
       //Renders the H1
       this.$el.append(this.template({
@@ -343,14 +368,10 @@
     },
     create: function() {
       this.createAnwendungsgebietList();
-      this.render();
-    },
-    hallo: function(){
-      console.log('hallo');
     },
     createAnwendungsgebietList: function() {
       Webac.anwendungsgebiete = {};
-      console.log('createAnwendungsgebietList');
+      console.log('++create Anwendungsgebiet Liste++');
       this.collection.each(function(product) {
         var name = product.get('Anwendungsgebiet');
         if(!Webac.anwendungsgebiete[name]){
@@ -386,9 +407,9 @@
     render: function() {
       ////Filter trough all ITEMS
       this.$el.html('');
-      console.log('render Anwendungsgebiete');
+      console.log('++render View: Anwendungsgebiete++');
       _.each(Webac.anwendungsgebiete, function(anwendungsgebiet, name) {
-        console.log('render Anwendungsgebiete:'+name);
+        //console.log('render Anwendungsgebiete:'+name);
         Webac.anwendungsgebietView = new Webac.Views.Anwendungsgebiet({
           collection: Webac.productsCollection,
           name: name
@@ -400,7 +421,7 @@
       return this;
     },
     updateQueryObject: function() {
-      Webac.queryObject = {};
+      //Webac.queryObject = {};
       $('select.multiselect').each(function() {
         filtername = 'filterable.' + $(this).attr('data-name');
         selected = {
@@ -411,9 +432,11 @@
         Webac.queryObject[filtername] = selected;
         
       });
+      console.log('Construct new Query:');
+      console.log(Webac.queryObject);
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
-      //			console.log('THE RESULT IS: ');
-      //			console.log(filteredProducts);
+      console.log('THE RESULT IS: ');
+      console.log(filteredProducts);
       Webac.productsCollection.reset(filteredProducts);
     }
   });
@@ -464,12 +487,6 @@
   // ################################################################
 
 
-  Webac.productsView = new Webac.Views.Products({
-    collection: Webac.productsCollection
-  });
-    
-  $('#productsView').append(Webac.productsView.render().el);
-
     
   //Webac.anwendungsgebietView = new  Webac.Views.Anwendungsgebiet({model:Webac.Models.Products});
   Webac.anwendungsgebieteView = new Webac.Views.Anwendungsgebiete({
@@ -484,13 +501,27 @@
     collection: Webac.productsCollection
   });
   $('#anwendungsSelections').append(Webac.anwendungsSelectionsView.render().el);
+
     
+  Webac.productsView = new Webac.Views.Products({
+    collection: Webac.productsCollection
+  });
+    
+  $('#productsView').append(Webac.productsView.render().el);
+
     
   Webac.activateMultiselect();
   $('.anwendungsgebiete .anwendungsgebiet').hide();
   $('.product').hide();
     
+    $('a.rr').click(function(){
+        Webac.vents.trigger('resetBtn');
+        //console.log('reset');
+    });
+    
 })(); //IIFE Imediately Iinvoked Function Expression
+
+
 
 
 
