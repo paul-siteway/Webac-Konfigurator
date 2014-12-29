@@ -26,5 +26,10 @@ mapping:
 
 TODO: 
 
-- [x] Create Subviews for each Anwendungsgebiet
-- [ ] Hook up onselectChage Events and rebuild query object
+- [ ] 3 Felder. 
+
+- [ ] Jeweils blendet sich das nächste ein
+- [ ] Nächsten Felder werden die Optionen Live geflitert
+- [ ] Felder Name „Schritt 1“ , „Schritt 2, ..
+
+
