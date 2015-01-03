@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Webac Konfigurator APP</title>
+	 <link rel="stylesheet" href="http://www.webac.de/fileadmin/system/css/style.css">
+	<link rel="stylesheet" href="css/app.css" media="all">
+
+</head>
+<body>
+
+<div class="page">
+    <div class="allcont">
+    <div id="webacAPP">
+    <a class="btn rr" href="#">Reset</a>
+
+    <div id="anwendungsSelections">
+        <script type="text/template" id="anwendungsSelectTemplate">
+                <a class="inner">
+                    <%= image %>    
+                    <h3><%= name %></h3>
+                </a>
+                <i class="fa fa-times close"></i>
+        </script>
+    </div><!-- anwendungsgebiete -->
+    <div id="anwendungsgebiete">
+        <script type="text/template" id="anwendungsgebietTemplate">
+           <h1>    <%= name %>  </h1>
+        </script>
+    </div><!-- anwendungsgebiete -->
+    
+    <div id="filterProducts">
+        <script type="text/template" id="filterTemplate">
+            <option value='<%= optionName %>'><%= optionName %></option>
+        </script>
+    </div> <!-- filterContainer -->
+    
+    
+    
+    
+
+	<div id="productsView">
+		<script type="text/template" id="productTemplate">
+        <div class="inner">
+		<h4><span><%= title %></span></h4>
+		<ul>
+			
+            
+            <% if (Anwendungsgebiet) { %>
+			 <li><strong>Anwendungsgebiet:</strong><%= Anwendungsgebiet %></li>
+			<% } %>
+            
+			<% if (filterable.Step1) { %>
+			 <li><strong>"1":</strong><%= filterable.Step1 %></li>
+			<% } %>
+			
+            <% if (filterable.Step2) { %>
+			 <li><strong>"2": </strong><%= filterable.Step2 %></li>
+			<% } %>
+			
+            <% if (filterable.Step3) { %>
+			 <li><strong>"3": </strong><%= filterable.Step3 %></li>
+			<% } %>
+            
+			<% if (link) { %>
+			 <li><strong>link:</strong><%= link %></li>
+			<% } %>
+            
+            
+		</ul>
+		<button class="btn btn-danger">Delete</button>
+		</div>
+		</script>
+	</div><!-- productsView -->
+
+
+
+	</div> <!-- webacAPP -->
+    </div><!--allcont-->
+</div><!--page-->
+    <script>
+    
+    var data = [
+            
+//PLASTIC
+    
+        
+        
+        
+    {
+    id: 1,
+    title: 'WEBAC<sub class="webacR">®</sub> 1',
+    Anwendungsgebiet: ['Waterproofing of structures'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": ['Plastic'],
+        "2": ['feucht'],
+        "3": ['danach'],
+    },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    },
+
+    {
+    id: 2,
+    title: 'WEBAC<sub class="webacR">®</sub> 2',
+    Anwendungsgebiet: ['Waterproofing of structures'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": ['Plastic'],
+        "2": ['trocken'],
+        "3": ['danach'],
+    },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    },
+        
+        
+//Beton
+        
+        
+    {
+    id: 3,
+    title: 'WEBAC<sub class="webacR">®</sub> 3',
+    Anwendungsgebiet: ['Waterproofing of structures'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": ['Beton'],
+        "2": ['trocken'],
+        "3": ['vorab'],
+    },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    },
+    
+        
+    {
+    id: 4,
+    title: 'WEBAC<sub class="webacR">®</sub> 4',
+    Anwendungsgebiet: ['Waterproofing of structures'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": ['Beton'],
+        "2": ['trocken'],
+        "3": ['danach'],
+    },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    },
+        
+//HOLZ 
+    {
+    id: 5,
+    title: 'WEBAC<sub class="webacR">®</sub> 5',
+    Anwendungsgebiet: ['Waterproofing of structures'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": ['Holz'],
+        "2": ['trocken'],
+        "3": ['vorab'],
+        },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    },
+        {
+    id: 6,
+    title: 'WEBAC<sub class="webacR">®</sub> 6',
+    Anwendungsgebiet: ['Waterproofing of structures'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": ['Holz'],
+        "2": ['trocken'],
+        "3": ['danach'],
+        },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    },
+        
+    {
+    id: 7,
+    title: 'WEBAC<sub class="webacR">®</sub> 7',
+    Anwendungsgebiet: ['Waterproofing of structures'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": ['Holz'],
+        "2": ['feucht'],
+        "3": ['vorab'],
+        },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    },
+        
+    {
+    id: 8,
+    title: 'WEBAC<sub class="webacR">®</sub> 7',
+    Anwendungsgebiet: ['Surface Protection'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    filterable:  {
+        "1": [''],
+        "2": [''],
+        "3": [''],
+        },
+    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    }
+    
+        
+        
+        
+        
+        
+        
+        
+    ];
+    </script>
+<!--
+             {  
+            id: 3,
+			title: 'Webac 151',
+			Anwendungsgebiet: 'Risssanierung',
+			image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Bauwerksabdichtung_fdff9f8a27.png" width="82" height="82" />',
+			filterable:  {
+				AnwendungFuer: ['Dehnbarer Beton', 'Krafschlüssiger Beton'],
+				Eigenschaften: ['trocken, feucht, nass', 'fließend', 'trocken', 'feucht', 'nass'],
+				Anwendungsart: ['Injektion', 'Grundierung', 'Reperatur', 'Hinterfüllung', 'Reperatur+Grundierung/Primer','Tränken,Impregnieren', 'Grundierung für Beschichtung', 'Verlaufbeschichtung', 'Rollbeschichtung', 'Voranstrich']
+			 } ,
+			link: 'http://www.webac-grouts.com.siteway.net/products/product-groups/pu-injection-foam-resins/webac-150/'
+		 }
+-->
+
+<!--    <a href="#" class="btn btn-default viewJSON">VIEW JSON</div> -->
+    
+    
+    <script  src="js/app.min.js"></script>
+    <script>
+        
+        $(function() {
+           $('.viewJSON').click(function(){
+                console.debug(Webac.productsCollection.toJSON());
+           });
+        });
+
+    
+    </script>
+
+    
+	
+
+</body>
+</html>		

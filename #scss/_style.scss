@@ -1,4 +1,4 @@
-@import 'bourbon/bourbon';
+@import "bourbon";
 
 body{
     overflow-y: scroll;
@@ -83,7 +83,7 @@ body{
             width: 100%;
             @include clearfix;
             text-align: center;
-            background: #f9f9f9;
+            // background: #f9f9f9;
             .inner{
                 margin: 5px; 
                 border: 1px solid #f9f9f9;
@@ -110,14 +110,68 @@ body{
                 display: inline-block;
                 width: 33%;
                 //background: lightgrey;
-                padding: 10px;
+                padding: 20px;
                 overflow: hidden;
                 vertical-align: top;
+                // border: 1px solid lightgrey;
+                min-height: 220px;
                 .dropdown-toggle{
                     width: 100%;
                     border-radius:0;
+                    color: grey;
+                    font-size: 4em;
+                    font-weight: lighter;
+                    background:none;
+                    border: none;
+                    box-shadow: none;
                 }        
             }//btn-group
+            .btn-group.active {
+                    
+                .dropdown-toggle{
+                    color: #e30613;
+                }
+                 li{
+                    display: block;
+                }
+            }
+            .multiselect-container{
+                background: none;
+                box-shadow: none;
+                display: none;
+                border: 1px dashed lightgrey;
+                // border: none;
+                border-radius: 2px;
+                padding: 20px;
+                padding-bottom: 0;
+                li{
+                    display: none;
+                }
+                .checkbox{
+                    padding: 15px 30px 10px 55px;
+                    margin-bottom: 20px;
+                    @include retina-image('../img/input', 45px 45px);
+                    background-color: #fff;
+                    background-repeat: no-repeat;
+                    background-position: left top;
+                    &:hover{
+                        
+                        @include retina-image('../img/inputH', 45px 45px);
+                        background-color: #fff;
+                        color: #e30613;
+                    }
+                    &.active{
+                        
+                        @include retina-image('../img/check', 45px 45px);
+                        background-color: #fff;
+                        color: #e30613;
+                    }
+                }
+
+                input{
+                   display: none;
+                }
+            }
          }//anwendungsgebiet
     }//anwendungsgebiete
 

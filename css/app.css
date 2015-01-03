@@ -8052,8 +8052,6 @@ body {
   background: #fff;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
-  -ms-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
 }
 #webacAPP #anwendungsSelections .selections .selection a {
@@ -8106,15 +8104,11 @@ body {
 #webacAPP .anwendungsgebiete .anwendungsgebiet {
   display: inline-block;
   width: 100%;
-  *zoom: 1;
   text-align: center;
-  background: #f9f9f9;
-}
-#webacAPP .anwendungsgebiete .anwendungsgebiet:before, #webacAPP .anwendungsgebiete .anwendungsgebiet:after {
-  content: " ";
-  display: table;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet:after {
+  content: "";
+  display: table;
   clear: both;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .inner {
@@ -8142,26 +8136,87 @@ body {
 #webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group {
   display: inline-block;
   width: 33%;
-  padding: 10px;
+  padding: 20px;
   overflow: hidden;
   vertical-align: top;
+  min-height: 220px;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group .dropdown-toggle {
   width: 100%;
   border-radius: 0;
+  color: grey;
+  font-size: 4em;
+  font-weight: lighter;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group.active .dropdown-toggle {
+  color: #e30613;
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group.active li {
+  display: block;
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container {
+  background: none;
+  box-shadow: none;
+  display: none;
+  border: 1px dashed lightgrey;
+  border-radius: 2px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container li {
+  display: none;
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox {
+  padding: 15px 30px 10px 55px;
+  margin-bottom: 20px;
+  background-image: url("../img/input.png");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox {
+    background-image: url("../img/input_2x.png");
+    background-size: 45px 45px;
+  }
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox:hover {
+  background-image: url("../img/inputH.png");
+  background-color: #fff;
+  color: #e30613;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox:hover {
+    background-image: url("../img/inputH_2x.png");
+    background-size: 45px 45px;
+  }
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox.active {
+  background-image: url("../img/check.png");
+  background-color: #fff;
+  color: #e30613;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox.active {
+    background-image: url("../img/check_2x.png");
+    background-size: 45px 45px;
+  }
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container input {
+  display: none;
 }
 #webacAPP #filterProducts {
   background: lightgrey;
 }
 #webacAPP #filterProducts .filters {
-  *zoom: 1;
   text-align: center;
 }
-#webacAPP #filterProducts .filters:before, #webacAPP #filterProducts .filters:after {
-  content: " ";
-  display: table;
-}
 #webacAPP #filterProducts .filters:after {
+  content: "";
+  display: table;
   clear: both;
 }
 #webacAPP #filterProducts .filters .dropdown-menu {

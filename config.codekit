@@ -948,6 +948,72 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/img\/check.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1697,
+		"inputAbbreviatedPath": "\/img\/check.png",
+		"outputAbbreviatedPath": "\/img\/check.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/check_2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2698,
+		"inputAbbreviatedPath": "\/img\/check_2x.png",
+		"outputAbbreviatedPath": "\/img\/check_2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/input.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1985,
+		"inputAbbreviatedPath": "\/img\/input.png",
+		"outputAbbreviatedPath": "\/img\/input.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/input_2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3535,
+		"inputAbbreviatedPath": "\/img\/input_2x.png",
+		"outputAbbreviatedPath": "\/img\/input_2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/inputH.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3634,
+		"inputAbbreviatedPath": "\/img\/inputH.png",
+		"outputAbbreviatedPath": "\/img\/inputH.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/inputH_2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3642,
+		"inputAbbreviatedPath": "\/img\/inputH_2x.png",
+		"outputAbbreviatedPath": "\/img\/inputH_2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/index Kopie.html": {
 		"fileType": 8192,
 		"ignore": 0,

@@ -60,6 +60,18 @@
         Webac.lastSelectionBox3 = "";
         Webac.currentAntwenungsgebiet = ""; 
   }
+
+  Webac.showSteps = function() {
+    $('.multiselect-container').each(function(index) {
+        var hasActive = $(this).find('.active').length;
+        next = index+1;
+        if(hasActive){
+          console.log(index+' has '+hasActive+'  (Next is '+next+')');
+          $('.btn-group:eq('+next+')').addClass('active');
+          //$('.multiselect-container:eq('+next+')').prev('.btn').add('active');
+        }
+    });
+  }
     
   //Activate Bootstrap MultiselectPlugin on created Selects
   Webac.activateMultiselect = function() {
@@ -83,15 +95,15 @@
       onChange: function(element, checked) {
         console.log('C H A N G E');
         
-        if( element.parents('.multiselect').attr('data-name') == "Step1" ){
+        if( element.parents('.multiselect').attr('data-name') == "1" ){
             Webac.lastSelectionBox1 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
         }
-        if( element.parents('.multiselect').attr('data-name') == "Step2" ){
+        if( element.parents('.multiselect').attr('data-name') == "2" ){
             Webac.lastSelectionBox2 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
         }
-        if( element.parents('.multiselect').attr('data-name') == "Step3" ){
+        if( element.parents('.multiselect').attr('data-name') == "3" ){
             Webac.lastSelectionBox3 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
         }
@@ -102,9 +114,9 @@
     });
       
       //reselect the last selection
-      $('input[value="'+Webac.lastSelectionBox1+'"]').attr('checked', true);
-      $('input[value="'+Webac.lastSelectionBox2+'"]').attr('checked', true);
-      $('input[value="'+Webac.lastSelectionBox3+'"]').attr('checked', true);
+      $('input[value="'+Webac.lastSelectionBox1+'"]').attr('checked', true).parent('.checkbox').addClass('active');
+      $('input[value="'+Webac.lastSelectionBox2+'"]').attr('checked', true).parent('.checkbox').addClass('active');;
+      $('input[value="'+Webac.lastSelectionBox3+'"]').attr('checked', true).parent('.checkbox').addClass('active');;
   }; //activateMultiselect
 
 
@@ -271,7 +283,6 @@
     },
      
     reset: function(){
-        Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
         Webac.resetApp();
         
     },
@@ -400,6 +411,8 @@
       });
       this.render();
       Webac.activateMultiselect();
+      $('.btn-group:eq(0)').addClass('active');
+      Webac.showSteps();
     },
 
 
@@ -514,11 +527,13 @@
   $('.anwendungsgebiete .anwendungsgebiet').hide();
   $('.product').hide();
     
-    $('a.rr').click(function(){
-        Webac.vents.trigger('resetBtn');
-        //console.log('reset');
-    });
-    
+
+
+  $('.rr').click(function(e) {
+    e.preventDefault();
+    Webac.resetApp();
+  });
+
 })(); //IIFE Imediately Iinvoked Function Expression
 
 
