@@ -11,6 +11,7 @@
 
 <div class="page">
     <div class="allcont">
+
     <div id="webacAPP">
     <a class="btn rr" href="#">Reset</a>
 
@@ -50,16 +51,16 @@
 			 <li><strong>Anwendungsgebiet:</strong><%= Anwendungsgebiet %></li>
 			<% } %>
             
-			<% if (filterable.Step1) { %>
-			 <li><strong>"1":</strong><%= filterable.Step1 %></li>
+			<% if (filterable[1]) { %>
+			 <li><strong>"1":</strong><%= filterable[1] %></li>
 			<% } %>
 			
-            <% if (filterable.Step2) { %>
-			 <li><strong>"2": </strong><%= filterable.Step2 %></li>
+            <% if (filterable[2]) { %>
+			 <li><strong>"2": </strong><%= filterable[2] %></li>
 			<% } %>
 			
-            <% if (filterable.Step3) { %>
-			 <li><strong>"3": </strong><%= filterable.Step3 %></li>
+            <% if (filterable[3]) { %>
+			 <li><strong>"3": </strong><%= filterable[3] %></li>
 			<% } %>
             
 			<% if (link) { %>
@@ -231,7 +232,7 @@
 
 <!--    <a href="#" class="btn btn-default viewJSON">VIEW JSON</div> -->
     
-    
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script  src="js/app.min.js"></script>
     <script>
         

@@ -1,5 +1,4 @@
 // @codekit-prepend 'lib/underscore.js'
-// @codekit-prepend 'lib/jquery.js'
 
 // @codekit-prepend 'lib/backbone.js'
 // @codekit-prepend 'lib/deep-model.min.js'
@@ -10,7 +9,7 @@
 
 
 (function() {
-
+  console.log('WEBAC KONFIGURATOR: V3 - 07.01');
   //create a namespace
   window.Webac = {
     Models: {},
