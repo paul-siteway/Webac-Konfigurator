@@ -13,7 +13,7 @@
     <div class="allcont">
 
     <div id="webacAPP">
-    <a class="btn rr" href="#">Reset</a>
+    <a class="btn restart white" href="#">Neu Starten</a>
 
     <div id="anwendungsSelections">
         <script type="text/template" id="anwendungsSelectTemplate">
@@ -23,58 +23,46 @@
                 </a>
                 <i class="fa fa-times close"></i>
         </script>
-    </div><!-- anwendungsgebiete -->
+    </div><!-- anwendungsSelections -->
+    <div class="btn hint">Please select an Application Range</div>
+    
+    
     <div id="anwendungsgebiete">
         <script type="text/template" id="anwendungsgebietTemplate">
            
         </script>
     </div><!-- anwendungsgebiete -->
     
+    
     <div id="filterProducts">
         <script type="text/template" id="filterTemplate">
             <option value='<%= optionName %>'><%= optionName %></option>
         </script>
     </div> <!-- filterContainer -->
+    <div class="btn hint left">Please Select</div>
+    <div class="btn hint center">Please Select</div>
+    <div class="btn hint right">Please Select</div>
+    
     
     
     
     
 
 	<div id="productsView">
+	
 		<script type="text/template" id="productTemplate">
+        
         <div class="inner">
-		<h4><span><%= title %></span></h4>
-		<ul>
-			
-            
-            <% if (Anwendungsgebiet) { %>
-			 <li><strong>Anwendungsgebiet:</strong><%= Anwendungsgebiet %></li>
-			<% } %>
-            
-			<% if (filterable[1]) { %>
-			 <li><strong>"1":</strong><%= filterable[1] %></li>
-			<% } %>
-			
-            <% if (filterable[2]) { %>
-			 <li><strong>"2": </strong><%= filterable[2] %></li>
-			<% } %>
-			
-            <% if (filterable[3]) { %>
-			 <li><strong>"3": </strong><%= filterable[3] %></li>
-			<% } %>
-            
-			<% if (link) { %>
-			 <li><strong>link:</strong><%= link %></li>
-			<% } %>
-            
-            
-		</ul>
-		<button class="btn btn-danger">Delete</button>
+          <a href="<%= link %>">
+		      <%= ProductImage %>
+               <h4><span><%= title %></span></h4>
+          </a>
+          
 		</div>
 		</script>
 	</div><!-- productsView -->
 
-
+    <div class="btn hint">Your Results</div>
 
 	</div> <!-- webacAPP -->
     </div><!--allcont-->
@@ -93,7 +81,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 1',
     Anwendungsgebiet: ['Waterproofing of structures'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": ['Plastic'],
         "2": ['feucht'],
@@ -107,7 +95,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 2',
     Anwendungsgebiet: ['Waterproofing of structures'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": ['Plastic'],
         "2": ['trocken'],
@@ -125,7 +113,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 3',
     Anwendungsgebiet: ['Waterproofing of structures'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": ['Beton'],
         "2": ['trocken'],
@@ -140,7 +128,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 4',
     Anwendungsgebiet: ['Waterproofing of structures'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": ['Beton'],
         "2": ['trocken'],
@@ -155,7 +143,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 5',
     Anwendungsgebiet: ['Waterproofing of structures'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": ['Holz'],
         "2": ['trocken'],
@@ -168,7 +156,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 6',
     Anwendungsgebiet: ['Waterproofing of structures'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": ['Holz'],
         "2": ['trocken'],
@@ -182,7 +170,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 7',
     Anwendungsgebiet: ['Waterproofing of structures'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": ['Holz'],
         "2": ['feucht'],
@@ -196,7 +184,7 @@
     title: 'WEBAC<sub class="webacR">®</sub> 7',
     Anwendungsgebiet: ['Surface Protection'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
         "1": [''],
         "2": [''],

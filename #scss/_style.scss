@@ -1,21 +1,79 @@
 @import "bourbon";
 
+$red: #e30613;
+$redDark:  darken($red, 10);
+$redLight: lighten($red, 10);
+
+$grey : #e6e9ee;
+$bodyColor: #7b7b7b;
+
+
+
 body{
     overflow-y: scroll;
     font: 400 0.85em/1.4em "StoneSansITCW01-Medium","Helvetica Neue",Arial,sans-serif;
-    color: #7b7b7b;
+    color: $bodyColor;
     background: #f0f0f0;
 }
 
 // select.multiselect{
 //     display: block !important;
 // }
+
 #webacAPP {
 	position: relative;
+    text-align: center;
+    padding-top: 20px;
+    min-height: 500px;
+    margin: 0 -35px;
+    opacity: 0;
+    hr{
+        margin: 20px -30px;
+    }
+    .btn{
+        @include linear-gradient($redLight, $redDark);
+        border: none;
+        position: relative;
+        margin-bottom: 20px;
+        &.left, &.center, &.right{
+            width: 33%;
+            margin: 10px 0 0;
+        }
+        &.hint{
+//            display: none;
+            max-width: 500px;
+            margin: 0 auto 10px;
+            margin-top: 10px;
+        }
+        &.hint:hover{
+            color: #fff;
+        }
+        &.hint:before{
+            bottom: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(0, 0, 0, 0);
+            border-bottom-color: $redLight;
+            border-width: 8px;
+            margin-left: -8px;
+            margin-top: -12px;
+        }
+        &.white{
+            background: #fff;
+            border: 1px solid $grey;
+            color: $bodyColor;
+        }
+    }
+    
     #anwendungsSelections {
         .selections {
             text-align: center;
-            padding: 30px 0;
+            padding: 10px 0;
             .selection {
                 padding: 5px;
                 display: inline-block;
@@ -31,11 +89,11 @@ body{
                     text-align: center;
                     display: block;
                     border-radius: 3px;
-                    border: 1px solid #e6e9ee;
+                    border: 1px solid $grey;
                     padding: 10px 0;
                     cursor: pointer;
                     text-decoration: none;
-                    color: #7b7b7b;
+                    color: $bodyColor;
                     h3{
                         padding: 0;
                         font-size: 12px;
@@ -61,7 +119,7 @@ body{
                     font-size: 12px;
                     display: none;
                     opacity: 1;
-                    color: #7b7b7b;
+                    color: $bodyColor;
                 }//close
                 &:hover, &.active{
                     .close{
@@ -77,7 +135,10 @@ body{
     
     
     .anwendungsgebiete{
-        margin: 0 -35px;
+        background: #f9f9f9;
+        border-top: 1px solid $grey;
+        border-bottom: 1px solid $grey;
+        margin-bottom: 20px;
          .anwendungsgebiet   {
             display: inline-block;
             width: 100%;
@@ -114,7 +175,6 @@ body{
                 overflow: hidden;
                 vertical-align: top;
                 // border: 1px solid lightgrey;
-                min-height: 220px;
                 .dropdown-toggle{
                     width: 100%;
                     border-radius:0;
@@ -127,16 +187,17 @@ body{
                 }        
             }//btn-group
             .btn-group.active {
-                    
                 .dropdown-toggle{
                     color: #e30613;
                 }
                  li{
                     display: block;
                 }
+                .multiselect-container{
+                    min-height: 0px;    
+                }
             }
             .multiselect-container{
-                background: none;
                 box-shadow: none;
                 display: none;
                 border: 1px dashed lightgrey;
@@ -144,6 +205,8 @@ body{
                 border-radius: 2px;
                 padding: 20px;
                 padding-bottom: 0;
+                min-height: 225px;
+                background: url('../img/appbg.png') center no-repeat #fff;
                 li{
                     display: none;
                 }
@@ -207,49 +270,43 @@ body{
     
     
     #productsView{
-        margin: 0 -10px;
+        margin: 35px;
     }
     
     .product{
         
         padding: 10px;
         display: inline-block;
-        width: 50%;
-        height: 240px;
+        width: 25%;
         overflow: hidden;
         
         .inner{
             box-shadow: 0 0 5px #e4e4e4;
             position: relative;
             background: #fff;
-            padding: 10px;
-            height: 220px;
+            padding: 1px;
+            border: 1px solid #e6e9ee;
+
+            &:hover{
+                border: 1px solid $red;
+                h4{
+                    background: $red;
+                    color: #fff;
+                }
+                a{
+                    text-decoration: none;
+                }
+
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
             h4{
-                margin: -10px !important;
-                margin-bottom: 10px !important;
-                color: #5fbd00;
-                border-bottom: 1px solid #e4e4e4;
-                padding: 10px;
-                padding-left: 25px;
-                margin: 0 0 10px 0;
-                font-weight: lighter;
-            }
-            ul{
-                margin: 0;
-                padding: 0;
-                padding-left: 15px;
-            }
-            .btn-danger {
-                position: absolute;
-                top: 0px;
-                right: 3px;
-                background: none;
-                color: #c12e2a;
-                text-shadow: none;
                 border: none;
-                box-shadow: none;
-                border-left: 1px solid #e4e4e4;
-                border-radius: 0;
+                font-size: 13px;
+                color: $bodyColor;
+                margin: 0;
                 padding: 10px;
             }
         }

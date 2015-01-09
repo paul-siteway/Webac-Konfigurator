@@ -8037,10 +8037,58 @@ body {
 
 #webacAPP {
   position: relative;
+  text-align: center;
+  padding-top: 20px;
+  min-height: 500px;
+  margin: 0 -35px;
+  opacity: 0;
+}
+#webacAPP hr {
+  margin: 20px -30px;
+}
+#webacAPP .btn {
+  background-color: #f9232f;
+  background-image: -webkit-linear-gradient(#f9232f, #b1050f);
+  background-image: linear-gradient(#f9232f, #b1050f);
+  border: none;
+  position: relative;
+  margin-bottom: 20px;
+}
+#webacAPP .btn.left, #webacAPP .btn.center, #webacAPP .btn.right {
+  width: 33%;
+  margin: 10px 0 0;
+}
+#webacAPP .btn.hint {
+  max-width: 500px;
+  margin: 0 auto 10px;
+  margin-top: 10px;
+}
+#webacAPP .btn.hint:hover {
+  color: #fff;
+}
+#webacAPP .btn.hint:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-bottom-color: #f9232f;
+  border-width: 8px;
+  margin-left: -8px;
+  margin-top: -12px;
+}
+#webacAPP .btn.white {
+  background: #fff;
+  border: 1px solid #e6e9ee;
+  color: #7b7b7b;
 }
 #webacAPP #anwendungsSelections .selections {
   text-align: center;
-  padding: 30px 0;
+  padding: 10px 0;
 }
 #webacAPP #anwendungsSelections .selections .selection {
   padding: 5px;
@@ -8099,7 +8147,10 @@ body {
   border: 1px solid #e30613;
 }
 #webacAPP .anwendungsgebiete {
-  margin: 0 -35px;
+  background: #f9f9f9;
+  border-top: 1px solid #e6e9ee;
+  border-bottom: 1px solid #e6e9ee;
+  margin-bottom: 20px;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet {
   display: inline-block;
@@ -8139,7 +8190,6 @@ body {
   padding: 20px;
   overflow: hidden;
   vertical-align: top;
-  min-height: 220px;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group .dropdown-toggle {
   width: 100%;
@@ -8157,14 +8207,18 @@ body {
 #webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group.active li {
   display: block;
 }
+#webacAPP .anwendungsgebiete .anwendungsgebiet .btn-group.active .multiselect-container {
+  min-height: 0px;
+}
 #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container {
-  background: none;
   box-shadow: none;
   display: none;
   border: 1px dashed lightgrey;
   border-radius: 2px;
   padding: 20px;
   padding-bottom: 0;
+  min-height: 225px;
+  background: url("../img/appbg.png") center no-repeat #fff;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container li {
   display: none;
@@ -8238,48 +8292,40 @@ body {
   border-radius: 0;
 }
 #webacAPP #productsView {
-  margin: 0 -10px;
+  margin: 35px;
 }
 #webacAPP .product {
   padding: 10px;
   display: inline-block;
-  width: 50%;
-  height: 240px;
+  width: 25%;
   overflow: hidden;
 }
 #webacAPP .product .inner {
   box-shadow: 0 0 5px #e4e4e4;
   position: relative;
   background: #fff;
-  padding: 10px;
-  height: 220px;
+  padding: 1px;
+  border: 1px solid #e6e9ee;
+}
+#webacAPP .product .inner:hover {
+  border: 1px solid #e30613;
+}
+#webacAPP .product .inner:hover h4 {
+  background: #e30613;
+  color: #fff;
+}
+#webacAPP .product .inner:hover a {
+  text-decoration: none;
+}
+#webacAPP .product .inner img {
+  width: 100%;
+  height: auto;
 }
 #webacAPP .product .inner h4 {
-  margin: -10px !important;
-  margin-bottom: 10px !important;
-  color: #5fbd00;
-  border-bottom: 1px solid #e4e4e4;
-  padding: 10px;
-  padding-left: 25px;
-  margin: 0 0 10px 0;
-  font-weight: lighter;
-}
-#webacAPP .product .inner ul {
-  margin: 0;
-  padding: 0;
-  padding-left: 15px;
-}
-#webacAPP .product .inner .btn-danger {
-  position: absolute;
-  top: 0px;
-  right: 3px;
-  background: none;
-  color: #c12e2a;
-  text-shadow: none;
   border: none;
-  box-shadow: none;
-  border-left: 1px solid #e4e4e4;
-  border-radius: 0;
+  font-size: 13px;
+  color: #7b7b7b;
+  margin: 0;
   padding: 10px;
 }
 

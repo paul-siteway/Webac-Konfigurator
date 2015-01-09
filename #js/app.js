@@ -6,6 +6,8 @@
 
 // @codekit-prepend 'lib/bootstrap.js'
 // @codekit-prepend 'lib/bootstrap-multiselect.js'
+// @codekit-prepend 'lib/TweenMax.min.js'
+
 
 
 (function() {
@@ -50,6 +52,7 @@
   // #####################################
   
   Webac.resetApp = function(){
+      console.log('reset');
       Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
         $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
         $('#productsView .product').hide();
@@ -57,7 +60,7 @@
         Webac.lastSelectionBox1 = "";
         Webac.lastSelectionBox2 = "";
         Webac.lastSelectionBox3 = "";
-        Webac.currentAntwenungsgebiet = ""; 
+        Webac.currentAntwenungsgebiet = "";
   }
 
   Webac.showSteps = function() {
@@ -97,14 +100,17 @@
         if( element.parents('.multiselect').attr('data-name') == "1" ){
             Webac.lastSelectionBox1 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
+            Webac.showHint(2);
         }
         if( element.parents('.multiselect').attr('data-name') == "2" ){
             Webac.lastSelectionBox2 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
+            Webac.showHint(3);
         }
         if( element.parents('.multiselect').attr('data-name') == "3" ){
             Webac.lastSelectionBox3 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
+            Webac.showHint(4);
         }
           
         filtername = element.parent().attr('data-name');
@@ -124,6 +130,14 @@
     $("select.multiselect").val([]);
     $("select.multiselect").multiselect('refresh')
     Webac.vents.trigger('selectChanged');
+  }
+  
+  Webac.showHint = function(num){
+      console.log('showHint: '+num)
+      all = $('.hint');
+      el = $('.hint').eq(num);
+      TweenLite.to(all, 0, {marginTop:-10, opacity: 0});//reset all
+      TweenLite.to(el, 2, {marginTop:0, opacity: 1, delay: 0.5, ease:Elastic.easeOut});//show 
   }
 
 
@@ -254,10 +268,10 @@
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
       Webac.productsCollection.reset(filteredProducts);
       Webac.currentAntwenungsgebiet = name;
-      
       var id = this.options.id;
-      //$('.anwendungsgebiete .anwendungsgebiet').slideUp();
-      //$('.anwendungsgebiete .anwendungsgebiet').eq(id).slideDown();        
+      Webac.showHint(1);
+      $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
+      $('.anwendungsgebiete .anwendungsgebiet').eq(id).slideDown();        
       
         //$('.selection').eq(id).addClass('active').show();
         //$('.selection').not('.active').slideUp();
@@ -276,21 +290,14 @@
     tagName: 'div',
     className: 'selections',
     initialize: function() {
-      this.collection.on('add', this.addOne, this);
-      this.collection.on('reset', this.render, this);
-      Webac.vents.on('resetBtn', this.reset, this);
-    },
-     
-    reset: function(){
-        Webac.resetApp();
-        
+        this.collection.on('reset', this.render, this);
     },
     render: function() {
       console.log('++render View: Selcections++');
       this.$el.html('');
       var i = 0;
       _.each(Webac.anwendungsgebiete, function(object, name){
-          //console.log('redering anwendungsauswahl');
+        console.log('redering anwendungsauswahl');
         var image = object.image;
         var anwendungsgebietName = name;
         var selectView = new Webac.Views.Selection({
@@ -370,10 +377,10 @@
     tagName: 'div',
     className: 'anwendungsgebiete',
     initialize: function() {
-      this.create()
-      
-      Webac.vents.on('selectChanged', this.updateQueryObject, this);
-      this.collection.on('reset', this.createAnwendungsgebietList, this);
+        this.create();
+        Webac.vents.on('selectChanged', this.updateQueryObject, this);
+        this.collection.on('reset', this.createAnwendungsgebietList, this);
+        Webac.showHint(0);
       
     },
     create: function() {
@@ -526,11 +533,13 @@
   $('.anwendungsgebiete .anwendungsgebiet').hide();
   $('.product').hide();
     
+  TweenLite.to($('#webacAPP'), 0.5, {opacity: 1, delay: 0.5});//reset all
 
 
-  $('.rr').click(function(e) {
+  $('.restart').click(function(e) {
     e.preventDefault();
     Webac.resetApp();
+    Webac.showHint(0);
   });
 
 })(); //IIFE Imediately Iinvoked Function Expression
