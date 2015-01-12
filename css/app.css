@@ -8222,10 +8222,11 @@ body {
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container li {
   display: none;
+  background-color: #fff;
+  padding-bottom: 20px;
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox {
   padding: 15px 30px 10px 55px;
-  margin-bottom: 20px;
   background-image: url("../img/input.png");
   background-color: #fff;
   background-repeat: no-repeat;

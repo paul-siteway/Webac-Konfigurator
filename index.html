@@ -16,7 +16,7 @@
     <a class="btn restart white" href="#">Neu Starten</a>
 
     <div id="anwendungsSelections">
-        <script type="text/template" id="anwendungsSelectTemplate">
+        <script type="text/template" id="anwendungsSelectTemplate"  data-ignore=1> 
                 <a class="inner">
                     <%= image %>    
                     <h3><%= name %></h3>
@@ -28,14 +28,14 @@
     
     
     <div id="anwendungsgebiete">
-        <script type="text/template" id="anwendungsgebietTemplate">
-           
+        <script type="text/template" id="anwendungsgebietTemplate"  data-ignore=1>
+           <div></div>
         </script>
     </div><!-- anwendungsgebiete -->
     
     
     <div id="filterProducts">
-        <script type="text/template" id="filterTemplate">
+        <script type="text/template" id="filterTemplate"  data-ignore=1>
             <option value='<%= optionName %>'><%= optionName %></option>
         </script>
     </div> <!-- filterContainer -->
@@ -50,7 +50,7 @@
 
 	<div id="productsView">
 	
-		<script type="text/template" id="productTemplate">
+		<script type="text/template" id="productTemplate"  data-ignore=1>
         
         <div class="inner">
           <a href="<%= link %>">
@@ -67,7 +67,7 @@
 	</div> <!-- webacAPP -->
     </div><!--allcont-->
 </div><!--page-->
-    <script>
+    <script  data-ignore=1>
     
     var data = [
             
@@ -222,19 +222,5 @@
     
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script  src="js/app.min.js"></script>
-    <script>
-        
-        $(function() {
-           $('.viewJSON').click(function(){
-                console.debug(Webac.productsCollection.toJSON());
-           });
-        });
-
-    
-    </script>
-
-    
-	
-
 </body>
 </html>		

@@ -6,7 +6,7 @@
 
 // @codekit-prepend 'lib/bootstrap.js'
 // @codekit-prepend 'lib/bootstrap-multiselect.js'
-// @codekit-prepend 'lib/TweenMax.min.js'
+// @codekit-prepend 'lib/TweenMax.js'
 
 
 

@@ -209,10 +209,12 @@ body{
                 background: url('../img/appbg.png') center no-repeat #fff;
                 li{
                     display: none;
+                    background-color: #fff;
+                    padding-bottom: 20px;
                 }
                 .checkbox{
                     padding: 15px 30px 10px 55px;
-                    margin-bottom: 20px;
+                    
                     @include retina-image('../img/input', 45px 45px);
                     background-color: #fff;
                     background-repeat: no-repeat;
