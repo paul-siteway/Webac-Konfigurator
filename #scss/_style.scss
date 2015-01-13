@@ -211,6 +211,9 @@ body{
                     display: none;
                     background-color: #fff;
                     padding-bottom: 20px;
+                    a{
+                        white-space: inherit;
+                    }
                 }
                 .checkbox{
                     padding: 15px 30px 10px 55px;
@@ -218,7 +221,7 @@ body{
                     @include retina-image('../img/input', 45px 45px);
                     background-color: #fff;
                     background-repeat: no-repeat;
-                    background-position: left top;
+                    background-position: left center;
                     &:hover{
                         
                         @include retina-image('../img/inputH', 45px 45px);

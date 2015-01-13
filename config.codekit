@@ -1054,12 +1054,34 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/js\/app.min (Pauls MacBook Pros in Konflikt stehende Kopie 2015-01-12).js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/app.min (Pauls MacBook Pros in Konflikt stehende Kopie 2015-01-12).js",
+		"outputAbbreviatedPath": "\/js\/min\/app.min (Pauls MacBook Pros in Konflikt stehende Kopie 2015-01-12)-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/app.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/app.min.js",
 		"outputAbbreviatedPath": "\/js\/min\/app.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/min\/app.min (Pauls MacBook Pros in Konflikt stehende Kopie 2015-01-12)-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/app.min (Pauls MacBook Pros in Konflikt stehende Kopie 2015-01-12)-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/app.min (Pauls MacBook Pros in Konflikt stehende Kopie 2015-01-12)-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

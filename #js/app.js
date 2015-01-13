@@ -140,6 +140,35 @@
       TweenLite.to(el, 2, {marginTop:0, opacity: 1, delay: 0.5, ease:Elastic.easeOut});//show 
   }
 
+  
+  Webac.checkExeptions = function(products, object){
+        exeption1 =  {"Anwendungsgebiet":"Waterproofing of structures","filterable.1":{"$all":["Horizontalsperre"]}};
+        exeption2 =  {"Anwendungsgebiet":"Waterproofing of structures","filterable.1":{"$all":["Mauerwerksabdichtung"]}};
+        if(JSON.stringify(object) == JSON.stringify(exeption1)){
+            alert('ausnahme');
+            _.each(products, function(product){
+                console.log("ausnahme");
+                arr1 = product.get('filterable')[1];
+                arr2 = product.get('filterable')[2];
+                product.get('filterable')[1] = _.without(arr1,'Mauerwerksabdichtung');
+                product.get('filterable')[2] = _.without(arr2,'Abdichtung gegen von außen einwirkendes Wasser', 'Vertikalabdichtung', 'Hohlraumverfüllung');
+                
+            });
+        }
+        else if(JSON.stringify(object) == JSON.stringify(exeption2)){
+            alert('ausnahme2');
+             _.each(products, function(product){
+                console.log("ausnahme");
+                arr1 = product.get('filterable')[1];
+                arr2 = product.get('filterable')[2];
+                product.get('filterable')[1] = _.without(arr1,'Horizontalsperre');
+                product.get('filterable')[2] = _.without(arr2,'Durchfeuchtungsgrad (DFG) bis 100%', 'Durchfeuchtungsgrad (DFG) bis 60% ');
+            });
+        }
+
+
+        return products; 
+  }
 
 
   // ################################################################
@@ -452,13 +481,19 @@
         
       });
       console.log('Construct new Query:');
-      console.log(Webac.queryObject);
+      console.log(JSON.stringify(Webac.queryObject));
+      
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
       console.log('THE RESULT IS: ');
-      console.log(filteredProducts);
-      Webac.productsCollection.reset(filteredProducts);
+      console.log(JSON.stringify(filteredProducts));
+        
+      filteredProducts1 = Webac.checkExeptions(filteredProducts, Webac.queryObject); //CHECK FOR EXCEPTIONS
+        
+      Webac.productsCollection.reset(filteredProducts1);
     }
   });
+    
+    
 
 
 
