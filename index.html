@@ -68,105 +68,129 @@
     </div><!--allcont-->
 </div><!--page-->
     <script  data-ignore=1>
-    
-    var data = [
-            
-//PLASTIC
-    
-
-    
+    var filterTree = [
     {
-    id: 169,
+        id: 1,
+        name: 'Bauwerksabdichtung',
+        filterable:  {
+            1 : ['Horizontalsperre', 'Mauerwerksabdichtung'],
+            2 : ['Durchfeuchtungsgrad (DFG) bis 60%', 'Durchfeuchtungsgrad (DFG) bis 100%'],
+            3 : ['Spur','Pur','Gel']
+        }
+    },
+    {
+        id: 2,
+        name: 'Bauwerksverfestigung',
+        filterable:  {
+            1 : ['Beton','Mauerwerk','Holz'],
+            2 : [],
+            3 : []
+        }
+    },
+    {
+        id: 3,
+        name: 'Risssanierung',
+        filterable:  {
+            1 : ['dehnbar','kraftschlüssig'],
+            2 : ['trocken','feucht','nass','fließend'],
+            3 : ['temporär vorweg:nein', 'temporär vorweg:ja']
+        }
+    }
+    ];
+        
+         var data = [
+    {
+    id: 1690011,
     title: 'WEBAC<sub class="webacR">®</sub> 1401',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Vertikalabdichtung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=169'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=169'
     },
     
     {
-    id: 169,
+    id: 1690012,
     title: 'WEBAC<sub class="webacR">®</sub> 1401',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Vertikalabdichtung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=169'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=169'
     },
     
 
     
     {
-    id: 188,
+    id: 1880021,
     title: 'WEBAC<sub class="webacR">®</sub> 1403',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser','Vertikalabdichtung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
     },
     
     {
-    id: 188,
+    id: 1880022,
     title: 'WEBAC<sub class="webacR">®</sub> 1403',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser','Vertikalabdichtung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
     },
     
     {
-    id: 188,
+    id: 1880023,
     title: 'WEBAC<sub class="webacR">®</sub> 1403',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser','Vertikalabdichtung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
     },
     
     {
-    id: 188,
+    id: 1880024,
     title: 'WEBAC<sub class="webacR">®</sub> 1403',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser','Vertikalabdichtung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=188'
     },
     
 
     
     {
-    id: 214,
+    id: 2140031,
     title: 'WEBAC<sub class="webacR">®</sub> 1403P',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -174,13 +198,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
     },
     
     {
-    id: 214,
+    id: 2140032,
     title: 'WEBAC<sub class="webacR">®</sub> 1403P',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -188,13 +212,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
     },
     
     {
-    id: 214,
+    id: 2140033,
     title: 'WEBAC<sub class="webacR">®</sub> 1403P',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -202,13 +226,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
     },
     
     {
-    id: 214,
+    id: 2140034,
     title: 'WEBAC<sub class="webacR">®</sub> 1403P',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -216,15 +240,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=214'
     },
     
 
     
     {
-    id: 227,
+    id: 2270041,
     title: 'WEBAC<sub class="webacR">®</sub> 1404',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -232,161 +256,161 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=227'
     },
     
 
     
     {
-    id: 235,
+    id: 2350051,
     title: 'WEBAC<sub class="webacR">®</sub> 1405',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
     },
     
     {
-    id: 235,
+    id: 2350052,
     title: 'WEBAC<sub class="webacR">®</sub> 1405',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
     },
     
     {
-    id: 235,
+    id: 2350053,
     title: 'WEBAC<sub class="webacR">®</sub> 1405',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
     },
     
     {
-    id: 235,
+    id: 2350054,
     title: 'WEBAC<sub class="webacR">®</sub> 1405',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
     },
     
     {
-    id: 235,
+    id: 2350055,
     title: 'WEBAC<sub class="webacR">®</sub> 1405',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=235'
     },
     
 
     
     {
-    id: 294,
+    id: 2940061,
     title: 'WEBAC<sub class="webacR">®</sub> 1420',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
     },
     
     {
-    id: 294,
+    id: 2940062,
     title: 'WEBAC<sub class="webacR">®</sub> 1420',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
     },
     
     {
-    id: 294,
+    id: 2940063,
     title: 'WEBAC<sub class="webacR">®</sub> 1420',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
     },
     
     {
-    id: 294,
+    id: 2940064,
     title: 'WEBAC<sub class="webacR">®</sub> 1420',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=294'
     },
     
 
     
     {
-    id: 300,
+    id: 3000071,
     title: 'WEBAC<sub class="webacR">®</sub> 1440',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=300'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=300'
     },
     
 
     
     {
-    id: 78,
+    id: 780081,
     title: 'WEBAC<sub class="webacR">®</sub> 150',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -394,13 +418,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
     },
     
     {
-    id: 78,
+    id: 780082,
     title: 'WEBAC<sub class="webacR">®</sub> 150',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -408,13 +432,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
     },
     
     {
-    id: 78,
+    id: 780083,
     title: 'WEBAC<sub class="webacR">®</sub> 150',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -422,13 +446,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
     },
     
     {
-    id: 78,
+    id: 780084,
     title: 'WEBAC<sub class="webacR">®</sub> 150',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -436,13 +460,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
     },
     
     {
-    id: 78,
+    id: 780085,
     title: 'WEBAC<sub class="webacR">®</sub> 150',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -450,15 +474,15 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=78'
     },
     
 
     
     {
-    id: 85,
+    id: 850091,
     title: 'WEBAC<sub class="webacR">®</sub> 151',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -466,13 +490,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
     },
     
     {
-    id: 85,
+    id: 850092,
     title: 'WEBAC<sub class="webacR">®</sub> 151',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -480,13 +504,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
     },
     
     {
-    id: 85,
+    id: 850093,
     title: 'WEBAC<sub class="webacR">®</sub> 151',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -494,13 +518,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
     },
     
     {
-    id: 85,
+    id: 850094,
     title: 'WEBAC<sub class="webacR">®</sub> 151',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -508,13 +532,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
     },
     
     {
-    id: 85,
+    id: 850095,
     title: 'WEBAC<sub class="webacR">®</sub> 151',
-    Anwendungsgebiet: ['Soil Stabilization'],
+    Anwendungsgebiet: ['Bodenverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -522,15 +546,15 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=85'
     },
     
 
     
     {
-    id: 96,
+    id: 9600101,
     title: 'WEBAC<sub class="webacR">®</sub> 157',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -538,13 +562,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=96'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=96'
     },
     
     {
-    id: 96,
+    id: 9600102,
     title: 'WEBAC<sub class="webacR">®</sub> 157',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -552,13 +576,13 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=96'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=96'
     },
     
     {
-    id: 96,
+    id: 9600103,
     title: 'WEBAC<sub class="webacR">®</sub> 157',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -566,147 +590,147 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 100%'],
     3: ['SPUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=96'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=96'
     },
     
 
     
     {
-    id: 307,
+    id: 30700111,
     title: 'WEBAC<sub class="webacR">®</sub> 1610',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=307'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=307'
     },
     
     {
-    id: 307,
+    id: 30700112,
     title: 'WEBAC<sub class="webacR">®</sub> 1610',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=307'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=307'
     },
     
     {
-    id: 307,
+    id: 30700113,
     title: 'WEBAC<sub class="webacR">®</sub> 1610',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=307'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=307'
     },
     
 
     
     {
-    id: 314,
+    id: 31400121,
     title: 'WEBAC<sub class="webacR">®</sub> 1660',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Beton','Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=314'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=314'
     },
     
     {
-    id: 314,
+    id: 31400122,
     title: 'WEBAC<sub class="webacR">®</sub> 1660',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Beton','Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=314'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=314'
     },
     
     {
-    id: 314,
+    id: 31400123,
     title: 'WEBAC<sub class="webacR">®</sub> 1660',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Beton','Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=314'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=314'
     },
     
 
     
     {
-    id: 341,
+    id: 34100131,
     title: 'WEBAC<sub class="webacR">®</sub> 2061',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=341'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=341'
     },
     
     {
-    id: 341,
+    id: 34100132,
     title: 'WEBAC<sub class="webacR">®</sub> 2061',
-    Anwendungsgebiet: ['Soil Stabilization'],
+    Anwendungsgebiet: ['Bodenverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=341'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=341'
     },
     
     {
-    id: 341,
+    id: 34100133,
     title: 'WEBAC<sub class="webacR">®</sub> 2061',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Mauerwerk'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=341'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=341'
     },
     
 
     
     {
-    id: 347,
+    id: 34700141,
     title: 'WEBAC<sub class="webacR">®</sub> 2100',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -714,15 +738,15 @@
     2: ['Durchfeuchtungsgrad (DFG) bis 60%'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=347'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=347'
     },
     
 
     
     {
-    id: 448,
+    id: 44800151,
     title: 'WEBAC<sub class="webacR">®</sub> 2130',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -730,131 +754,131 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=448'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=448'
     },
     
 
     
     {
-    id: 163,
+    id: 16300161,
     title: 'WEBAC<sub class="webacR">®</sub> 2260, WEBAC<sub class="webacR">®</sub> B60',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Hohlraumverfüllung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=163'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=163'
     },
     
     {
-    id: 163,
+    id: 16300162,
     title: 'WEBAC<sub class="webacR">®</sub> 2260, WEBAC<sub class="webacR">®</sub> B60',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Hohlraumverfüllung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=163'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=163'
     },
     
     {
-    id: 163,
+    id: 16300163,
     title: 'WEBAC<sub class="webacR">®</sub> 2260, WEBAC<sub class="webacR">®</sub> B60',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE'],
     2: ['Hohlraumverfüllung'],
     3: ['PUR'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=163'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=163'
     },
     
 
     
     {
-    id: 321,
+    id: 32100171,
     title: 'WEBAC<sub class="webacR">®</sub> 240',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['Gel'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
     },
     
     {
-    id: 321,
+    id: 32100172,
     title: 'WEBAC<sub class="webacR">®</sub> 240',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['Gel'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
     },
     
     {
-    id: 321,
+    id: 32100173,
     title: 'WEBAC<sub class="webacR">®</sub> 240',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['Gel'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
     },
     
     {
-    id: 321,
+    id: 32100174,
     title: 'WEBAC<sub class="webacR">®</sub> 240',
-    Anwendungsgebiet: ['Curtain Injection'],
+    Anwendungsgebiet: ['Schleierinjektion'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['Gel'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
     },
     
     {
-    id: 321,
+    id: 32100175,
     title: 'WEBAC<sub class="webacR">®</sub> 240',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Abdichtung gegen von außen einwirkendes Wasser'],
     3: ['Gel'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=321'
     },
     
 
     
     {
-    id: 327,
-    title: 'WEBAC<sub class="webacR">®</sub> 240 + Bseal I',
-    Anwendungsgebiet: ['Joint Sealing'],
+    id: 32700181,
+    title: 'WEBAC<sub class="webacR">®</sub> 240 Bseal I',
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -862,15 +886,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=327'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=327'
     },
     
 
     
     {
-    id: 526,
-    title: 'WEBAC<sub class="webacR">®</sub> 240 Bseal II',
-    Anwendungsgebiet: ['Curtain Injection'],
+    id: 52600191,
+    title: 'WEBAC<sub class="webacR">®</sub> 240 II',
+    Anwendungsgebiet: ['Schleierinjektion'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -878,45 +902,45 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=526'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=526'
     },
     
 
     
     {
-    id: 335,
+    id: 33500201,
     title: 'WEBAC<sub class="webacR">®</sub> 250',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Vertikalabdichtung'],
     3: ['Gel'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=335'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=335'
     },
     
     {
-    id: 335,
+    id: 33500202,
     title: 'WEBAC<sub class="webacR">®</sub> 250',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Horizontalsperre','Mauerwerksabdichtung'],
+    1: ['Horizontalsperre','Mauerwerksabdichtung DE'],
     2: ['Durchfeuchtungsgrad (DFG) bis 100%','Vertikalabdichtung'],
     3: ['Gel'],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=335'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=335'
     },
     
 
     
     {
-    id: 120,
+    id: 12000211,
     title: 'WEBAC<sub class="webacR">®</sub> 4110',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -924,13 +948,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=120'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=120'
     },
     
     {
-    id: 120,
+    id: 12000212,
     title: 'WEBAC<sub class="webacR">®</sub> 4110',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -938,13 +962,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=120'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=120'
     },
     
     {
-    id: 120,
+    id: 12000213,
     title: 'WEBAC<sub class="webacR">®</sub> 4110',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -952,15 +976,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=120'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=120'
     },
     
 
     
     {
-    id: 108,
+    id: 10800221,
     title: 'WEBAC<sub class="webacR">®</sub> 4120P',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -968,15 +992,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=108'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=108'
     },
     
 
     
     {
-    id: 151,
+    id: 15100231,
     title: 'WEBAC<sub class="webacR">®</sub> 4130',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -984,45 +1008,45 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=151'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=151'
     },
     
 
     
     {
-    id: 145,
+    id: 14500241,
     title: 'WEBAC<sub class="webacR">®</sub> 4170',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Beton'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=145'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=145'
     },
     
     {
-    id: 145,
+    id: 14500242,
     title: 'WEBAC<sub class="webacR">®</sub> 4170',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: [],
+    1: ['Beton'],
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=145'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=145'
     },
     
 
     
     {
-    id: 133,
+    id: 13300251,
     title: 'WEBAC<sub class="webacR">®</sub> 4170T',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1030,13 +1054,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=133'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=133'
     },
     
     {
-    id: 133,
+    id: 13300252,
     title: 'WEBAC<sub class="webacR">®</sub> 4170T',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1044,59 +1068,59 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=133'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=133'
     },
     
 
     
     {
-    id: 201,
+    id: 20100261,
     title: 'WEBAC<sub class="webacR">®</sub> 4180N',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE','Holz'],
     2: ['Vertikalabdichtung'],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=201'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=201'
     },
     
     {
-    id: 201,
+    id: 20100262,
     title: 'WEBAC<sub class="webacR">®</sub> 4180N',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE','Holz'],
     2: ['Vertikalabdichtung'],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=201'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=201'
     },
     
     {
-    id: 201,
+    id: 20100263,
     title: 'WEBAC<sub class="webacR">®</sub> 4180N',
-    Anwendungsgebiet: ['Surface Protection'],
+    Anwendungsgebiet: ['Oberflächenschutz'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
-    1: ['Mauerwerksabdichtung'],
+    1: ['Mauerwerksabdichtung DE','Holz'],
     2: ['Vertikalabdichtung'],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=201'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=201'
     },
     
 
     
     {
-    id: 170,
+    id: 17000271,
     title: 'WEBAC<sub class="webacR">®</sub> 4204',
-    Anwendungsgebiet: ['Surface Protection'],
+    Anwendungsgebiet: ['Oberflächenschutz'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1104,15 +1128,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=170'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=170'
     },
     
 
     
     {
-    id: 182,
+    id: 18200281,
     title: 'WEBAC<sub class="webacR">®</sub> 4270',
-    Anwendungsgebiet: ['Surface Protection'],
+    Anwendungsgebiet: ['Oberflächenschutz'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1120,15 +1144,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=182'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=182'
     },
     
 
     
     {
-    id: 194,
+    id: 19400291,
     title: 'WEBAC<sub class="webacR">®</sub> 4270T',
-    Anwendungsgebiet: ['Surface Protection'],
+    Anwendungsgebiet: ['Oberflächenschutz'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1136,13 +1160,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=194'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=194'
     },
     
     {
-    id: 194,
+    id: 19400292,
     title: 'WEBAC<sub class="webacR">®</sub> 4270T',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1150,15 +1174,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=194'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=194'
     },
     
 
     
     {
-    id: 207,
+    id: 20700301,
     title: 'WEBAC<sub class="webacR">®</sub> 4430',
-    Anwendungsgebiet: ['Surface Protection'],
+    Anwendungsgebiet: ['Oberflächenschutz'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1166,15 +1190,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=207'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=207'
     },
     
 
     
     {
-    id: 215,
+    id: 21500311,
     title: 'WEBAC<sub class="webacR">®</sub> 4480',
-    Anwendungsgebiet: ['Surface Protection'],
+    Anwendungsgebiet: ['Oberflächenschutz'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1182,15 +1206,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=215'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=215'
     },
     
 
     
     {
-    id: 287,
+    id: 28700321,
     title: 'WEBAC<sub class="webacR">®</sub> 4510',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1198,13 +1222,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=287'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=287'
     },
     
     {
-    id: 287,
+    id: 28700322,
     title: 'WEBAC<sub class="webacR">®</sub> 4510',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1212,15 +1236,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=287'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=287'
     },
     
 
     
     {
-    id: 281,
+    id: 28100331,
     title: 'WEBAC<sub class="webacR">®</sub> 4515',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1228,13 +1252,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=281'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=281'
     },
     
     {
-    id: 281,
+    id: 28100332,
     title: 'WEBAC<sub class="webacR">®</sub> 4515',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1242,13 +1266,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=281'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=281'
     },
     
     {
-    id: 281,
+    id: 28100333,
     title: 'WEBAC<sub class="webacR">®</sub> 4515',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1256,15 +1280,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=281'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=281'
     },
     
 
     
     {
-    id: 275,
-    title: 'WEBAC<sub class="webacR">®</sub> 4520',
-    Anwendungsgebiet: ['Crack Repair'],
+    id: 24100341,
+    title: 'WEBAC<sub class="webacR">®</sub> 4525',
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1272,13 +1296,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=275'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
     },
     
     {
-    id: 275,
-    title: 'WEBAC<sub class="webacR">®</sub> 4520',
-    Anwendungsgebiet: ['Joint Sealing'],
+    id: 24100342,
+    title: 'WEBAC<sub class="webacR">®</sub> 4525',
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1286,13 +1310,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=275'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
     },
     
     {
-    id: 275,
-    title: 'WEBAC<sub class="webacR">®</sub> 4520',
-    Anwendungsgebiet: ['Sewer Repair'],
+    id: 24100343,
+    title: 'WEBAC<sub class="webacR">®</sub> 4525',
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1300,73 +1324,29 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=275'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
+    },
+    
+    {
+    id: 24100344,
+    title: 'WEBAC<sub class="webacR">®</sub> 4525',
+    Anwendungsgebiet: ['Baudenkmalpflege'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
+    filterable:  {
+    1: [],
+    2: [],
+    3: [],
+    },
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
     },
     
 
     
     {
-    id: 241,
-    title: 'WEBAC<sub class="webacR">®</sub> 4525',
-    Anwendungsgebiet: ['Crack Repair'],
-    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
-    filterable:  {
-    1: [],
-    2: [],
-    3: [],
-    },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
-    },
-    
-    {
-    id: 241,
-    title: 'WEBAC<sub class="webacR">®</sub> 4525',
-    Anwendungsgebiet: ['Joint Sealing'],
-    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
-    filterable:  {
-    1: [],
-    2: [],
-    3: [],
-    },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
-    },
-    
-    {
-    id: 241,
-    title: 'WEBAC<sub class="webacR">®</sub> 4525',
-    Anwendungsgebiet: ['Sewer Repair'],
-    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
-    filterable:  {
-    1: [],
-    2: [],
-    3: [],
-    },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
-    },
-    
-    {
-    id: 241,
-    title: 'WEBAC<sub class="webacR">®</sub> 4525',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
-    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
-    filterable:  {
-    1: [],
-    2: [],
-    3: [],
-    },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=241'
-    },
-    
-
-    
-    {
-    id: 249,
+    id: 24900351,
     title: 'WEBAC<sub class="webacR">®</sub> 4525P',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1374,13 +1354,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=249'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=249'
     },
     
     {
-    id: 249,
+    id: 24900352,
     title: 'WEBAC<sub class="webacR">®</sub> 4525P',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1388,13 +1368,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=249'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=249'
     },
     
     {
-    id: 249,
+    id: 24900353,
     title: 'WEBAC<sub class="webacR">®</sub> 4525P',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1402,15 +1382,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=249'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=249'
     },
     
 
     
     {
-    id: 84,
+    id: 8400361,
     title: 'WEBAC<sub class="webacR">®</sub> 5510',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1418,15 +1398,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=84'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=84'
     },
     
 
     
     {
-    id: 101,
+    id: 10100371,
     title: 'WEBAC<sub class="webacR">®</sub> 5520',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1434,15 +1414,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=101'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=101'
     },
     
 
     
     {
-    id: 99,
+    id: 9900381,
     title: 'WEBAC<sub class="webacR">®</sub> 5520N',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1450,15 +1430,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=99'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=99'
     },
     
 
     
     {
-    id: 256,
+    id: 25600391,
     title: 'WEBAC<sub class="webacR">®</sub> 5611',
-    Anwendungsgebiet: ['Surface Sealing'],
+    Anwendungsgebiet: ['Flächenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1466,13 +1446,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=256'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=256'
     },
     
     {
-    id: 256,
+    id: 25600392,
     title: 'WEBAC<sub class="webacR">®</sub> 5611',
-    Anwendungsgebiet: ['Baudenkmalpflege EN'],
+    Anwendungsgebiet: ['Baudenkmalpflege'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1480,15 +1460,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=256'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=256'
     },
     
 
     
     {
-    id: 262,
+    id: 26200401,
     title: 'WEBAC<sub class="webacR">®</sub> 5620',
-    Anwendungsgebiet: ['Surface Sealing'],
+    Anwendungsgebiet: ['Flächenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1496,15 +1476,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=262'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=262'
     },
     
 
     
     {
-    id: 268,
+    id: 26800411,
     title: 'WEBAC<sub class="webacR">®</sub> 5621P',
-    Anwendungsgebiet: ['Surface Sealing'],
+    Anwendungsgebiet: ['Flächenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1512,15 +1492,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=268'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=268'
     },
     
 
     
     {
-    id: 353,
+    id: 35300421,
     title: 'WEBAC<sub class="webacR">®</sub> 5622P/F',
-    Anwendungsgebiet: ['Surface Sealing'],
+    Anwendungsgebiet: ['Flächenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1528,7 +1508,7 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=353'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=353'
     },
     
 
@@ -1544,9 +1524,9 @@
 
     
     {
-    id: 137,
-    title: 'WEBAC<sub class="webacR">®</sub> Bentonite Swelling Tape',
-    Anwendungsgebiet: ['Joint Sealing'],
+    id: 13700481,
+    title: 'WEBAC<sub class="webacR">®</sub> Bentonitquellband',
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1554,17 +1534,31 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=137'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=137'
     },
     
 
     
+    {
+    id: 15600491,
+    title: 'WEBAC<sub class="webacR">®</sub> Dichtband TPE',
+    Anwendungsgebiet: ['Fugenabdichtung'],
+    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
+    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
+    filterable:  {
+    1: [],
+    2: [],
+    3: [],
+    },
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=156'
+    },
+    
 
     
     {
-    id: 414,
+    id: 41400501,
     title: 'WEBAC<sub class="webacR">®</sub> HEP 1001',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1572,13 +1566,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=414'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=414'
     },
     
     {
-    id: 414,
+    id: 41400502,
     title: 'WEBAC<sub class="webacR">®</sub> HEP 1001',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1586,13 +1580,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=414'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=414'
     },
     
     {
-    id: 414,
+    id: 41400503,
     title: 'WEBAC<sub class="webacR">®</sub> HEP 1001',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1600,15 +1594,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=414'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=414'
     },
     
 
     
     {
-    id: 402,
+    id: 40200511,
     title: 'WEBAC<sub class="webacR">®</sub> HP 100',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1616,13 +1610,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=402'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=402'
     },
     
     {
-    id: 402,
+    id: 40200512,
     title: 'WEBAC<sub class="webacR">®</sub> HP 100',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1630,13 +1624,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=402'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=402'
     },
     
     {
-    id: 402,
+    id: 40200513,
     title: 'WEBAC<sub class="webacR">®</sub> HP 100',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1644,15 +1638,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=402'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=402'
     },
     
 
     
     {
-    id: 408,
+    id: 40800521,
     title: 'WEBAC<sub class="webacR">®</sub> HP 250',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1660,13 +1654,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=408'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=408'
     },
     
     {
-    id: 408,
+    id: 40800522,
     title: 'WEBAC<sub class="webacR">®</sub> HP 250',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1674,13 +1668,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=408'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=408'
     },
     
     {
-    id: 408,
+    id: 40800523,
     title: 'WEBAC<sub class="webacR">®</sub> HP 250',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1688,15 +1682,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=408'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=408'
     },
     
 
     
     {
-    id: 384,
+    id: 38400531,
     title: 'WEBAC<sub class="webacR">®</sub> HP 50 2K',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1704,13 +1698,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=384'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=384'
     },
     
     {
-    id: 384,
+    id: 38400532,
     title: 'WEBAC<sub class="webacR">®</sub> HP 50 2K',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1718,13 +1712,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=384'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=384'
     },
     
     {
-    id: 384,
+    id: 38400533,
     title: 'WEBAC<sub class="webacR">®</sub> HP 50 2K',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1732,7 +1726,7 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=384'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=384'
     },
     
 
@@ -1740,9 +1734,9 @@
 
     
     {
-    id: 110,
-    title: 'WEBAC<sub class="webacR">®</sub> Injection Tube',
-    Anwendungsgebiet: ['Joint Sealing'],
+    id: 11000551,
+    title: 'WEBAC<sub class="webacR">®</sub> Injektionsschlauch',
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1750,15 +1744,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=110'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=110'
     },
     
 
     
     {
-    id: 420,
+    id: 42000561,
     title: 'WEBAC<sub class="webacR">®</sub> IP 1',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1766,13 +1760,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
     },
     
     {
-    id: 420,
+    id: 42000562,
     title: 'WEBAC<sub class="webacR">®</sub> IP 1',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1780,13 +1774,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
     },
     
     {
-    id: 420,
+    id: 42000563,
     title: 'WEBAC<sub class="webacR">®</sub> IP 1',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1794,13 +1788,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
     },
     
     {
-    id: 420,
+    id: 42000564,
     title: 'WEBAC<sub class="webacR">®</sub> IP 1',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1808,13 +1802,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
     },
     
     {
-    id: 420,
+    id: 42000565,
     title: 'WEBAC<sub class="webacR">®</sub> IP 1',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1822,15 +1816,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=420'
     },
     
 
     
     {
-    id: 426,
+    id: 42600571,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1838,13 +1832,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
     },
     
     {
-    id: 426,
+    id: 42600572,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1852,13 +1846,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
     },
     
     {
-    id: 426,
+    id: 42600573,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1866,13 +1860,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
     },
     
     {
-    id: 426,
+    id: 42600574,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1880,13 +1874,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
     },
     
     {
-    id: 426,
+    id: 42600575,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1894,13 +1888,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
     },
     
     {
-    id: 426,
+    id: 42600576,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2',
-    Anwendungsgebiet: ['Surface Protection'],
+    Anwendungsgebiet: ['Oberflächenschutz'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1908,15 +1902,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=426'
     },
     
 
     
     {
-    id: 396,
+    id: 39600581,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F1',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1924,13 +1918,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
     },
     
     {
-    id: 396,
+    id: 39600582,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F1',
-    Anwendungsgebiet: ['Curtain Injection'],
+    Anwendungsgebiet: ['Schleierinjektion'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1938,13 +1932,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
     },
     
     {
-    id: 396,
+    id: 39600583,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F1',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1952,13 +1946,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
     },
     
     {
-    id: 396,
+    id: 39600584,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F1',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1966,13 +1960,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
     },
     
     {
-    id: 396,
+    id: 39600585,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F1',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1980,15 +1974,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=396'
     },
     
 
     
     {
-    id: 390,
+    id: 39000591,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F2',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -1996,13 +1990,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
     },
     
     {
-    id: 390,
+    id: 39000592,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F2',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2010,13 +2004,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
     },
     
     {
-    id: 390,
+    id: 39000593,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F2',
-    Anwendungsgebiet: ['Foundation Pit Sealing'],
+    Anwendungsgebiet: ['Baugrubenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2024,13 +2018,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
     },
     
     {
-    id: 390,
+    id: 39000594,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F2',
-    Anwendungsgebiet: ['Sewer Repair'],
+    Anwendungsgebiet: ['Kanalsanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2038,13 +2032,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
     },
     
     {
-    id: 390,
+    id: 39000595,
     title: 'WEBAC<sub class="webacR">®</sub> IP 2K-F2',
-    Anwendungsgebiet: ['Soil Stabilization'],
+    Anwendungsgebiet: ['Bodenverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2052,15 +2046,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=390'
     },
     
 
     
     {
-    id: 432,
+    id: 43200601,
     title: 'WEBAC<sub class="webacR">®</sub> IP 3',
-    Anwendungsgebiet: ['Waterproofing of structures'],
+    Anwendungsgebiet: ['Bauwerksabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2068,13 +2062,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
     },
     
     {
-    id: 432,
+    id: 43200602,
     title: 'WEBAC<sub class="webacR">®</sub> IP 3',
-    Anwendungsgebiet: ['Stabilization of Structures'],
+    Anwendungsgebiet: ['Bauwerksverfestigung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2082,13 +2076,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
     },
     
     {
-    id: 432,
+    id: 43200603,
     title: 'WEBAC<sub class="webacR">®</sub> IP 3',
-    Anwendungsgebiet: ['Crack Repair'],
+    Anwendungsgebiet: ['Risssanierung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2096,13 +2090,13 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
     },
     
     {
-    id: 432,
+    id: 43200604,
     title: 'WEBAC<sub class="webacR">®</sub> IP 3',
-    Anwendungsgebiet: ['Joint Sealing'],
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2110,15 +2104,15 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=432'
     },
     
 
     
     {
-    id: 124,
-    title: 'WEBAC<sub class="webacR">®</sub> Polymer Swelling Tape',
-    Anwendungsgebiet: ['Joint Sealing'],
+    id: 12400611,
+    title: 'WEBAC<sub class="webacR">®</sub> Polymerquellband',
+    Anwendungsgebiet: ['Fugenabdichtung'],
     image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
     ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
     filterable:  {
@@ -2126,23 +2120,7 @@
     2: [],
     3: [],
     },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=124'
-    },
-    
-
-    
-    {
-    id: 156,
-    title: 'WEBAC<sub class="webacR">®</sub> Sealing Tape TPE',
-    Anwendungsgebiet: ['Joint Sealing'],
-    image: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/Bauwerksabdichtung_01.png" width="82" height="82" />',
-    ProductImage: '<img alt="Bauwerksabdichtung" src="http://www.webac.de.siteway.net/typo3temp/_processed_/csm_Silikat-Injektionsloesungen_5e7c8e14b1.jpg" width="209" height="82" />',
-    filterable:  {
-    1: [],
-    2: [],
-    3: [],
-    },
-    link: 'http://www.webac-grouts.com.siteway.net/solutions/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=156'
+    link: 'http://www.webac.de.siteway.net/loesungen/produktfilter/?debug=1&tx_produkte_webacprodukte%5Bprodukt%5D=124'
     },
     
 
@@ -2150,14 +2128,13 @@
 
     
 
-        
-        
-        
-        
-        
-        
-        
-    ];
+    
+
+    
+
+
+        ];
+
     </script>
 <!--
              {  
