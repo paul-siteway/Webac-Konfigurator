@@ -42,9 +42,7 @@
   Webac.filterList = [];
   Webac.anwendungsgebiete = {};
   Webac.currentAntwenungsgebiet = "";
-  Webac.lastSelectionBox1 = "";
-  Webac.lastSelectionBox2 = "";
-  Webac.lastSelectionBox3 = "";
+  
 
 
   // #####################################
@@ -54,26 +52,24 @@
   Webac.resetApp = function(){
       console.log('reset');
       Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
-        $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
+        $('.filterSteps').slideUp(0);
         $('#productsView .product').hide();
         Webac.queryObject = {};
-        Webac.lastSelectionBox1 = "";
-        Webac.lastSelectionBox2 = "";
-        Webac.lastSelectionBox3 = "";
         Webac.currentAntwenungsgebiet = "";
+        Webac.showHint(0);
   }
 
-  Webac.showSteps = function() {
-    $('.multiselect-container').each(function(index) {
-        var hasActive = $(this).find('.active').length;
-        next = index+1;
-        if(hasActive){
-          console.log(index+' has '+hasActive+'  (Next is '+next+')');
-          $('.btn-group:eq('+next+')').addClass('active');
-          //$('.multiselect-container:eq('+next+')').prev('.btn').add('active');
-        }
-    });
-  }
+//  Webac.showSteps = function() {
+//    $('.multiselect-container').each(function(index) {
+//        var hasActive = $(this).find('.active').length;
+//        next = index+1;
+//        if(hasActive){
+//          console.log(index+' has '+hasActive+'  (Next is '+next+')');
+//          $('.btn-group:eq('+next+')').addClass('active');
+//          //$('.multiselect-container:eq('+next+')').prev('.btn').add('active');
+//        }
+//    });
+//  }
     
   //Activate Bootstrap MultiselectPlugin on created Selects
   Webac.activateMultiselect = function() {
@@ -100,28 +96,27 @@
         if( element.parents('.multiselect').attr('data-name') == "1" ){
             Webac.lastSelectionBox1 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
-            Webac.showHint(2);
+            Webac.showHint(4);
+            $('.btn-group:eq(1)').addClass('active');
         }
         if( element.parents('.multiselect').attr('data-name') == "2" ){
             Webac.lastSelectionBox2 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
-            Webac.showHint(3);
+            Webac.showHint(4);
+            $('.btn-group:eq(2)').addClass('active');
         }
         if( element.parents('.multiselect').attr('data-name') == "3" ){
             Webac.lastSelectionBox3 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
             Webac.showHint(4);
+            $('.btn-group:eq(3)').addClass('active');
         }
           
         filtername = element.parent().attr('data-name');
         Webac.vents.trigger('selectChanged', element, filtername, checked);
       }
     });
-      
-      //reselect the last selection
-      $('input[value="'+Webac.lastSelectionBox1+'"]').attr('checked', true).parent('.checkbox').addClass('active');
-      $('input[value="'+Webac.lastSelectionBox2+'"]').attr('checked', true).parent('.checkbox').addClass('active');;
-      $('input[value="'+Webac.lastSelectionBox3+'"]').attr('checked', true).parent('.checkbox').addClass('active');;
+    $('.btn-group:eq(0)').addClass('active');
   }; //activateMultiselect
 
 
@@ -346,23 +341,29 @@
         
     },
     showSelect: function() {
-      Webac.resetApp();
+      
+        
+      if (this.$el.hasClass('active')){
+        $('.selection').removeClass('active').show();
+        Webac.resetApp();
+        return;
+      }
+      
       var name = this.options.anwendungsgebietName;      
+      
       Webac.queryObject = { Anwendungsgebiet:name};  
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
       Webac.productsCollection.reset(filteredProducts);
       Webac.currentAntwenungsgebiet = name;
       var id = this.options.id;
-      Webac.showHint(1);
-      $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
-      $('.anwendungsgebiete .anwendungsgebiet').eq(id).slideDown();        
+      Webac.showHint(2);
       
-        //$('.selection').eq(id).addClass('active').show();
-        //$('.selection').not('.active').slideUp();
-    },
+      Webac.filtersView.render(name);
+      $('.filterSteps').slideDown(200);
       
-    remove: function() {
-      //this.$el.remove();
+      
+        $('.selection').eq(id).addClass('active').show();
+        $('.selection').not('.active').slideUp();
     }
   });
 
@@ -375,7 +376,7 @@
     className: 'selections',
     initialize: function() {
         Webac.createAnwendungsgebietList();
-        this.collection.on('reset', this.render, this);
+        //this.collection.on('reset', this.render, this);
     },
     render: function() {
       console.log('++render View: Selcections++');
@@ -402,26 +403,50 @@
     
 
     
-    
+
+  Webac.Views.Filter = Backbone.View.extend({
+    tagName: 'select',
+    className: 'multiselect',
+    template: template('filterStepTemplate'),
+    initialize: function() {
+        
+      this.$el.attr("data-name", this.options.num);
+      this.$el.attr('multiple', 'multiple');
+      
+    },
+    render: function() {
+        
+        var filter = this.options.filter;
+        var num = this.options.num;
+        
+        _.each(filter, function(name, index) {
+            this.$el.append(this.template({
+              optionName: name
+            }));
+        }, this);//each
+    }
+  });
 
   // ################################################################
   // #######  SINGLE ANWENUNGSGEBIET  VIEW   ########################
   // ################################################################
 
-
-  Webac.Views.Filter = Backbone.View.extend({
-    tagName: 'div',
-    className: 'anwendungsgebiet',
-    template: template('anwendungsgebietTemplate'),
-    initialize: function() {
-      
-    },
+//
+//  Webac.Views.Filter = Backbone.View.extend({
+//    tagName: 'select',
+//    className: 'multiselect',
+//    template: template('filterStepTemplate'),
+//    initialize: function() {
+//    },
 //    render: function() {
-//      var anwendungsgebietName = this.options.name;
-//      //Renders the H1
+//      console.log('++render View: Filter++');
+//      var filter = this.options.filter;
+//      var num = this.options.num;
 //      this.$el.append(this.template({
-//        name: anwendungsgebietName
+//        filter: filter,
+//        num: num
 //      }));
+
 
 
       
@@ -449,9 +474,9 @@
 //        }
 //      }, this);//eacht
 //    }//render
-    
-  });
-
+//    
+//  });
+//
 
   // ################################################################
   // ##########   FILTER   VIEW   ###################################
@@ -459,54 +484,61 @@
     
     Webac.Views.Filters = Backbone.View.extend({
         tagName: 'div',
-        className: 'anwendungsgebiete',
+        className: 'filterSteps',
+        template: template('filterStepsTemplate'),
         initialize: function() {
-           // Webac.vents.on('selectChanged', this.updateQueryObject, this);
-//            Webac.showHint(0);
-//            this.render();
+            Webac.vents.on('selectChanged', this.updateQueryObject, this);
+            Webac.showHint(0);
+            
         },
-//        render: function() {
+        render: function(anwendungsgebietName) {
 //        console.log('++render Filter++');
 //        ////Filter trough all ITEMS
-//        this.$el.html('');
-//        console.log('++render View: Filters++');
-//        _.each(Webac.filterCollection, function(anwendungsgebiet, name) {
-//        console.log('render Anwendungsgebiete:'+name);
-//        Webac.anwendungsgebietView = new Webac.Views.Anwendungsgebiet({
-//          collection: Webac.filterCollection,
-//          name: name
-//        });
-//        //Webac.anwendungsgebietView.render();
-//        //this.$el.append(Webac.anwendungsgebietView.el);
-//      }, this);
-      //each
-//      return this;
-//    }
-//     updateQueryObject: function() {
-//          console.log('++updateQueryObject++');
-//          //Webac.queryObject = {};
-//          $('select.multiselect').each(function() {
-//            filtername = 'filterable.' + $(this).attr('data-name');
-//            selected = {
-//              $all: $(this).val()
-//            };
-//            Webac.queryObject["Anwendungsgebiet"] =  Webac.currentAntwenungsgebiet;
-//            if ($(this).val() == null) return;
-//            Webac.queryObject[filtername] = selected;
-//
-//          });
-//          console.log('Construct new Query:');
-//          console.log(JSON.stringify(Webac.queryObject));
-//
-//          filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
-//          console.log('THE RESULT IS: ');
-//          console.log(JSON.stringify(filteredProducts));
-//
-//          filteredProducts1 = Webac.checkExeptions(filteredProducts, Webac.queryObject); //CHECK FOR EXCEPTIONS
-//
-//          Webac.productsCollection.reset(filteredProducts1);
-//        }
-//  
+            console.log('++render View: Filters++');
+            //var anwendungsgebietName = this.options.anwendungsgebietName;
+            this.$el.html('');
+            this.$el.append(this.template({name: anwendungsgebietName}));
+            this.collection.each(function(anwendungsgebiet) {
+                name = anwendungsgebiet.get('name');
+                if(name == anwendungsgebietName){
+                    filters = anwendungsgebiet.get('filters');
+                    _.each(filters, function(filter, index){
+                        Webac.filterView = new Webac.Views.Filter({
+                          num: index,
+                          filter: filter
+                        });
+                        Webac.filterView.render();
+                        this.$el.append(Webac.filterView.el);
+                    }, this);//eachfilters
+                }//if
+            },this);//each            
+            Webac.activateMultiselect();
+    },
+     updateQueryObject: function() {
+          console.log('++updateQueryObject++');
+          Webac.queryObject = {};
+          $('select.multiselect').each(function() {
+            filtername = 'filterable.' + $(this).attr('data-name');
+            selected = {
+              $all: $(this).val()
+            };
+            Webac.queryObject["Anwendungsgebiet"] =  Webac.currentAntwenungsgebiet;
+            if ($(this).val() == null) return;
+            Webac.queryObject[filtername] = selected;
+
+          });
+          console.log('Construct new Query:');
+          console.log(JSON.stringify(Webac.queryObject));
+
+          filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
+          console.log('THE RESULT IS: ');
+          console.log(filteredProducts);
+
+          //filteredProducts = Webac.checkExeptions(filteredProducts, Webac.queryObject); //CHECK FOR EXCEPTIONS
+
+          Webac.productsCollection.reset(filteredProducts);
+        }
+  
 });
     
     
@@ -610,30 +642,7 @@
 
 
 
-  // ################################################################
-  // ###################### NEW SIGNLE FILTER VIEW ##################
-  // ################################################################
 
-
-
-  Webac.Views.FilterNew = Backbone.View.extend({
-    tagName: 'select',
-    className: 'multiselect',
-    template: template('filterTemplate'),
-    initialize: function() {
-        
-      this.$el.attr("data-name", this.options.spalte);
-      this.$el.attr('multiple', 'multiple');
-      
-    },
-    render: function(name) {
-      _.each(this.options.optionsArray, function(name, index) {
-        this.$el.append(this.template({
-          optionName: name
-        }));
-      }, this);
-    }
-  });
 
   
     
@@ -664,7 +673,7 @@
   Webac.filtersView = new Webac.Views.Filters({
     collection: Webac.filterCollection
   });
-  //$('#anwendungsgebiete').append(Webac.filtersView.el);
+  $('#filterSteps').append(Webac.filtersView.el);
 
 
     

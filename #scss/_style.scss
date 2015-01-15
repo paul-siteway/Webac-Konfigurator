@@ -134,12 +134,12 @@ body{
     }//anwendungsSelections
     
     
-    .anwendungsgebiete{
+    #filterSteps{
         background: #f9f9f9;
         border-top: 1px solid $grey;
         border-bottom: 1px solid $grey;
         margin-bottom: 20px;
-         .anwendungsgebiet   {
+         .filterSteps   {
             display: inline-block;
             width: 100%;
             @include clearfix;
@@ -199,7 +199,7 @@ body{
             }
             .multiselect-container{
                 box-shadow: none;
-                display: none;
+//                display: none;
                 border: 1px dashed lightgrey;
                 // border: none;
                 border-radius: 2px;
@@ -208,11 +208,17 @@ body{
                 min-height: 225px;
                 background: url('../img/appbg.png') center no-repeat #fff;
                 li{
-                    display: none;
+//                    display: none;
                     background-color: #fff;
                     padding-bottom: 20px;
                     a{
                         white-space: inherit;
+                    }
+                    &.active .checkbox{
+                        
+                        @include retina-image('../img/check', 45px 45px);
+                        background-color: #fff;
+                        color: #e30613;
                     }
                 }
                 .checkbox{
@@ -225,12 +231,6 @@ body{
                     &:hover{
                         
                         @include retina-image('../img/inputH', 45px 45px);
-                        background-color: #fff;
-                        color: #e30613;
-                    }
-                    &.active{
-                        
-                        @include retina-image('../img/check', 45px 45px);
                         background-color: #fff;
                         color: #e30613;
                     }

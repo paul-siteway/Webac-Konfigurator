@@ -13,7 +13,6 @@
     <div class="allcont">
 
     <div id="webacAPP">
-    <a class="btn restart white" href="#">Neu Starten</a>
 
     <div id="anwendungsSelections">
         <script type="text/template" id="anwendungsSelectTemplate"  data-ignore=1> 
@@ -27,9 +26,13 @@
     <div class="btn hint">Please select an Application Range</div>
     
     
-    <div id="anwendungsgebiete">
-        <script type="text/template" id="anwendungsgebietTemplate"  data-ignore=1>
-           <div></div>
+    <div id="filterSteps">
+        <script type="text/template" id="filterStepsTemplate"  data-ignore=1>
+        </script>
+    </div><!-- anwendungsgebiete -->
+    <div id="filterStep">
+        <script type="text/template" id="filterStepTemplate"  data-ignore=1>
+           <option value='<%= optionName %>'><%= optionName %></option>
         </script>
     </div><!-- anwendungsgebiete -->
     
@@ -72,16 +75,16 @@
     {
         id: 1,
         name: 'Bauwerksabdichtung',
-        filterable:  {
-            1 : ['Horizontalsperre', 'Mauerwerksabdichtung'],
-            2 : ['Durchfeuchtungsgrad (DFG) bis 60%', 'Durchfeuchtungsgrad (DFG) bis 100%'],
-            3 : ['Spur','Pur','Gel']
+        filters:  {
+            1 : ['Horizontalsperre', 'Mauerwerksabdichtung DE'],
+            2 : ['Durchfeuchtungsgrad (DFG) bis 60%', 'Durchfeuchtungsgrad (DFG) bis 100%','Hohlraumverfüllung', 'Vertikalabdichtung', 'Abdichtung gegen von außen einwirkendes Wasser'],
+            3 : ['PUR','SPUR','Gel']
         }
     },
     {
         id: 2,
         name: 'Bauwerksverfestigung',
-        filterable:  {
+        filters:  {
             1 : ['Beton','Mauerwerk','Holz'],
             2 : [],
             3 : []
@@ -90,7 +93,7 @@
     {
         id: 3,
         name: 'Risssanierung',
-        filterable:  {
+        filters:  {
             1 : ['dehnbar','kraftschlüssig'],
             2 : ['trocken','feucht','nass','fließend'],
             3 : ['temporär vorweg:nein', 'temporär vorweg:ja']
