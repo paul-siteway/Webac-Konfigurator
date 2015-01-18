@@ -135,12 +135,16 @@
     Webac.vents.trigger('selectChanged');
   }
   
-  Webac.showHint = function(num){
+  Webac.showHint = function(num,delay){
       console.log('showHint: '+num)
       all = $('.hint');
       el = $('.hint').eq(num);
-      TweenLite.to(all, 0, {marginTop:-10, opacity: 0});//reset all
-      TweenLite.to(el, 2, {marginTop:0, opacity: 1, delay: 0.5, ease:Elastic.easeOut});//show 
+      if(delay == undefined){
+          delay = 0.5;
+      }
+      
+      TweenLite.to(all, 0, {marginTop:-10, opacity: 0,  overwrite:"all"});//reset all
+      TweenLite.to(el, 2, {marginTop:0, opacity: 1, delay: delay, ease:Elastic.easeOut});//show 
   }
 
   
@@ -281,6 +285,7 @@
     className: 'selection',
     events: {
       'click a': 'showSelect',
+      'click .close': 'reset',
     },
     template: template('anwendungsSelectTemplate'),
     initialize: function() {
@@ -293,25 +298,26 @@
       return this;
         
     },
+    reset: function(){
+          $('.selections').removeClass('active');
+          Webac.resetApp();
+          Webac.showHint(0,2);
+          
+    },
     showSelect: function() {
+
       Webac.resetApp();
       var name = this.options.anwendungsgebietName;      
+        
       Webac.queryObject = { Anwendungsgebiet:name};  
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
       Webac.productsCollection.reset(filteredProducts);
       Webac.currentAntwenungsgebiet = name;
       var id = this.options.id;
-      Webac.showHint(1);
-      console.log('id:'+id);
-      $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
-      $('.anwendungsgebiete .anwendungsgebiet').eq(id).delay(200).slideDown();        
+      Webac.showHint(1,1.5);  
+      $('.selections').addClass('active');
+      $('.anwendungsgebiete .anwendungsgebiet').slideUp(0).slideDown();
       
-        //$('.selection').eq(id).addClass('active').show();
-        //$('.selection').not('.active').slideUp();
-    },
-      
-    remove: function() {
-      //this.$el.remove();
     }
   });
 
@@ -343,9 +349,10 @@
           i++;
           
       }, this);
-        
+      TweenMax.fromTo($('.selections').not('.active'), 1.5, {opacity: 0}, {opacity: 1, delay:0.5});
       return this;
-    }
+        
+    }//render
   });
     
 
@@ -413,7 +420,7 @@
         this.create();
         Webac.vents.on('selectChanged', this.updateQueryObject, this);
         this.collection.on('reset', this.createAnwendungsgebietList, this);
-        Webac.showHint(0);
+        Webac.showHint(0, 3)
       
     },
     create: function() {
@@ -575,8 +582,8 @@
   Webac.activateMultiselect();
   $('.anwendungsgebiete .anwendungsgebiet').hide();
   $('.product').hide();
-    
-  TweenLite.to($('#webacAPP'), 0.5, {opacity: 1, delay: 0.5});//reset all
+  TweenMax.to($('#webacAPP'), 0, {opacity: 0});//reset all  
+  TweenMax.fromTo($('#webacAPP'), 1, {opacity: 0}, {opacity: 1, delay: 2});//reset all
 
 
   $('.restart').click(function(e) {

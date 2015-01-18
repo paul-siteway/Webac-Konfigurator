@@ -8098,9 +8098,6 @@ body {
   margin-bottom: 0;
   position: relative;
   background: #fff;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
 }
 #webacAPP #anwendungsSelections .selections .selection a {
   background: #fff;
@@ -8140,11 +8137,15 @@ body {
   opacity: 1;
   color: #7b7b7b;
 }
-#webacAPP #anwendungsSelections .selections .selection:hover .close, #webacAPP #anwendungsSelections .selections .selection.active .close {
-  color: #e30613;
-}
-#webacAPP #anwendungsSelections .selections .selection:hover a, #webacAPP #anwendungsSelections .selections .selection.active a {
+#webacAPP #anwendungsSelections .selections .selection:hover a {
   border: 1px solid #e30613;
+}
+#webacAPP #anwendungsSelections .selections.active .selection a {
+  border: 1px solid #e30613;
+}
+#webacAPP #anwendungsSelections .selections.active .selection .close {
+  color: #e30613;
+  display: block;
 }
 #webacAPP .anwendungsgebiete {
   background: #f9f9f9;

@@ -82,7 +82,6 @@ body{
                 margin-bottom: 0;
                 position: relative;
                 background: #fff;
-                @include transition (all 2.0s ease-in-out);
                 a{
                     background: #fff;
                     font-size: 12px;
@@ -121,15 +120,19 @@ body{
                     opacity: 1;
                     color: $bodyColor;
                 }//close
-                &:hover, &.active{
-                    .close{
-                        color: #e30613;                    
-                    }
-                    a{
-                      border: 1px solid #e30613;
-                    }
+                &:hover a{
+                    border: 1px solid #e30613;
                 }
             }//selection
+            &.active .selection{
+                a{
+                    border: 1px solid #e30613;
+                }
+                 .close{
+                    color: #e30613;    
+                    display: block;
+                }
+            }
         }//selections
     }//anwendungsSelections
     
