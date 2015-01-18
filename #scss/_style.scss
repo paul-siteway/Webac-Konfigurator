@@ -35,6 +35,8 @@ body{
         border: none;
         position: relative;
         margin-bottom: 20px;
+        border-radius: 5px;
+        padding: 5px 10px;
         &.left, &.center, &.right{
             width: 33%;
             margin: 10px 0 0;
@@ -166,6 +168,7 @@ body{
                 border-top-right-radius: 0px;
                 border-top: none;
                 padding: 10px 0;
+                margin: 0;
                 a{
                     background: #fff;
                 }
@@ -185,11 +188,12 @@ body{
                     width: 100%;
                     border-radius:0;
                     color: grey;
-                    font-size: 4em;
+                    font-size: 3em;
                     font-weight: lighter;
                     background:none;
                     border: none;
                     box-shadow: none;
+                    cursor: inherit;
                 }        
             }//btn-group
             .btn-group.done ul{
@@ -224,12 +228,17 @@ body{
                     display: none;
                     background-color: #fff;
                     padding-bottom: 20px;
+                    text-align: left;
                     a{
                         white-space: inherit;
+                        cursor: pointer;    
+                        label{
+                            cursor: pointer;
+                        }
                     }
                     &.active .checkbox{
-                        
                         @include retina-image('../img/check', 45px 45px);
+                        background-position: top left;
                         background-color: #fff;
                         color: #e30613;
                         &.skip{
@@ -239,8 +248,8 @@ body{
                     }
                 }
                 .checkbox{
-                    padding: 15px 30px 10px 55px;
-                    
+                    padding: 15px 30px 15px 55px;
+                    display: block;
                     @include retina-image('../img/input', 45px 45px);
                     background-color: #fff;
                     background-repeat: no-repeat;
