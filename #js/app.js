@@ -69,7 +69,10 @@
         next = index+1;
         if(hasActive){
           console.log(index+' has '+hasActive+'  (Next is '+next+')');
+          $('.btn-group').removeClass('active');
+          $('.btn-group:eq('+index+')').addClass('done');
           $('.btn-group:eq('+next+')').addClass('active');
+          
           //$('.multiselect-container:eq('+next+')').prev('.btn').add('active');
         }
     });
@@ -119,9 +122,9 @@
     });
       
       //reselect the last selection
-      $('input[value="'+Webac.lastSelectionBox1+'"]').attr('checked', true).parent('.checkbox').addClass('active');
-      $('input[value="'+Webac.lastSelectionBox2+'"]').attr('checked', true).parent('.checkbox').addClass('active');;
-      $('input[value="'+Webac.lastSelectionBox3+'"]').attr('checked', true).parent('.checkbox').addClass('active');;
+      $('input[value="'+Webac.lastSelectionBox1+'"]').attr('checked', true).parents('li').addClass('active');
+      $('input[value="'+Webac.lastSelectionBox2+'"]').attr('checked', true).parents('li').addClass('active');
+      $('input[value="'+Webac.lastSelectionBox3+'"]').attr('checked', true).parents('li').addClass('active');
   }; //activateMultiselect
 
 
@@ -142,15 +145,15 @@
 
   
   Webac.checkExeptions = function(products, object){
-        exeption1 =  {"Anwendungsgebiet":"Waterproofing of structures","filterable.1":{"$all":["Horizontalsperre"]}};
-        exeption2 =  {"Anwendungsgebiet":"Waterproofing of structures","filterable.1":{"$all":["Mauerwerksabdichtung"]}};
+        exeption1 =  {"Anwendungsgebiet":"Bauwerksabdichtung","filterable.1":{"$all":["Horizontalsperre"]}};
+        exeption2 =  {"Anwendungsgebiet":"Bauwerksabdichtung","filterable.1":{"$all":["Mauerwerksabdichtung DE"]}};
         if(JSON.stringify(object) == JSON.stringify(exeption1)){
             alert('ausnahme');
             _.each(products, function(product){
                 console.log("ausnahme");
                 arr1 = product.get('filterable')[1];
                 arr2 = product.get('filterable')[2];
-                product.get('filterable')[1] = _.without(arr1,'Mauerwerksabdichtung');
+                product.get('filterable')[1] = _.without(arr1,'Mauerwerksabdichtung DE');
                 product.get('filterable')[2] = _.without(arr2,'Abdichtung gegen von außen einwirkendes Wasser', 'Vertikalabdichtung', 'Hohlraumverfüllung');
                 
             });
@@ -162,7 +165,7 @@
                 arr1 = product.get('filterable')[1];
                 arr2 = product.get('filterable')[2];
                 product.get('filterable')[1] = _.without(arr1,'Horizontalsperre');
-                product.get('filterable')[2] = _.without(arr2,'Durchfeuchtungsgrad (DFG) bis 100%', 'Durchfeuchtungsgrad (DFG) bis 60% ');
+                product.get('filterable')[2] = _.without(arr2,'Durchfeuchtungsgrad (DFG) > 95%', 'DFG ≥ 95%');
             });
         }
 
@@ -299,8 +302,9 @@
       Webac.currentAntwenungsgebiet = name;
       var id = this.options.id;
       Webac.showHint(1);
+      console.log('id:'+id);
       $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
-      $('.anwendungsgebiete .anwendungsgebiet').eq(id).slideDown();        
+      $('.anwendungsgebiete .anwendungsgebiet').eq(id).delay(200).slideDown();        
       
         //$('.selection').eq(id).addClass('active').show();
         //$('.selection').not('.active').slideUp();
@@ -487,9 +491,9 @@
       console.log('THE RESULT IS: ');
       console.log(JSON.stringify(filteredProducts));
         
-      filteredProducts1 = Webac.checkExeptions(filteredProducts, Webac.queryObject); //CHECK FOR EXCEPTIONS
+      //filteredProducts1 = Webac.checkExeptions(filteredProducts, Webac.queryObject); //CHECK FOR EXCEPTIONS
         
-      Webac.productsCollection.reset(filteredProducts1);
+      Webac.productsCollection.reset(filteredProducts);
     }
   });
     
@@ -532,10 +536,14 @@
     model: Webac.Models.Products
   });
 
-  Webac.productsCollection = new Webac.Collections.Products(data);
-  Webac.initialProductsCollection = new Webac.Collections.Products(Webac.productsCollection.toJSON());
+  Webac.productsCollection =            new Webac.Collections.Products(data);
+  Webac.preInitialProductsCollection =  new Webac.Collections.Products(Webac.productsCollection.toJSON());  
+//  Webac.initialProductsCollection =     new Webac.Collections.Products(Webac.productsCollection.toJSON());  
 
+  Webac.initialProductsCollection =     new Webac.Collections.Products( Webac.preInitialProductsCollection.query({ $not: { "filterable.1": [], "filterable.2": [], "filterable.3": []}}));
+//  Webac.initialProductsCollection =     new Webac.Collections.Products(Webac.fixedProductCollection);
 
+    
   // ################################################################
   // ######################## CREATE VIEWS ##########################
   // ################################################################

@@ -186,6 +186,13 @@ body{
                     box-shadow: none;
                 }        
             }//btn-group
+            .btn-group.done ul{
+                 min-height: inherit;
+                 li.active {
+                    display: block;
+
+                }
+            }
             .btn-group.active {
                 .dropdown-toggle{
                     color: #e30613;
@@ -214,6 +221,12 @@ body{
                     a{
                         white-space: inherit;
                     }
+                    &.active .checkbox{
+                        
+                        @include retina-image('../img/check', 45px 45px);
+                        background-color: #fff;
+                        color: #e30613;
+                    }
                 }
                 .checkbox{
                     padding: 15px 30px 10px 55px;
@@ -228,12 +241,7 @@ body{
                         background-color: #fff;
                         color: #e30613;
                     }
-                    &.active{
-                        
-                        @include retina-image('../img/check', 45px 45px);
-                        background-color: #fff;
-                        color: #e30613;
-                    }
+               
                 }
 
                 input{
