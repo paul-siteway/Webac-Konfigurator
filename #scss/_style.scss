@@ -166,6 +166,9 @@ body{
                 border-top-right-radius: 0px;
                 border-top: none;
                 padding: 10px 0;
+                a{
+                    background: #fff;
+                }
                 input{
                     -webkit-appearance: checkbox;
                 }
@@ -229,6 +232,10 @@ body{
                         @include retina-image('../img/check', 45px 45px);
                         background-color: #fff;
                         color: #e30613;
+                        &.skip{
+                            @include retina-image('../img/arrow', 83px 8px);
+                            background-position: center;
+                        }
                     }
                 }
                 .checkbox{

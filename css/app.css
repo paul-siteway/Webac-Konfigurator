@@ -8182,6 +8182,9 @@ body {
   border-top: none;
   padding: 10px 0;
 }
+#webacAPP .anwendungsgebiete .anwendungsgebiet .dropdown-menu a {
+  background: #fff;
+}
 #webacAPP .anwendungsgebiete .anwendungsgebiet .dropdown-menu input {
   -webkit-appearance: checkbox;
 }
@@ -8244,6 +8247,16 @@ body {
   #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container li.active .checkbox {
     background-image: url("../img/check_2x.png");
     background-size: 45px 45px;
+  }
+}
+#webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container li.active .checkbox.skip {
+  background-image: url("../img/arrow.png");
+  background-position: center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container li.active .checkbox.skip {
+    background-image: url("../img/arrow_2x.png");
+    background-size: 83px 8px;
   }
 }
 #webacAPP .anwendungsgebiete .anwendungsgebiet .multiselect-container .checkbox {

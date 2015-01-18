@@ -71,6 +71,13 @@
           console.log(index+' has '+hasActive+'  (Next is '+next+')');
           $('.btn-group').removeClass('active');
           $('.btn-group:eq('+index+')').addClass('done');
+          
+          if( $('.btn-group:eq('+next+')').find('li').length == 0){
+              $('.btn-group:eq('+next+') ul').append('<li class="active"><a href="javascript:void(0);"><label class="checkbox skip">&nbsp;</label></a></li>');
+              $('.btn-group:eq('+next+')').addClass('done');
+              next++
+              Webac.showHint(next);
+          }
           $('.btn-group:eq('+next+')').addClass('active');
           
           //$('.multiselect-container:eq('+next+')').prev('.btn').add('active');
@@ -79,6 +86,16 @@
   }
     
   //Activate Bootstrap MultiselectPlugin on created Selects
+  Webac.removeEmptySteps = function(){
+    $('.btn-group').each(function(){
+       var LIs = $('li', this).length;
+       if(LIs == 0) {
+        $(this).remove();
+       }
+    });   
+  }
+        
+  
   Webac.activateMultiselect = function() {
     $("select.multiselect").val([]);
     $('.multiselect').multiselect("destroy");
