@@ -20,7 +20,6 @@
     queryObject: {},
   };
 
-
   //TEMPLATE FUNCTION
   window.template = function(id) {
     return _.template($('#' + id).html());
@@ -76,25 +75,12 @@
               $('.btn-group:eq('+next+') ul').append('<li class="active"><a href="javascript:void(0);"><label class="checkbox skip">&nbsp;</label></a></li>');
               $('.btn-group:eq('+next+')').addClass('done');
               next++
-              Webac.showHint(next);
+              Webac.showHint(next)
           }
           $('.btn-group:eq('+next+')').addClass('active');
-          
-          //$('.multiselect-container:eq('+next+')').prev('.btn').add('active');
         }
     });
-  }
-    
-  //Activate Bootstrap MultiselectPlugin on created Selects
-  Webac.removeEmptySteps = function(){
-    $('.btn-group').each(function(){
-       var LIs = $('li', this).length;
-       if(LIs == 0) {
-        $(this).remove();
-       }
-    });   
-  }
-        
+  }        
   
   Webac.activateMultiselect = function() {
     $("select.multiselect").val([]);
@@ -391,24 +377,7 @@
     render: function() {
       var anwendungsgebietName = this.options.name;
       //Renders the H1
-      this.$el.append(this.template({
-        name: anwendungsgebietName
-      }));
-
-
-      
-      // this.collection.each(function(product) {
-        
-      //   var name = product.get('Anwendungsgebiet');
-      //   Webac.newfilterView = new Webac.Views.FilterNew({
-      //         anwendungsgebietName: anwendungsgebietName,
-      //         spalte: name,
-      //         optionsArray: object
-      //       });
-      //       Webac.newfilterView.render();
-      //       this.$el.append(Webac.newfilterView.el);
-      // });
-
+      this.$el.append(this.template({name: anwendungsgebietName}));
       _.each(Webac.anwendungsgebiete[anwendungsgebietName], function(object, name) {
         if(name != "image"){
             Webac.newfilterView = new Webac.Views.FilterNew({
@@ -419,9 +388,8 @@
             Webac.newfilterView.render();
             this.$el.append(Webac.newfilterView.el);
         }
-      }, this);//eacht
+      }, this);//each
     }//render
-    
   });
 
 
@@ -477,9 +445,6 @@
       $('.btn-group:eq(0)').addClass('active');
       Webac.showSteps();
     },
-
-
-
     render: function() {
       ////Filter trough all ITEMS
       this.$el.html('');
@@ -516,8 +481,7 @@
       console.log(JSON.stringify(filteredProducts));
         
       //filteredProducts1 = Webac.checkExeptions(filteredProducts, Webac.queryObject); //CHECK FOR EXCEPTIONS
-        
-      Webac.productsCollection.reset(filteredProducts);
+       Webac.productsCollection.reset(filteredProducts);
     }
   });
     
@@ -528,8 +492,6 @@
   // ################################################################
   // ###################### NEW SIGNLE FILTER VIEW ##################
   // ################################################################
-
-
 
   Webac.Views.FilterNew = Backbone.View.extend({
     tagName: 'select',
@@ -550,8 +512,6 @@
     }
   });
 
-
-
   // ################################################################
   // ########################  COLLECTION ###########################
   // ################################################################
@@ -562,18 +522,14 @@
 
   Webac.productsCollection =            new Webac.Collections.Products(data);
   Webac.preInitialProductsCollection =  new Webac.Collections.Products(Webac.productsCollection.toJSON());  
-//  Webac.initialProductsCollection =     new Webac.Collections.Products(Webac.productsCollection.toJSON());  
-
+  //remove Products with no Filters from List
   Webac.initialProductsCollection =     new Webac.Collections.Products( Webac.preInitialProductsCollection.query({ $not: { "filterable.1": [], "filterable.2": [], "filterable.3": []}}));
-//  Webac.initialProductsCollection =     new Webac.Collections.Products(Webac.fixedProductCollection);
 
-    
+
   // ################################################################
   // ######################## CREATE VIEWS ##########################
   // ################################################################
 
-
-    
   //Webac.anwendungsgebietView = new  Webac.Views.Anwendungsgebiet({model:Webac.Models.Products});
   Webac.anwendungsgebieteView = new Webac.Views.Anwendungsgebiete({
     collection: Webac.productsCollection
