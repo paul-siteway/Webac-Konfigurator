@@ -3,32 +3,38 @@
 $red: #e30613;
 $redDark:  darken($red, 10);
 $redLight: lighten($red, 10);
-
 $grey : #e6e9ee;
 $bodyColor: #7b7b7b;
 
 
-
-//body{
-//    overflow-y: scroll;
-//    font: 400 0.85em/1.4em "StoneSansITCW01-Medium","Helvetica Neue",Arial,sans-serif;
-//    color: $bodyColor;
-//    background: #f0f0f0;
-//}
-
-// select.multiselect{
-//     display: block !important;
-// }
-
+@import "spinners/1-rotating-plane";
 #webacAPP {
 	position: relative;
     text-align: center;
     padding-top: 20px;
     min-height: 500px;
     margin: 0 -35px;
-    opacity: 0;
+    overflow: hidden;
+    .innerapp{
+        display: none;
+    }
     hr{
         margin: 20px -30px;
+    }
+    .loader{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        .sk-spinner{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -30px;
+            margin-top: -30px;
+        }
     }
     .btn{
         @include linear-gradient($redLight, $redDark);
@@ -115,12 +121,18 @@ $bodyColor: #7b7b7b;
                 }//a
                 .close{
                     position: absolute;
-                    top: 10px;
-                    right: 13px;
+                    top: 5px;
+                    right: 5px;
                     font-size: 12px;
                     display: none;
                     opacity: 1;
                     color: $bodyColor;
+                    cursor: pointer;
+                    padding: 5px 8px;
+                    &:hover{
+                        background: $red;
+                        color: #fff !important;
+                    }
                 }//close
                 &:hover a{
                     border: 1px solid #e30613;
@@ -236,7 +248,8 @@ $bodyColor: #7b7b7b;
                             cursor: pointer;
                         }
                     }
-                    &.active .checkbox{
+                    &.active {
+                        .checkbox{
                         @include retina-image('../img/check', 45px 45px);
                         background-position: top left;
                         background-color: #fff;
@@ -245,8 +258,12 @@ $bodyColor: #7b7b7b;
                             @include retina-image('../img/arrow', 83px 8px);
                             background-position: center;
                         }
-                    }
-                }
+                      }//checkbox
+                        a label{
+                            cursor: default;
+                        }//label
+                    }//active
+                }//li
                 .checkbox{
                     padding: 15px 30px 15px 55px;
                     display: block;
