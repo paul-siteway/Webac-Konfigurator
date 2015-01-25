@@ -1,17 +1,13 @@
 // @codekit-prepend 'lib/underscore.js'
-
 // @codekit-prepend 'lib/backbone.js'
 // @codekit-prepend 'lib/deep-model.min.js'
 // @codekit-prepend 'lib/backbone-query.min.js'
-
 // @codekit-prepend 'lib/bootstrap.js'
 // @codekit-prepend 'lib/bootstrap-multiselect.js'
 // @codekit-prepend 'lib/TweenMax.js'
 
-
-
 (function() {
-  console.log('WEBAC KONFIGURATOR: V3 - 07.01');
+  console.log('WEBAC KONFIGURATOR: V5 - 25.01');
   //create a namespace
   window.Webac = {
     Models: {},
@@ -45,13 +41,59 @@
   Webac.lastSelectionBox2 = "";
   Webac.lastSelectionBox3 = "";
 
+    
+ Webac.exceptions = {
+    1: {
+        ifAnwenungsgebiet: "Bauwerksabdichtung",
+        ifStep: 1,
+        ifOption: " Horizontalsperre",
+        inStep: 2,
+        allowText:  [' DFG ≥ 95%', ' Durchfeuchtungsgrad (DFG) > 95%',' DFG < 60%']
+    },
+    2: {
+        ifAnwenungsgebiet: "Bauwerksabdichtung",
+        ifStep: 1,
+        ifOption: " Mauerwerksabdichtung DE",
+        inStep: 2,
+        allowText:  [' Vertikalabdichtung',' Hohlraumverfüllung',' Abdichtung gegen von außen einwirkendes Wasser']
+    },
+    3: {
+        ifAnwenungsgebiet: "Risssanierung",
+        ifStep: 2,
+        ifOption: " trocken, feucht, nass",
+        inStep: 3,
+        allowText:  ['']
+    },
+    4: {
+        ifAnwenungsgebiet: "Fugenabdichtung",
+        ifStep: 1,
+        ifOption: " Arbeitsfugen",
+        inStep: 2,
+        allowText:  [' Injektion: ja',' Injektion: nein']
+    },
+    5: {
+        ifAnwenungsgebiet: "Fugenabdichtung",
+        ifStep: 1,
+        ifOption: " Dehnfugen",
+        inStep: 2,
+        allowText:  [' Fugeninjektion',' Fugenverguss', ' Quelldichtungen Dichtbänder']
+    },
+    6: {
+        ifAnwenungsgebiet: "Kanalsanierung",
+        ifStep: 1,
+        ifOption: " drückendes Wasser: Ja",
+        inStep: 2,
+        allowText:  ['']
+    }
+     
+};
 
   // #####################################
   // ######### GLOBAL FUNCTIONS   ########
   // #####################################
   
   Webac.resetApp = function(){
-      console.log('reset');
+      //console.log('reset');
       Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
         $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
         $('#productsView .product').hide();
@@ -95,14 +137,13 @@
         if (options.length === 0) {
           return select.attr('data-name');
         } else if (options.length > 0) {
-          return select.attr('data-name') + ' (' + options.length + ')';
+          return select.attr('data-name') + '(' + options.length + ')';
         } else {
           return select.attr('data-name');
         } //buttontext
       },
       onChange: function(element, checked) {
         console.log('C H A N G E');
-        
         if( element.parents('.multiselect').attr('data-name') == "1" ){
             Webac.lastSelectionBox1 = element.val();
             //console.log(Webac.lastSelectionBox1+'+++++++++++++');
@@ -139,7 +180,7 @@
   }
   
   Webac.showHint = function(num,delay){
-      console.log('showHint: '+num)
+      //console.log('showHint: '+num)
       all = $('.hint');
       el = $('.hint').eq(num);
       if(delay == undefined){
@@ -151,30 +192,73 @@
   }
 
   
-  Webac.checkExeptions = function(products, object){
+    Webac.checkExceptions = function(products, object){
+        
+   
+        
+        //Go Trough Exeptions
+        _.each(Webac.exceptions, function(exeption){
+             
+            var ifAnwenungsgebiet = exeption.ifAnwenungsgebiet
+            var ifStep = exeption.ifStep-1;
+            var ifOption = exeption.ifOption
+            
+            var inStep = exeption.inStep-1;
+            var allowText = exeption.allowText
+            
+            console.log(ifAnwenungsgebiet);
+            console.log(ifStep);
+            console.log(inStep);
+            console.log(ifOption);
+            console.log(allowText);
+            
+             
+            curAnwengunsgebiet = $('.selection h3').text();
+            curOption = $('.anwendungsgebiet .btn-group').eq(ifStep).find('li.active').text();
+             
+            console.log('curAnwengunsgebiet:'+curAnwengunsgebiet);
+            console.log('curOption:'+curOption);
+            
+            if( ifAnwenungsgebiet == curAnwengunsgebiet && ifOption == curOption){
+                alert('AUSNAHME');
+                var LIs = $('.anwendungsgebiet .btn-group:eq('+inStep+') ul li');
+                //go trhough each LI
+                LIs.each(function(){
+                    li = $(this);
+                    var liText  = li.text();
+                    console.log('checking LI'+liText);
+                    //if liTEst is not in allowedTexts
+                    if( !_.contains(exeption.allowText, liText) ){
+                        li.remove();
+                    }        
+                });//each LI  
+            }//if
+            
+            
+        });
+        
+        
         exeption1 =  {"Anwendungsgebiet":"Bauwerksabdichtung","filterable.1":{"$all":["Horizontalsperre"]}};
+        allowedTexts =  [' DFG ≥ 95%', ' Durchfeuchtungsgrad (DFG) > 95%',' DFG < 60%'];
+        
         exeption2 =  {"Anwendungsgebiet":"Bauwerksabdichtung","filterable.1":{"$all":["Mauerwerksabdichtung DE"]}};
-        if(JSON.stringify(object) == JSON.stringify(exeption1)){
-            alert('ausnahme');
-            _.each(products, function(product){
-                console.log("ausnahme");
-                arr1 = product.get('filterable')[1];
-                arr2 = product.get('filterable')[2];
-                product.get('filterable')[1] = _.without(arr1,'Mauerwerksabdichtung DE');
-                product.get('filterable')[2] = _.without(arr2,'Abdichtung gegen von außen einwirkendes Wasser', 'Vertikalabdichtung', 'Hohlraumverfüllung');
-                
-            });
-        }
-        else if(JSON.stringify(object) == JSON.stringify(exeption2)){
-            alert('ausnahme2');
-             _.each(products, function(product){
-                console.log("ausnahme");
-                arr1 = product.get('filterable')[1];
-                arr2 = product.get('filterable')[2];
-                product.get('filterable')[1] = _.without(arr1,'Horizontalsperre');
-                product.get('filterable')[2] = _.without(arr2,'Durchfeuchtungsgrad (DFG) > 95%', 'DFG ≥ 95%');
-            });
-        }
+        allowedTexts2 =  [' Vertikalabdichtung', ' Hohlraumverfüllung',' Abdichtung gegen von außen einwirkendes Wasser'];
+        
+        
+//        if(JSON.stringify(object) == JSON.stringify(exeption1)){
+//            alert('ausnahme');
+//            var LIs = $('.anwendungsgebiet .btn-group:eq(1) ul li');
+//            //go trhough each LI
+//            LIs.each(function(){
+//                li = $(this);
+//                var liText  = li.text();
+//                console.log('checking LI'+liText);
+//                //if liTEst is not in allowedTexts
+//                if( !_.contains(allowedTexts, liText) ){
+//                    li.remove();
+//                }        
+//            });//each LI  
+//        };//if
 
 
         return products; 
@@ -250,7 +334,7 @@
       Webac.vents.on('startSearch', this.search, this);
     },
     render: function() {
-      console.log('++render View: Products++');
+     // console.log('++render View: Products++');
       this.$el.html('');
       this.collection.each(this.addOne, this);
       return this;
@@ -335,11 +419,11 @@
         this.collection.on('reset', this.render, this);
     },
     render: function() {
-      console.log('++render View: Selcections++');
+      //console.log('++render View: Selcections++');
       this.$el.html('');
       var i = 0;
       _.each(Webac.anwendungsgebiete, function(object, name){
-        console.log('redering anwendungsauswahl');
+        //console.log('redering anwendungsauswahl');
         var image = object.image;
         var anwendungsgebietName = name;
         var selectView = new Webac.Views.Selection({
@@ -413,7 +497,7 @@
     },
     createAnwendungsgebietList: function() {
       Webac.anwendungsgebiete = {};
-      console.log('++create Anwendungsgebiet Liste++');
+      //console.log('++create Anwendungsgebiet Liste++');
       this.collection.each(function(product) {
         var name = product.get('Anwendungsgebiet');
         if(!Webac.anwendungsgebiete[name]){
@@ -448,7 +532,7 @@
     render: function() {
       ////Filter trough all ITEMS
       this.$el.html('');
-      console.log('++render View: Anwendungsgebiete++');
+      //console.log('++render View: Anwendungsgebiete++');
       _.each(Webac.anwendungsgebiete, function(anwendungsgebiet, name) {
         //console.log('render Anwendungsgebiete:'+name);
         Webac.anwendungsgebietView = new Webac.Views.Anwendungsgebiet({
@@ -478,10 +562,13 @@
       
       filteredProducts = Webac.initialProductsCollection.query(Webac.queryObject)
       console.log('THE RESULT IS: ');
-      console.log(JSON.stringify(filteredProducts));
+      //console.log(JSON.stringify(filteredProducts));
+      console.log(filteredProducts);
         
       //filteredProducts1 = Webac.checkExeptions(filteredProducts, Webac.queryObject); //CHECK FOR EXCEPTIONS
-       Webac.productsCollection.reset(filteredProducts);
+      Webac.productsCollection.reset(filteredProducts);
+      Webac.checkExceptions(filteredProducts, Webac.queryObject);
+      Webac.showSteps();
     }
   });
     

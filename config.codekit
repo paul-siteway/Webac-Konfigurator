@@ -210,7 +210,7 @@
 		"useLibsass": 0
 		},
 	"\/#scss\/app.scss": {
-		"createSourceMap": 1,
+		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
@@ -219,8 +219,8 @@
 		"inputAbbreviatedPath": "\/#scss\/app.scss",
 		"outputAbbreviatedPath": "\/css\/app.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
