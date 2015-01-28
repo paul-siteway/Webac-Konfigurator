@@ -105,7 +105,9 @@
     #webacAPP .btn.white {
       background: #fff;
       border: 1px solid #e6e9ee;
-      color: #7b7b7b; }
+      color: #7b7b7b;
+      margin-left: 20px;
+      margin-right: 20px; }
   #webacAPP #anwendungsSelections .selections {
     text-align: center;
     padding: 10px 0; }

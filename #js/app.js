@@ -7,7 +7,7 @@
 // @codekit-prepend 'lib/TweenMax.js'
 
 (function() {
-  console.log('WEBAC KONFIGURATOR: V5 - 25.01');
+  console.log('WEBAC KONFIGURATOR: V5.5 - 28.01');
   //create a namespace
   window.Webac = {
     Models: {},
@@ -21,12 +21,11 @@
     return _.template($('#' + id).html());
   };
 
-
+    
   // ################################
   // ######### GLOBAL EVENTS ########
   // ################################
   Webac.vents = _.extend({}, Backbone.Events);
-
 
 
   // ################################
@@ -44,14 +43,14 @@
     
  Webac.exceptions = {
     1: {
-        ifAnwenungsgebiet: "Bauwerksabdichtung",
+        ifAnwenungsgebiet: "Mauerwerksabdichtung",
         ifStep: 1,
         ifOption: " Horizontalsperre",
         inStep: 2,
         allowText:  [' DFG ≥ 95%', ' Durchfeuchtungsgrad (DFG) > 95%',' DFG < 60%']
     },
     2: {
-        ifAnwenungsgebiet: "Bauwerksabdichtung",
+        ifAnwenungsgebiet: "Mauerwerksabdichtung",
         ifStep: 1,
         ifOption: " Mauerwerksabdichtung",
         inStep: 2,
@@ -94,6 +93,7 @@
   
   Webac.resetApp = function(){
       //console.log('reset');
+      $('.selections').removeClass('active');
       Webac.productsCollection.reset(Webac.initialProductsCollection.toJSON());
         $('.anwendungsgebiete .anwendungsgebiet').slideUp(0);
         $('#productsView .product').hide();
@@ -377,6 +377,7 @@
       var id = this.options.id;
       Webac.showHint(1,1.5);  
       $('.selections').addClass('active');
+      $('.product').hide();
       $('.anwendungsgebiete .anwendungsgebiet').slideUp(0).slideDown();
       
     }
