@@ -23,13 +23,3 @@ mapping:
 - [gmaps.js] (http://hpneo.github.com/gmaps/) 
 - [google maps api] (https://developers.google.com/maps/?hl=de)
 
-
-TODO: 
-
-- [ ] 3 Felder. 
-
-- [ ] Jeweils blendet sich das nächste ein
-- [ ] Nächsten Felder werden die Optionen Live geflitert
-- [ ] Felder Name „Schritt 1“ , „Schritt 2, ..
-
-
