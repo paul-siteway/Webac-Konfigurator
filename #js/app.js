@@ -47,7 +47,7 @@
         ifStep: 1,
         ifOption: " Horizontalsperre",
         inStep: 2,
-        allowText:  [' DFG ≥ 95%', ' Durchfeuchtungsgrad (DFG) > 95%',' DFG < 60%']
+        allowText:  [' Durchfeuchtungsgrad (DFG) bis 100%', ' DFG bis 95%',' DFG bis 80%',' DFG bis 60%']
     },
     2: {
         ifAnwenungsgebiet: "Mauerwerksabdichtung",
