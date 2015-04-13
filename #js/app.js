@@ -7,7 +7,7 @@
 // @codekit-prepend 'lib/TweenMax.js'
 
 (function() {
-  console.log('WEBAC KONFIGURATOR: V5.5 - 28.01');
+  console.log('WEBAC KONFIGURATOR: V5.6 - 13.04');
   //create a namespace
   window.Webac = {
     Models: {},
