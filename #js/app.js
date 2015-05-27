@@ -7,7 +7,7 @@
 // @codekit-prepend 'lib/TweenMax.js'
 
 (function() {
-  console.log('WEBAC KONFIGURATOR: V5.6 - 13.04');
+  console.log('WEBAC KONFIGURATOR: V5.81 - 27.05');
   //create a namespace
   window.Webac = {
     Models: {},
@@ -21,7 +21,6 @@
     return _.template($('#' + id).html());
   };
 
-  $('.top .langDrop').remove();
 
   // ################################
   // ######### GLOBAL EVENTS ########
@@ -41,53 +40,119 @@
   Webac.lastSelectionBox2 = "";
   Webac.lastSelectionBox3 = "";
 
-    
- Webac.exceptions = {
-    1: {
-        ifAnwenungsgebiet: "Mauerwerksabdichtung",
-        ifStep: 1,
-        ifOption: " Horizontalsperre",
-        inStep: 2,
-        allowText:  [' Durchfeuchtungsgrad (DFG) bis 100%', ' DFG bis 95%',' DFG bis 80%',' DFG bis 60%']
-    },
-    2: {
-        ifAnwenungsgebiet: "Mauerwerksabdichtung",
-        ifStep: 1,
-        ifOption: " Mauerwerksabdichtung",
-        inStep: 2,
-        allowText:  [' Vertikalabdichtung',' Hohlraumverfüllung',' Abdichtung gegen von außen einwirkendes Wasser']
-    },
-    3: {
-        ifAnwenungsgebiet: "Risssanierung",
-        ifStep: 2,
-        ifOption: " trocken, feucht, nass",
-        inStep: 3,
-        allowText:  ['']
-    },
-    4: {
-        ifAnwenungsgebiet: "Fugenabdichtung",
-        ifStep: 1,
-        ifOption: " Arbeitsfugen",
-        inStep: 2,
-        allowText:  [' Injektion: ja',' Injektion: nein']
-    },
-    5: {
-        ifAnwenungsgebiet: "Fugenabdichtung",
-        ifStep: 1,
-        ifOption: " Dehnfugen",
-        inStep: 2,
-        allowText:  [' Fugeninjektion',' Fugenverguss', ' Quelldichtungen Dichtbänder']
-    },
-    6: {
-        ifAnwenungsgebiet: "Kanalsanierung",
-        ifStep: 1,
-        ifOption: " drückendes Wasser: Ja",
-        inStep: 2,
-        allowText:  ['']
-    }
-     
-};
+   Webac.exceptions = {
+      1: {
+          ifAnwenungsgebiet: "Mauerwerksabdichtung",
+          ifStep: 1,
+          ifOption: " Horizontalsperre",
+          inStep: 2,
+          allowText:  [' Durchfeuchtungsgrad (DFG) bis 100%', ' DFG bis 95%',' DFG bis 80%',' DFG bis 60%']
+      },
+      2: {
+          ifAnwenungsgebiet: "Sealing of masonry",
+          ifStep: 1,
+          ifOption: " damp proof course (dpc)",
+          inStep: 2,
+          allowText:  [' degree of moisture penetration (DFG) up to 100%',' DFG up to 95%',' DFG up to 80%',' DFG up to 60%']
+      },
 
+
+
+
+      3: {
+          ifAnwenungsgebiet: "Sealing of masonry",
+          ifStep: 1,
+          ifOption: " sealing of masonry",
+          inStep: 2,
+          allowText:  [' vertical dampproofing',' sealing against pressing water from outside',' filling of cavities']
+      },
+
+      4: {
+          ifAnwenungsgebiet: "Mauerwerksabdichtung",
+          ifStep: 1,
+          ifOption: " Mauerwerksabdichtung",
+          inStep: 2,
+          allowText:  [' Vertikalabdichtung',' Hohlraumverfüllung',' Abdichtung gegen von außen einwirkendes Wasser']
+      },
+
+
+
+
+  
+      5: {
+          ifAnwenungsgebiet: "Risssanierung",
+          ifStep: 2,
+          ifOption: " trocken, feucht, nass",
+          inStep: 3,
+          allowText:  ['']
+      },
+      6: {
+          ifAnwenungsgebiet: "Crack Repair",
+          ifStep: 2,
+          ifOption: " dry, damp, wet",
+          inStep: 3,
+          allowText:  ['']
+      },
+
+
+
+
+
+
+      7: {
+          ifAnwenungsgebiet: "Fugenabdichtung",
+          ifStep: 1,
+          ifOption: " Arbeitsfugen",
+          inStep: 2,
+          allowText:  [' Injektion: ja',' Injektion: nein']
+      },
+      8: {
+          ifAnwenungsgebiet: "Joint Sealing",
+          ifStep: 1,
+          ifOption: " construction joints",
+          inStep: 2,
+          allowText:  [' injection',' non injection']
+      },
+
+
+
+
+
+      9: {
+          ifAnwenungsgebiet: "Fugenabdichtung",
+          ifStep: 1,
+          ifOption: " Dehnfugen",
+          inStep: 2,
+          allowText:  [' Fugeninjektion',' Fugenverguss', ' Quelldichtungen Dichtbänder']
+      },
+      10: {
+          ifAnwenungsgebiet: "Joint Sealing",
+          ifStep: 1,
+          ifOption: " expansion joints",
+          inStep: 2,
+          allowText:  [' injection into joints',' Fugenverguss', ' swelling sealings / sealing tapes']
+      },
+
+
+
+      11: {
+          ifAnwenungsgebiet: "Kanalsanierung",
+          ifStep: 1,
+          ifOption: " drückendes Wasser: Ja",
+          inStep: 2,
+          allowText:  ['']
+      },
+      12: {
+          ifAnwenungsgebiet: "Sewer Repair",
+          ifStep: 1,
+          ifOption: " pressing water",
+          inStep: 2,
+          allowText:  ['']
+      }
+
+
+
+  };
   // #####################################
   // ######### GLOBAL FUNCTIONS   ########
   // #####################################
