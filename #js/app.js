@@ -7,7 +7,7 @@
 // @codekit-prepend 'lib/TweenMax.js'
 
 (function() {
-  console.log('WEBAC KONFIGURATOR: V5.81 - 02.07');
+  console.log('WEBAC KONFIGURATOR: V5.82 - 02.07');
   //create a namespace
   window.Webac = {
     Models: {},
@@ -116,8 +116,6 @@
 
 
 
-
-
       9: {
           ifAnwenungsgebiet: "Fugenabdichtung",
           ifStep: 1,
@@ -130,7 +128,7 @@
           ifStep: 1,
           ifOption: " expansion joints",
           inStep: 2,
-          allowText:  [' injection into joints',' Fugenverguss', ' swelling sealings / sealing tapes']
+          allowText:  [' injection into joints',' casting of joints', ' swelling sealings / sealing tapes']
       },
 
 
