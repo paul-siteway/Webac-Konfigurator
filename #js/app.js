@@ -7,7 +7,7 @@
 // @codekit-prepend 'lib/TweenMax.js'
 
 (function() {
-  console.log('WEBAC KONFIGURATOR: V5.81 - 27.05');
+  console.log('WEBAC KONFIGURATOR: V5.81 - 02.07');
   //create a namespace
   window.Webac = {
     Models: {},
@@ -40,7 +40,7 @@
   Webac.lastSelectionBox2 = "";
   Webac.lastSelectionBox3 = "";
 
-   Webac.exceptions = {
+  Webac.exceptions = {
       1: {
           ifAnwenungsgebiet: "Mauerwerksabdichtung",
           ifStep: 1,
@@ -49,7 +49,7 @@
           allowText:  [' Durchfeuchtungsgrad (DFG) bis 100%', ' DFG bis 95%',' DFG bis 80%',' DFG bis 60%']
       },
       2: {
-          ifAnwenungsgebiet: "Sealing of masonry",
+          ifAnwenungsgebiet: "Sealing of Masonry",
           ifStep: 1,
           ifOption: " damp proof course (dpc)",
           inStep: 2,
@@ -60,7 +60,7 @@
 
 
       3: {
-          ifAnwenungsgebiet: "Sealing of masonry",
+          ifAnwenungsgebiet: "Sealing of Masonry",
           ifStep: 1,
           ifOption: " sealing of masonry",
           inStep: 2,
